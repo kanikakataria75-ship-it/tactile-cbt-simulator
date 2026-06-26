@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Assessment Portal — Configure practice exam session">
+  <title>Assessment Portal — Setup Practice</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script>
+    function initTheme() {
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+    }
+    initTheme();
+  </script>
+</head>
+<body>
+  <!-- Ambient Blurred Orbs -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <button class="theme-toggle" id="themeToggleBtn" onclick="toggleGlobalTheme()">
+    <span class="theme-icon"><i class="fa-solid fa-moon"></i></span> <span id="themeToggleText">Dark</span>
+  </button>
+
+  <!-- Widescreen Setup Dashboard Form -->
+  <form class="dashboard-wrapper animate-fade-in" action="/upload" method="POST" enctype="multipart/form-data" id="setupForm">
+
+    <!-- THE LEFT SIDEBAR PANEL (Navigation & Identity) -->
+    <aside class="sidebar-panel">
+      <!-- Illuminated portal logo emblem -->
+      <div class="sidebar-logo">
+        <div class="logo-emblem"><i class="fa-solid fa-graduation-cap"></i></div>
+        <h2>Assessment Portal</h2>
+        <p>Enterprise Practice Controller</p>
+      </div>
+
+      <!-- Candidate Profile inputs as sleek, bottom-bordered parameters -->
+      <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 20px;">
+        <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cfa-gold); margin-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;"><i class="fa-solid fa-user-gear" style="color: var(--cfa-gold); margin-right: 8px;"></i> Candidate Profile</h3>
+        
+        <div class="form-group">
+          <label class="form-label" for="candidateName" style="font-size: 0.72rem;">Candidate Name</label>
+          <input class="form-input-tactile" type="text" name="candidate_name" placeholder="e.g. John Doe" required id="candidateName">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="examTopic" style="font-size: 0.72rem;">Exam Topic / Title</label>
+          <input class="form-input-tactile" type="text" name="exam_topic" placeholder="e.g. Financial Management" required id="examTopic">
+        </div>
+      </div>
+
+      <!-- Navigation stacked tactical dashboard options -->
+      <div class="sidebar-nav">
+        <a href="/dashboard" class="sidebar-nav-btn">
+          <i class="fa-solid fa-chart-pie" style="margin-right: 8px;"></i> Historical Analytics
+        </a>
+        <a href="/generate-error-quiz" class="sidebar-nav-btn" style="border-color: rgba(239, 68, 68, 0.25);">
+          <i class="fa-solid fa-rotate-left" style="margin-right: 8px;"></i> Error Log Vault Quiz Generator
+        </a>
+      </div>
+    </aside>
+
+    <!-- THE MAIN EXPANSION WORKSPACE (Right Grid Panel) -->
+    <main class="main-workspace">
+      <!-- Error vault check warning -->
+      {% if error == 'no_mistakes' %}
+      <div class="dashboard-card animate-fade-in" style="padding: 18px 24px; border-color: var(--color-incorrect); text-align: center; background: rgba(239, 68, 68, 0.08); border-radius: var(--radius-md);">
+        <p style="color: var(--color-incorrect); font-weight: 700; font-size: 0.9rem; margin: 0;">
+          <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i> Your mistake vault is currently empty! Answer questions incorrectly in a mock test first to log errors.
+        </p>
+      </div>
+      {% endif %}
+
+      <!-- ROW 1 (Configuration Metrics) -->
+      <div class="workspace-row">
+        <!-- Target Exam & Rules Breakdown -->
+        <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-sliders" style="color: var(--cfa-gold); margin-right: 8px;"></i> Target Exam &amp; Rules</h3>
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label class="form-label" for="targetExam">Target Examination</label>
+            <select class="form-select-tactile" name="target_exam" id="targetExam" onchange="applyRulesEngine()">
+              <option value="CFA">CFA (3 choices: A, B, C)</option>
+              <option value="FRM">FRM (4 choices: A, B, C, D)</option>
+              <option value="ACCA">ACCA (4 choices: A, B, C, D)</option>
+              <option value="JEE Main">JEE Main (4 choices: A, B, C, D)</option>
+              <option value="JEE Advanced">JEE Advanced (4 choices: A, B, C, D)</option>
+              <option value="NEET">NEET (4 choices: A, B, C, D)</option>
+              <option value="Other">Other (Custom Mock Test)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Rules Breakdown</label>
+            <div id="rulesFeedback" style="padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
+              CFA rules selected. Exam questions will render 3 options (A, B, C). Standard 3pt marking applies.
+            </div>
+          </div>
+        </div>
+
+        <!-- Marking Settings -->
+        <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-calculator" style="color: var(--cfa-gold); margin-right: 8px;"></i> Marking Settings</h3>
+          <div style="display: flex; flex-direction: column; gap: 16px; height: 100%; justify-content: center;">
+            <div class="marking-item" style="border-radius: var(--radius-md); background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle);">
+              <span class="mark-label"><i class="fa-solid fa-circle-check" style="color: var(--color-correct); margin-right: 6px;"></i> Correct Answer</span>
+              <input type="number" name="mark_correct" value="3" min="0" max="10" id="markCorrect">
+              <span style="color:var(--text-muted);font-size:0.8rem">pts</span>
+            </div>
+            <div class="marking-item" style="border-radius: var(--radius-md); background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle);">
+              <span class="mark-label"><i class="fa-solid fa-circle-xmark" style="color: var(--color-incorrect); margin-right: 6px;"></i> Incorrect / Blank</span>
+              <input type="number" name="mark_incorrect" value="0" min="-5" max="0" id="markIncorrect">
+              <span style="color:var(--text-muted);font-size:0.8rem">pts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 2 (Session Variables & Uploader) -->
+      <div class="workspace-row">
+        <!-- Duration & Active Session Selection -->
+        <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-clock" style="color: var(--cfa-gold); margin-right: 8px;"></i> Duration &amp; Session</h3>
+          <div style="display: flex; flex-direction: column; gap: 20px; height: 100%; justify-content: center;">
+            <div class="form-group">
+              <label class="form-label" for="durationInput">Test Duration (minutes)</label>
+              <input class="form-input-tactile" type="number" name="duration" value="135" min="1" max="360" required id="durationInput">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Active Session</label>
+              <div class="session-toggle" style="border-radius: var(--radius-md);">
+                <input type="radio" name="session" value="AM" id="sessionAM" checked>
+                <label for="sessionAM" style="padding: 14px;">AM Practice</label>
+                <input type="radio" name="session" value="PM" id="sessionPM">
+                <label for="sessionPM" style="padding: 14px;">PM Practice</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual Drag-and-drop File Upload Terminal -->
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <!-- Tooltip Badge -->
+          <div style="font-size: 0.78rem; color: var(--text-secondary); background: var(--cfa-gold-dim); border: 1px dashed var(--border-active); padding: 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-lightbulb" style="color: var(--cfa-gold); margin-right: 6px;"></i> <span>Leave the Answer Key card blank if your question document already contains the answers or explanations inline.</span>
+          </div>
+
+          <!-- Two side-by-side glassmorphic cards -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 100%;">
+            <!-- Card 1: Question Document -->
+            <div class="dashboard-card" style="padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+              <h3 style="font-size: 0.88rem; margin-bottom: 12px; color: var(--cfa-gold);"><i class="fa-solid fa-file-arrow-up" style="color: var(--cfa-gold); margin-right: 8px;"></i> 1. Question Document</h3>
+              <div class="upload-zone" id="uploadZoneQuest" style="padding: 20px 10px; min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: var(--radius-md); background: rgba(255,255,255,0.01); border: 2px dashed var(--border-input); cursor: pointer; transition: all var(--transition-base);">
+                <input type="file" name="question_file" accept=".txt,.csv,.text,.pdf" required id="fileInputQuest" style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+                <div class="upload-icon" style="font-size: 1.8rem; margin-bottom: 8px; color: var(--text-secondary);"><i class="fa-solid fa-file-arrow-up"></i></div>
+                <div class="upload-text" style="font-size: 0.8rem; color: var(--text-secondary);">Drop questions (.txt/.pdf)</div>
+                <div class="upload-filename" id="fileNameQuest" style="display:none; font-size: 0.75rem; margin-top: 6px; color: var(--color-correct); font-weight: 700;"></div>
+              </div>
+            </div>
+
+            <!-- Card 2: Separate Answer Key -->
+            <div class="dashboard-card" style="padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+              <h3 style="font-size: 0.88rem; margin-bottom: 12px; color: var(--cfa-gold);"><i class="fa-solid fa-key" style="color: var(--cfa-gold); margin-right: 8px;"></i> 2. Separate Answer Key</h3>
+              <div class="upload-zone" id="uploadZoneAns" style="padding: 20px 10px; min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: var(--radius-md); background: rgba(255,255,255,0.01); border: 2px dashed var(--border-input); cursor: pointer; transition: all var(--transition-base);">
+                <input type="file" name="answer_file" accept=".txt,.csv,.text,.pdf" id="fileInputAns" style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+                <div class="upload-icon" style="font-size: 1.8rem; margin-bottom: 8px; color: var(--text-secondary);"><i class="fa-solid fa-key"></i></div>
+                <div class="upload-text" style="font-size: 0.8rem; color: var(--text-secondary);">Drop answer key (optional)</div>
+                <div class="upload-filename" id="fileNameAns" style="display:none; font-size: 0.75rem; margin-top: 6px; color: var(--color-correct); font-weight: 700;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Panel / Widescreen Test Launch Button -->
+        <button type="submit" class="btn btn-primary btn-lg" id="startBtn" disabled style="width: 100%; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; border-radius: var(--radius-md);">
+          <i class="fa-solid fa-rocket" style="margin-right: 8px;"></i> Boot Active Testing Environment
+        </button>
+      </div>
+    </main>
+  </form>
+
+  <script>
+    const fileInputQuest = document.getElementById('fileInputQuest');
+    const uploadZoneQuest = document.getElementById('uploadZoneQuest');
+    const fileNameQuest = document.getElementById('fileNameQuest');
+
+    const fileInputAns = document.getElementById('fileInputAns');
+    const uploadZoneAns = document.getElementById('uploadZoneAns');
+    const fileNameAns = document.getElementById('fileNameAns');
+
+    const startBtn = document.getElementById('startBtn');
+    const rulesFeedback = document.getElementById('rulesFeedback');
+    const targetExam = document.getElementById('targetExam');
+
+    // Dynamic Rules Engine Selection Response
+    function applyRulesEngine() {
+      const exam = targetExam.value;
+      if (exam === 'CFA') {
+        rulesFeedback.innerHTML = "CFA rules selected. Exam questions will render 3 options (A, B, C). Standard 3pt marking applies.";
+      } else {
+        rulesFeedback.innerHTML = `${exam} rules selected. Exam questions will render 4 options (A, B, C, D) dynamically. Adjust your custom marking scheme accordingly.`;
+      }
+    }
+
+    function setupUploader(input, zone, nameElement, isMandatory) {
+      input.addEventListener('change', function() {
+        if (this.files.length > 0) {
+          const file = this.files[0];
+          nameElement.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--color-correct); margin-right: 6px;"></i> Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+          nameElement.style.display = 'block';
+          zone.classList.add('has-file');
+          if (isMandatory) {
+            startBtn.disabled = false;
+            startBtn.style.opacity = '1';
+          }
+        } else {
+          nameElement.style.display = 'none';
+          zone.classList.remove('has-file');
+          if (isMandatory) {
+            startBtn.disabled = true;
+            startBtn.style.opacity = '0.45';
+          }
+        }
+      });
+
+      zone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        zone.classList.add('dragover');
+      });
+
+      zone.addEventListener('dragleave', () => {
+        zone.classList.remove('dragover');
+      });
+
+      zone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        zone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) {
+          input.files = e.dataTransfer.files;
+          input.dispatchEvent(new Event('change'));
+        }
+      });
+    }
+
+    setupUploader(fileInputQuest, uploadZoneQuest, fileNameQuest, true);
+    setupUploader(fileInputAns, uploadZoneAns, fileNameAns, false);
+
+    // Theme Toggle Functionality
+    function toggleGlobalTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggleUI(newTheme);
+    }
+
+    function updateThemeToggleUI(theme) {
+      const btn = document.getElementById('themeToggleBtn');
+      if (!btn) return;
+      const icon = btn.querySelector('.theme-icon');
+      const text = btn.querySelector('#themeToggleText');
+      if (theme === 'light') {
+        if (icon) icon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        if (text) text.textContent = 'Light';
+      } else {
+        if (icon) icon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        if (text) text.textContent = 'Dark';
+      }
+    }
+    
+    // Set initial button state on page load
+    updateThemeToggleUI(localStorage.getItem('theme') || 'dark');
+    applyRulesEngine();
+  </script>
+</body>
+</html>

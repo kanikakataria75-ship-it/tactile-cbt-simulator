@@ -1,0 +1,54 @@
+# CFA Level I & II Sample Questions — Mixed Format
+# Lines starting with # are comments and will be ignored
+# Format: Q | A | B | C | CorrectAns
+# Optional topic tag: TOPIC:TopicName before questions
+
+TOPIC:Ethics
+An analyst discovers material nonpublic information about a company. According to the CFA Institute Standards of Professional Conduct, the analyst should most likely:|Report the information to regulatory authorities immediately|Refrain from trading or causing others to trade on the information|Share the information only with her firm's compliance department|B
+A portfolio manager allocates profitable IPO shares to her personal account before client accounts. This practice most likely violates the CFA Standard related to:|Suitability|Priority of Transactions|Fair Dealing|B
+Which of the following actions is most consistent with CFA Institute's Standard III(B) Fair Dealing?|Disseminating investment recommendations to all clients simultaneously|Giving largest institutional clients a 24-hour head start on changes|Allowing favored clients to trade before publishing research|A
+
+TOPIC:Quantitative Methods
+A stock has an expected return of 12% and a standard deviation of 20%. Assuming returns are normally distributed, the probability that the return will be negative is closest to:|15.87%|27.43%|30.85%|B
+An investor deposits $10,000 today in an account earning 6% compounded annually. The value of the account after 5 years is closest to:|$13,000.00|$13,382.26|$13,500.00|B
+The correlation between two assets is -0.30. If the standard deviations of the assets are 15% and 25% respectively, the covariance is closest to:|-1.125%|-0.01125|Both A and B are correct|C
+
+TOPIC:Financial Reporting & Analysis
+VIGNETTE_START
+Meridian Technologies Inc. is a mid-cap semiconductor manufacturer headquartered in Austin, Texas. The company has been publicly traded for 8 years and reports under US GAAP. An analyst is reviewing Meridian's most recent annual report for the fiscal year ended December 31.
+
+Selected Financial Data (in $ millions):
+- Revenue: $2,450 (prior year: $2,180)
+- Cost of Goods Sold: $1,470 (prior year: $1,350)  
+- Operating Expenses: $490 (prior year: $420)
+- Interest Expense: $85 (prior year: $78)
+- Tax Rate: 21%
+- Total Assets: $4,200 (prior year: $3,800)
+- Total Equity: $2,100 (prior year: $1,900)
+- Total Debt: $1,500 (prior year: $1,400)
+- Depreciation & Amortization: $180 (prior year: $155)
+- Capital Expenditures: $320 (prior year: $280)
+- Dividends Paid: $60 (prior year: $55)
+
+The company recently changed its inventory accounting method from LIFO to FIFO. Management stated this change was made to better reflect the flow of goods and to align with industry peers. The LIFO reserve at year-end was $45 million (prior year: $38 million).
+
+Additionally, Meridian capitalized $75 million of software development costs during the year that competitors typically expense. The company uses straight-line amortization over 5 years for these costs.
+VIGNETTE_END
+Based on the financial data provided, Meridian's current year gross profit margin is closest to:|38.5%|40.0%|42.3%|B
+If the analyst adjusts Meridian's financials to expense the capitalized software costs, the adjusted operating income would be closest to:|$405 million|$415 million|$490 million|A
+Compared to its competitors who expense software development costs, Meridian's reported cash flow from operations is most likely:|Overstated because capitalizing shifts the expense to investing activities|Understated because of higher reported depreciation|Unaffected because cash flow is the same regardless of accounting treatment|A
+
+TOPIC:Fixed Income
+VIGNETTE_START
+Alexandra Chen, CFA, is a fixed-income portfolio manager at Blackridge Capital. She is evaluating two corporate bonds for potential inclusion in her investment-grade portfolio.
+
+Bond A: 5-year maturity, 4.5% annual coupon, rated A, priced at 102.50, YTM of 4.00%
+Bond B: 7-year maturity, 5.0% annual coupon, rated BBB+, priced at 98.75, YTM of 5.25%
+
+The current risk-free rate is 3.25%. Credit spreads have been widening over the past quarter due to deteriorating economic conditions. Chen's economic outlook suggests a potential recession within the next 12 months.
+
+The portfolio's current duration is 4.8 years, and the investment policy statement requires maintaining duration between 3.5 and 6.0 years. Chen is also considering using interest rate futures to hedge a portion of the portfolio's duration exposure.
+VIGNETTE_END
+The credit spread of Bond A over the risk-free rate is closest to:|50 basis points|75 basis points|125 basis points|B
+If Chen expects credit spreads to widen further, she should most likely:|Increase allocation to lower-rated bonds to capture higher yields|Reduce exposure to credit risk by shifting toward higher-quality bonds|Maintain current allocations as spreads are already priced in|B
+Adding Bond B to the portfolio would most likely cause the portfolio duration to:|Increase, potentially approaching the upper policy limit|Decrease, providing more room for duration extension|Remain unchanged since coupon payments offset maturity extension|A

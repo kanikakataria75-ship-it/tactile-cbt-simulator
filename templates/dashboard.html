@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Assessment Portal — Historical Performance Analytics Dashboard">
+  <title>Assessment Portal — Historical Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    function initTheme() {
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+    }
+    initTheme();
+  </script>
+</head>
+<body>
+  <!-- Ambient Blurred Orbs -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <button class="theme-toggle" id="themeToggleBtn" onclick="toggleGlobalTheme()">
+    <span class="theme-icon"><i class="fa-solid fa-moon"></i></span> <span id="themeToggleText">Dark</span>
+  </button>
+
+  <div class="result-container animate-fade-in">
+    <!-- Header -->
+    <div class="setup-header" style="margin-bottom: 30px;">
+      <div class="logo-emblem"><i class="fa-solid fa-chart-pie"></i></div>
+      <h1>Historical Performance</h1>
+      <p>Analyze scoring trends and error log vault statistics</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stat-cards stagger" style="margin-bottom: 24px;">
+      <div class="glass-card stat-card">
+        <div class="stat-value">{{ total_runs }}</div>
+        <div class="stat-label">Practice Runs Completed</div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-value">{{ avg_score }}%</div>
+        <div class="stat-label">Average Score</div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-value">{{ avg_accuracy }}%</div>
+        <div class="stat-label">Overall Accuracy</div>
+      </div>
+      <div class="glass-card stat-card" style="border-color: var(--color-incorrect);">
+        <div class="stat-value" style="color: var(--color-incorrect);">{{ vault_count }}</div>
+        <div class="stat-label">Questions in Error Vault</div>
+      </div>
+    </div>
+
+    <!-- Trend Chart Card -->
+    <div class="glass-card" style="padding: 24px; margin-bottom: 24px;">
+      <h3 style="font-size: 0.95rem; margin-bottom: 16px; color: var(--cfa-gold);"><i class="fa-solid fa-chart-line" style="color: var(--cfa-gold); margin-right: 8px;"></i> Score Trajectory Curve</h3>
+      <div style="position: relative; height: 300px; width: 100%;">
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+
+    <!-- History Table Card -->
+    <div class="glass-card topic-table-wrapper" style="padding: 24px; margin-bottom: 24px;">
+      <h3 style="font-size: 0.95rem; margin-bottom: 16px; color: var(--cfa-gold);"><i class="fa-solid fa-table" style="color: var(--cfa-gold); margin-right: 8px;"></i> Historical Attempt Log</h3>
+      <div style="overflow-x: auto;">
+        <table class="topic-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+          <thead>
+            <tr style="text-align: left; border-bottom: 1px solid var(--border-subtle);">
+              <th style="padding: 12px 8px;">Date &amp; Time</th>
+              <th style="padding: 12px 8px;">Candidate Name</th>
+              <th style="padding: 12px 8px;">Exam Topic / Reading</th>
+              <th style="padding: 12px 8px; text-align: center;">Score</th>
+              <th style="padding: 12px 8px; text-align: center;">Correct</th>
+              <th style="padding: 12px 8px; text-align: center;">Pacing (Correct/Wrong)</th>
+              <th style="padding: 12px 8px; text-align: center;">Mastery Rating</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Portal Navigation Panel -->
+    <div class="result-footer" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="/" class="btn btn-secondary btn-lg"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Return to Exam Setup</a>
+      <a href="/generate-error-quiz" class="btn btn-primary btn-lg" style="box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25); background: linear-gradient(135deg, var(--color-incorrect), #991b1b);">
+        <i class="fa-solid fa-rotate-left" style="margin-right: 8px;"></i> Start Mistake Vault Quiz
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    const historyData = {{ history_json | safe }};
+
+    function populateTable() {
+      const tbody = document.getElementById('historyTableBody');
+      if (historyData.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 30px 8px;">
+              No exam attempts recorded in history database yet. Take practice exams to populate!
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = historyData.map(run => {
+        const dateObj = new Date(run.timestamp);
+        const dateStr = dateObj.toLocaleDateString() + ' ' + dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        let masteryBadgeColor = 'var(--color-correct)';
+        if (run.score_pct < 70) masteryBadgeColor = 'var(--color-incorrect)';
+        else if (run.score_pct < 80) masteryBadgeColor = 'var(--color-flagged)';
+
+        const pacingStr = `${run.avg_time_correct}s / ${run.avg_time_incorrect}s`;
+
+        return `
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 8px; color: var(--text-secondary); font-size: 0.8rem;">${dateStr}</td>
+            <td style="padding: 12px 8px; font-weight: 600;">${run.candidate_name}</td>
+            <td style="padding: 12px 8px; color: var(--text-secondary);">${run.exam_topic}</td>
+            <td style="padding: 12px 8px; text-align: center; font-weight: 700; color: ${run.score_pct >= 70 ? 'var(--color-correct)' : 'var(--color-incorrect)'}">${run.score_pct}%</td>
+            <td style="padding: 12px 8px; text-align: center;">${run.correct} / ${run.total}</td>
+            <td style="padding: 12px 8px; text-align: center; color: var(--text-secondary); font-size: 0.8rem;">${pacingStr}</td>
+            <td style="padding: 12px 8px; text-align: center;">
+              <span style="display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; background: ${masteryBadgeColor}; color: #fff;">
+                ${run.mastery_class || (run.score_pct >= 80 ? 'Mastery Level' : run.score_pct >= 70 ? 'Borderline Pass' : 'Review Required')}
+              </span>
+            </td>
+          </tr>
+        `;
+      }).reverse().join('');
+    }
+
+    // ── Trend Line Chart ──
+    let trendChartInstance = null;
+    function renderTrendChart() {
+      const ctx = document.getElementById('trendChart').getContext('2d');
+      if (historyData.length === 0) {
+        ctx.font = '14px Poppins';
+        ctx.fillStyle = '#94a3b8';
+        ctx.textAlign = 'center';
+        ctx.fillText('No history data available to map curve.', ctx.canvas.width / 2, ctx.canvas.height / 2);
+        return;
+      }
+
+      const labels = historyData.map((_, i) => `Attempt ${i + 1}`);
+      const scores = historyData.map(run => run.score_pct);
+
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const gridColor = theme === 'light' ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.06)';
+      const textColor = theme === 'light' ? '#475569' : '#94a3b8';
+
+      trendChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Score Percentage (%)',
+            data: scores,
+            borderColor: 'var(--cfa-gold)',
+            backgroundColor: 'var(--cfa-gold-dim)',
+            borderWidth: 3,
+            pointBackgroundColor: 'var(--bg-primary)',
+            pointBorderColor: 'var(--cfa-gold)',
+            pointBorderWidth: 2.5,
+            pointRadius: 6,
+            pointHoverRadius: 8,
+            tension: 0.2,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                title: function(context) {
+                  const run = historyData[context[0].dataIndex];
+                  const d = new Date(run.timestamp);
+                  return d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                },
+                label: function(context) {
+                  const run = historyData[context.dataIndex];
+                  return [
+                    `Candidate: ${run.candidate_name}`,
+                    `Topic: ${run.exam_topic}`,
+                    `Score: ${context.raw}%`
+                  ];
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              min: 0,
+              max: 100,
+              grid: { color: gridColor },
+              ticks: { color: textColor },
+              title: {
+                display: true,
+                text: 'Score (%)',
+                color: textColor,
+                font: { family: 'Poppins', weight: '600' }
+              }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: textColor }
+            }
+          }
+        }
+      });
+    }
+
+    // Theme Toggle Functionality
+    function toggleGlobalTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggleUI(newTheme);
+
+      if (trendChartInstance) {
+        trendChartInstance.destroy();
+        renderTrendChart();
+      }
+    }
+
+    function updateThemeToggleUI(theme) {
+      const btn = document.getElementById('themeToggleBtn');
+      if (!btn) return;
+      const icon = btn.querySelector('.theme-icon');
+      const text = btn.querySelector('#themeToggleText');
+      if (theme === 'light') {
+        if (icon) icon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        if (text) text.textContent = 'Light';
+      } else {
+        if (icon) icon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        if (text) text.textContent = 'Dark';
+      }
+    }
+
+    updateThemeToggleUI(localStorage.getItem('theme') || 'dark');
+
+    populateTable();
+    renderTrendChart();
+  </script>
+</body>
+</html>

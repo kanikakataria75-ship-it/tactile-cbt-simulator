@@ -1,0 +1,281 @@
+{
+  "history": [
+    {
+      "id": "9a7c9821-75d4-4368-bf85-529047359d74",
+      "candidate_name": "hrshit",
+      "exam_topic": "ethucs",
+      "timestamp": "2026-06-27T00:06:46.364609",
+      "total": 14,
+      "attempted": 5,
+      "correct": 1,
+      "points": 1,
+      "max_points": 14,
+      "score_pct": 7.1,
+      "time_spent": [
+        7,
+        2,
+        1,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avg_time_correct": 2.0,
+      "avg_time_incorrect": 3.0,
+      "mastery_class": "Requires Immediate Review"
+    },
+    {
+      "id": "db171a42-cc46-421b-bdce-a27690786b0d",
+      "candidate_name": "gsdg",
+      "exam_topic": "dgsdg",
+      "timestamp": "2026-06-27T00:23:19.066317",
+      "total": 14,
+      "attempted": 5,
+      "correct": 1,
+      "points": 3,
+      "max_points": 42,
+      "score_pct": 7.1,
+      "time_spent": [
+        7,
+        2,
+        3,
+        3,
+        3,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avg_time_correct": 3.0,
+      "avg_time_incorrect": 3.8,
+      "mastery_class": "Requires Immediate Review"
+    },
+    {
+      "id": "01bd85e4-47d1-416b-bec6-bb0b4cc26469",
+      "candidate_name": "hfgh",
+      "exam_topic": "fhfxh",
+      "timestamp": "2026-06-27T00:35:22.840687",
+      "total": 14,
+      "attempted": 1,
+      "correct": 0,
+      "points": 0,
+      "max_points": 42,
+      "score_pct": 0.0,
+      "time_spent": [
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avg_time_correct": 0.0,
+      "avg_time_incorrect": 15.0,
+      "mastery_class": "Requires Immediate Review"
+    }
+  ],
+  "error_vault": [
+    {
+      "id": 1,
+      "text": "of 14 Question ID: 1574533 With respect to venture capital, the term \"mezzanine-stage financing\" is used to describe the financing:",
+      "choices": {
+        "A": "that supports product development and market research",
+        "B": "to initiate commercial manufacturing",
+        "C": "to prepare for an initial public o\u0000ering"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Mezzanine-stage venture capital financing provides capital during the period prior to an\ninitial public offering. (Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 2,
+      "text": "of 14 Question ID: 1577987 Which of the following types of private debt has the lowest level of risk?",
+      "choices": {
+        "A": "Mezzanine debt",
+        "B": "Unitranche debt",
+        "C": "Venture debt"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Unitranche debt is a blend of different classes of debt and typically ranks between senior\nand subordinated debt. Mezzanine debt is subordinated to senior debt and often\nunsecured. Venture debt is the riskiest because it finances start-up companies that have\nhigh business risk and often lack positive cash flow and assets.\n(Module 80.1, LOS 80.b)"
+    },
+    {
+      "id": 3,
+      "text": "of 14 Question ID: 1574530 The formative stage of venture capital investing when capital is furnished for market research and product development is best characterized as the:",
+      "choices": {
+        "A": "angel investing stage",
+        "B": "seed stage",
+        "C": "early stage"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "In the seed stage of venture capital investing, capital is furnished for product\ndevelopment, marketing, and market research. The angel investing stage is when\ninvestment funds are used for business plans and assessing market potential. The early\nstage refers to investments made to fund initial commercial production and sales.\n(Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 5,
+      "text": "of 14 Question ID: 1577988 The vintage year is the year in which a private equity fund:",
+      "choices": {
+        "A": "makes its \u0000rst investment",
+        "B": "receives its \u0000rst capital commitment",
+        "C": "sells its \u0000rst investment"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "The vintage year is typically defined as the year a private equity or venture capital fund\nmakes its first investment. The year of the first capital commitment is not necessarily the\nsame as the year of the first investment by the fund into a portfolio company, because\nthere might be a lag between when the capital is committed and when it is deployed.\n(Module 80.1, LOS 80.c)"
+    },
+    {
+      "id": 6,
+      "text": "of 14 Question ID: 1574534 Supplying capital to companies that are just moving into operation, but do not as yet have a product or service available to sell, is a description that best relates to which of the following stages of venture capital investing?",
+      "choices": {
+        "A": "Mezzanine stage",
+        "B": "Angel investing stage",
+        "C": "Early stage"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "The description relates best to the early stage wherein the capital that is supplied helps\nfund initial production and sales.(Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 7,
+      "text": "of 14 Question ID: 1577989 SuperStarts Venture Capital Fund has a favorable performance record compared to other venture capital funds. This most likely suggests SuperStarts began investing its capital in a:",
+      "choices": {
+        "A": "high valuation market",
+        "B": "business cycle expansion",
+        "C": "business cycle contraction"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Funds that begin investing during a business cycle expansion are likely to earn higher\nrates of return if they specialize in early-stage companies. Funds that begin investing\nduring business cycle contractions are likely to earn higher rates of return if they\nspecialize in distressed companies.\n(Module 80.1, LOS 80.c)"
+    },
+    {
+      "id": 8,
+      "text": "of 14 Question ID: 1577985 At what stage in its lifecycle is a company most likely to have distressed debt?",
+      "choices": {
+        "A": "Mature",
+        "B": "Growth",
+        "C": "Start-up"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Distressed debt is typically that of mature companies that have encountered financial\ntrouble, which may be due to a temporary situation or a structural issue.\n(Module 80.1, LOS 80.b)"
+    },
+    {
+      "id": 9,
+      "text": "of 14 Question ID: 1574532 A private equity firm that provides equity capital to a publicly traded company to finance the company's restructuring, but does not take the company private, is best described as engaging in:",
+      "choices": {
+        "A": "private investment in public equity",
+        "B": "mezzanine-stage \u0000nancing",
+        "C": "angel investing"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Private investment in public equities refers to a private equity firm providing equity\nfinancing to publicly traded companies. Angel investing refers to financing the formation\nof a business. Mezzanine-stage financing refers to capital provided to a firm as it prepares\nfor an initial public offering. (Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 10,
+      "text": "of 14 Question ID: 1574537 Relatively infrequent valuations of private equity portfolio companies most likely cause:",
+      "choices": {
+        "A": "average fund returns to be biased upward",
+        "B": "standard deviations of fund returns to be biased upward",
+        "C": "correlations of fund returns with equity returns to be biased downward"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Infrequent valuation results in downward bias in both standard deviations and\ncorrelations. (Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 11,
+      "text": "of 14 Question ID: 1577984 What type of private debt is least likely to have warrants?",
+      "choices": {
+        "A": "Direct lending",
+        "B": "Mezzanine debt",
+        "C": "Venture debt"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Direct lending is often senior and secured. Venture debt and mezzanine debt often have\nfeatures such as warrants to compensate investors for taking on additional risk.\n(Module 80.1, LOS 80.b)"
+    },
+    {
+      "id": 12,
+      "text": "of 14 Question ID: 1574531 To exit an investment in a portfolio company through a trade sale, a private equity firm sells:",
+      "choices": {
+        "A": "the portfolio company to one of the portfolio company\u2019s competitors",
+        "B": "shares of a portfolio company to the public",
+        "C": "the portfolio company to another private equity \u0000rm"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "A trade sale involves selling a portfolio company to a competitor or another strategic\nbuyer. An IPO involves selling all or some shares of a portfolio company to the public. A\nsecondary sale involves selling a portfolio company to another private equity firm or a\ngroup of investors. (Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 13,
+      "text": "of 14 Question ID: 1577986 Compared to traditional bonds, private debt provides:",
+      "choices": {
+        "A": "higher returns",
+        "B": "higher liquidity",
+        "C": "lower risk"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Overall, investing in private debt is illiquid and riskier than investing in traditional debt.\nGiven that investors want to be compensated for higher risk, private debt should have the\npotential to provide higher returns. Also, some private debt may include equity upside\npotential.\n(Module 80.1, LOS 80.b)"
+    },
+    {
+      "id": 14,
+      "text": "of 14 Question ID: 1574535 The stage at which venture capital financing is used to fund market research and product development is best characterized as the:",
+      "choices": {
+        "A": "seed stage",
+        "B": "early stage",
+        "C": "angel investing stage"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Seed stage financing is used for market research and to fund product development and/or\nmarketing and is typically the first stage at which a venture capital fund will invest in a\nstart-up company. (Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 4,
+      "text": "of 14 Question ID: 1574536 Kettering Incorporated is a successful manufacturer of technology hardware. Kettering is seeking capital to finance additional growth that will position the company for an initial public offering. This stage of financing is most accurately described as:",
+      "choices": {
+        "A": "mezzanine-stage \u0000nancing",
+        "B": "angel investing",
+        "C": "early-stage \u0000nancing"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Mezzanine stage capital prepares a company for and IPO. Angel investing and early-stage\nfinancing describe venture capital in a company's formative stages.\n(Module 80.1, LOS 80.a)"
+    }
+  ]
+}
