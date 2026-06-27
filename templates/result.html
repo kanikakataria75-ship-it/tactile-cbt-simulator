@@ -288,7 +288,7 @@
             <div class="review-item-header">
               <span class="review-q-num">Q${i + 1} ${r.is_flagged ? '<i class="fa-solid fa-flag" style="color: var(--color-flagged); margin-left: 6px;"></i>' : ''}</span>
               <span style="flex:1; font-size:0.85rem; color: var(--text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin: 0 14px;">
-                ${r.text.substring(0, 80)}${r.text.length > 80 ? '...' : ''}
+                ${(r.plain_text || r.text || '').replace(/<[^>]*>/g, '').substring(0, 80)}...
               </span>
               <span class="review-status ${statusClass}">${statusText}</span>
             </div>

@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+static/extracted_media/
+test_history.json
