@@ -226,10 +226,11 @@ You are an elite, universal document parsing engine. Your objective is to proces
 CRITICAL RULES:
 1. UNIVERSAL OPTION SPLITTING: Split inline/side-by-side options into separate objects in the `choices` array. Strip prefixes (A, B, 1, 2) from the text and put them in the `label`.
 2. INDEPENDENT QUESTION ISOLATION: Treat every numbered item as an independent object. Do not merge distinct questions.
-3. SPATIAL BOUNDING BOXES FOR VISUALS (CRITICAL): If a question contains a diagram, graph, circuit, or complex unreadable table, DO NOT describe it in text. Populate the `diagram_bbox` array with exact relative coordinates [ymin, xmin, ymax, xmax], scaled proportionally from 0.0 to 1000.0 based on the page dimensions. If no visual, return []. Write [DIAGRAM_INJECT] in the `text` field where the image belongs.
-4. NATIVE HTML TABLES: Convert readable text data tables into clean HTML (<table>, <tr>, <th>, <td>) embedded in the `text` field.
-5. MATH PRESERVATION: Preserve all math symbols as Unicode (π, Δ, Ω). Use HTML <sup> and <sub>. Never output □.
-6. NOISE FILTERING: Ignore headers, footers, page numbers, and section titles like "SECTION-B".
+3. SPATIAL BOUNDING BOXES FOR VISUALS & TABLES (CRITICAL): If a question contains a diagram, graph, circuit, or any table (including financial statements, schedules, lists, or tables in image/drawn form), DO NOT transcribe it as plain text and DO NOT ignore its structure. Instead, either:
+   a. Convert it into a clean, responsive HTML <table> with inline borders embedded in the question `text` or `vignette` field if it is a simple, easily readable table.
+   b. If the table is complex, contains math/visuals, is scanned, or is in image form, treat it as a visual component: populate the `diagram_bbox` array with its exact relative coordinates [ymin, xmin, ymax, xmax] scaled proportionally from 0.0 to 1000.0 based on the page dimensions, and write [DIAGRAM_INJECT] in the question `text` or `vignette` field where the visual belongs.
+4. MATH PRESERVATION: Preserve all math symbols as Unicode (π, Δ, Ω). Use HTML <sup> and <sub>. Never output □.
+5. NOISE FILTERING: Ignore headers, footers, page numbers, and section titles like "SECTION-B".
 """
 
 
@@ -377,8 +378,11 @@ def _inject_diagrams_from_bbox(questions: list[dict], page_images: list[dict]) -
 
                 # Replace token if present, otherwise append
                 text = q.get('text', '')
+                vignette = q.get('vignette') or ''
                 if '[DIAGRAM_INJECT]' in text:
                     q['text'] = text.replace('[DIAGRAM_INJECT]', img_tag)
+                elif '[DIAGRAM_INJECT]' in vignette:
+                    q['vignette'] = vignette.replace('[DIAGRAM_INJECT]', img_tag)
                 else:
                     q['text'] = text + "\n" + img_tag
 
