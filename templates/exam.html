@@ -121,17 +121,18 @@
 </head>
 
 <body>
-  <!-- Ambient Blurred Orbs -->
-  <div class="orb-container">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+  <!-- Ambient Aurora Background -->
+  <div class="aurora-bg">
+    <div class="aurora-orb orb-indigo"></div>
+    <div class="aurora-orb orb-amethyst"></div>
+    <div class="aurora-orb orb-blue"></div>
   </div>
 
   <button class="theme-toggle" id="themeToggleBtn" onclick="toggleGlobalTheme()">
     <span class="theme-icon"><i class="fa-solid fa-moon"></i></span> <span id="themeToggleText">Dark</span>
   </button>
 
+  <div class="perspective-container">
   <div class="exam-wrapper">
 
     <!-- ═══ HEADER ═══ -->
@@ -206,6 +207,7 @@
       </div>
     </footer>
 
+  </div>
   </div>
 
   <!-- SUBMIT MODAL -->
@@ -454,6 +456,7 @@
       updateNavGrid();
       document.getElementById('prevBtn').disabled = index === 0;
       document.getElementById('nextBtn').disabled = index === TOTAL - 1;
+      applySpatialEffects();
     }
 
     // ── Answer helpers ────────────────────────────────────────────────
@@ -604,6 +607,24 @@
 
     updateThemeToggleUI(localStorage.getItem('theme') || 'dark');
     init();
+
+    // ── 3D Interactive Spatial Computing Script ──
+    function applySpatialEffects() {
+      const spatialCards = document.querySelectorAll('.vignette-pane, .question-pane, .option-item, .glass-card, .sidebar-panel, .confidence-pill, .brand, .timer-display');
+      spatialCards.forEach(card => {
+        if (card.dataset.spatialBound) return;
+        card.dataset.spatialBound = "true";
+
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    }
+    applySpatialEffects();
   </script>
 </body>
 

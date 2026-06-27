@@ -17,106 +17,115 @@
   </script>
 </head>
 <body>
-  <!-- Ambient Blurred Orbs -->
-  <div class="orb-container">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+  <!-- Ambient Aurora Background -->
+  <div class="aurora-bg">
+    <div class="aurora-orb orb-indigo"></div>
+    <div class="aurora-orb orb-amethyst"></div>
+    <div class="aurora-orb orb-blue"></div>
   </div>
 
   <button class="theme-toggle" id="themeToggleBtn" onclick="toggleGlobalTheme()">
     <span class="theme-icon"><i class="fa-solid fa-moon"></i></span> <span id="themeToggleText">Dark</span>
   </button>
 
-  <div class="result-container">
+  <div class="perspective-container">
+  <div class="bento-grid animate-fade-in">
 
-    <!-- ═══ IDENTITY & MASTERY ═══ -->
-    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; margin-bottom: 20px;">
-      <!-- Identity card -->
-      <div class="glass-card" style="padding: 24px; display: flex; flex-direction: column; justify-content: center;">
-        <h2 style="font-size: 1.6rem; color: var(--text-accent); margin-bottom: 4px;" id="candName">John Doe</h2>
-        <p style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.06em;" id="candTopic">Reading Title</p>
-      </div>
-      <!-- Mastery Rating card -->
-      <div class="glass-card" style="padding: 24px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h4 style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.08em; margin-bottom: 12px;"><i class="fa-solid fa-trophy" style="color: var(--cfa-gold); margin-right: 6px;"></i> Mastery Rating</h4>
-        <div id="masteryBadge" style="padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; color: #fff;">
-          Mastery Level
-        </div>
+    <!-- ═══ HEADER: IDENTITY & MASTERY ═══ -->
+    <!-- Identity card - Span 8 -->
+    <div class="glass-card bento-card-span-8" style="padding: 28px; display: flex; flex-direction: column; justify-content: center;">
+      <h2 style="font-size: 2rem; color: var(--text-primary); margin-bottom: 6px; font-weight: 800;" id="candName">John Doe</h2>
+      <p class="heavy-tracking" id="candTopic">Reading Title</p>
+    </div>
+    
+    <!-- Mastery Rating card - Span 4 -->
+    <div class="glass-card bento-card-span-4" style="padding: 28px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h4 class="heavy-tracking" style="margin-bottom: 12px;"><i class="fa-solid fa-trophy" style="color: var(--cfa-gold); margin-right: 6px;"></i> Mastery Rating</h4>
+      <div id="masteryBadge" style="padding: 10px 24px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; color: #fff; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.45);">
+        Mastery Level
       </div>
     </div>
 
-    <!-- ═══ GLOWING CIRCULAR VERDICT HEADER ═══ -->
-    <div class="result-header animate-fade-in" id="resultHeader" style="display: flex; flex-direction: column; align-items: center;">
+    <!-- ═══ VERDICT & STATS ═══ -->
+    <!-- Circular Verdict Header - Span 4 -->
+    <div class="glass-card bento-card-span-4 result-header animate-fade-in" id="resultHeader" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px;">
       <!-- Filled by JS -->
     </div>
 
-    <!-- ═══ STAT CARDS ═══ -->
-    <div class="stat-cards stagger" id="statCards">
+    <!-- Stat Cards - Span 8 -->
+    <div class="bento-card-span-8 stat-cards stagger" id="statCards">
       <!-- Filled by JS -->
     </div>
 
-    <!-- ═══ LUCK VS KNOWLEDGE MATRIX ═══ -->
-    <div class="glass-card animate-fade-in" style="padding: 24px; margin-bottom: 20px;">
-      <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-brain" style="color: var(--cfa-gold); margin-right: 8px;"></i> Luck vs. Knowledge Matrix</h3>
+    <!-- ═══ MATRIX BLOCKS ═══ -->
+    <!-- Luck vs Knowledge Matrix - Span 6 -->
+    <div class="glass-card bento-card-span-6 animate-fade-in" style="padding: 28px;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 18px;">
+        <i class="fa-solid fa-brain" style="margin-right: 8px;"></i> Luck vs. Knowledge Matrix
+      </h3>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
         <!-- Overconfidence Alert Card -->
-        <div style="padding: 16px; border-radius: var(--radius-md); background: rgba(239, 68, 68, 0.04); border: 1px solid rgba(239, 68, 68, 0.15);">
-          <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-incorrect); margin-bottom: 8px; font-weight: 700;"><i class="fa-solid fa-triangle-exclamation" style="color: var(--color-incorrect); margin-right: 6px;"></i> Overconfidence Alerts</h4>
-          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
-            Questions you marked <strong>High Confidence</strong> but answered <strong>incorrectly</strong>.
+        <div style="padding: 20px; border-radius: var(--radius-md); background: rgba(244, 63, 94, 0.04); border: 1px solid rgba(244, 63, 94, 0.15);">
+          <h4 style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-incorrect); margin-bottom: 8px; font-weight: 700; letter-spacing: 0.05em;"><i class="fa-solid fa-triangle-exclamation" style="margin-right: 6px;"></i> Overconfidence</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+            High confidence but answered incorrectly.
           </p>
-          <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-incorrect);" id="overconfidenceCount">0</div>
+          <div class="stat-value" style="color: var(--color-incorrect);" id="overconfidenceCount">0</div>
         </div>
         <!-- Lucky Guesses Card -->
-        <div style="padding: 16px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.04); border: 1px solid rgba(16, 185, 129, 0.15);">
-          <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--color-correct); margin-bottom: 8px; font-weight: 700;"><i class="fa-solid fa-dice" style="color: var(--color-correct); margin-right: 6px;"></i> Lucky Guesses</h4>
-          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
-            Questions you marked <strong>Blind Guess</strong> but answered <strong>correctly</strong> (review suggested).
+        <div style="padding: 20px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.04); border: 1px solid rgba(16, 185, 129, 0.15);">
+          <h4 style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-correct); margin-bottom: 8px; font-weight: 700; letter-spacing: 0.05em;"><i class="fa-solid fa-dice" style="margin-right: 6px;"></i> Lucky Guesses</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+            Blind guess but answered correctly.
           </p>
-          <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-correct);" id="luckyGuessesCount">0</div>
+          <div class="stat-value" style="color: var(--color-correct);" id="luckyGuessesCount">0</div>
         </div>
       </div>
     </div>
 
-    <!-- ═══ PACING MATRIX ═══ -->
-    <div class="glass-card animate-fade-in" style="padding: 24px; margin-bottom: 20px;">
-      <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-bolt" style="color: var(--cfa-gold); margin-right: 8px;"></i> Speed vs. Accuracy Pacing Matrix</h3>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center;">
-        <div style="padding: 14px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
-          <div style="font-size: 1.6rem; font-weight: 800; color: var(--color-correct);" id="avgTimeCorrect">0s</div>
-          <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-top: 4px;">Avg Correct Time</div>
+    <!-- Speed vs Accuracy Pacing Matrix - Span 6 -->
+    <div class="glass-card bento-card-span-6 animate-fade-in" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 18px;">
+        <i class="fa-solid fa-bolt" style="margin-right: 8px;"></i> Speed vs. Accuracy Pacing Matrix
+      </h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center; height: 100%; align-items: center;">
+        <div style="padding: 20px; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md);">
+          <div class="stat-value" style="color: var(--color-correct);" id="avgTimeCorrect">0s</div>
+          <div class="heavy-tracking" style="margin-top: 8px;">Avg Correct Time</div>
         </div>
-        <div style="padding: 14px; background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
-          <div style="font-size: 1.6rem; font-weight: 800; color: var(--color-incorrect);" id="avgTimeIncorrect">0s</div>
-          <div style="font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; margin-top: 4px;">Avg Incorrect Time</div>
+        <div style="padding: 20px; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md);">
+          <div class="stat-value" style="color: var(--color-incorrect);" id="avgTimeIncorrect">0s</div>
+          <div class="heavy-tracking" style="margin-top: 8px;">Avg Incorrect Time</div>
         </div>
       </div>
     </div>
 
-    <!-- ═══ TIME SPENT CHART ═══ -->
-    <div class="glass-card animate-fade-in" style="padding: 24px; margin-bottom: 20px;">
-      <h3 style="font-size: 0.95rem; margin-bottom: 16px;"><i class="fa-solid fa-clock" style="color: var(--cfa-gold); margin-right: 8px;"></i> Time Spent Per Question</h3>
-      <div style="position: relative; height: 260px; width: 100%;">
+    <!-- Time Spent Chart - Span 12 -->
+    <div class="glass-card bento-card-span-12 animate-fade-in" style="padding: 28px;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 16px;"><i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Time Spent Per Question</h3>
+      <div style="position: relative; height: 280px; width: 100%;">
         <canvas id="timeChart"></canvas>
       </div>
     </div>
 
-    <!-- ═══ MPS SLIDER ═══ -->
-    <div class="glass-card mps-section animate-fade-in" id="mpsSection">
-      <h3 style="font-size: 0.95rem; margin-bottom: 4px;">Minimum Passing Score (MPS)</h3>
-      <p style="color: var(--text-secondary); font-size: 0.82rem;">Adjust the simulated passing threshold dynamically</p>
+    <!-- MPS Slider - Span 4 -->
+    <div class="glass-card bento-card-span-4 mps-section animate-fade-in" id="mpsSection" style="padding: 28px; display: flex; flex-direction: column; justify-content: center;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 4px;">MPS Threshold</h3>
+      <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">Simulated passing limit</p>
       <div class="mps-slider-row">
         <span style="font-size: 0.8rem; color: var(--text-muted);">50%</span>
         <input type="range" id="mpsSlider" min="50" max="90" value="70" step="1">
         <span style="font-size: 0.8rem; color: var(--text-muted);">90%</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top: 14px;">
+        <span style="font-size:0.85rem; font-weight:700; color:var(--text-secondary);">Current:</span>
         <div class="mps-value" id="mpsValue">70%</div>
       </div>
     </div>
 
-    <!-- ═══ TOPIC BREAKDOWN ═══ -->
-    <div class="glass-card topic-table-wrapper animate-fade-in" id="topicSection">
-      <h3 style="font-size: 0.95rem; margin-bottom: 16px;"><i class="fa-solid fa-chart-pie" style="color: var(--cfa-gold); margin-right: 8px;"></i> Performance by Topic Area</h3>
+    <!-- Performance by Topic Area Table - Span 8 -->
+    <div class="glass-card bento-card-span-8 topic-table-wrapper animate-fade-in" id="topicSection" style="padding: 28px;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 16px;"><i class="fa-solid fa-chart-pie" style="margin-right: 8px;"></i> Performance by Topic Area</h3>
       <table class="topic-table" id="topicTable">
         <thead>
           <tr>
@@ -132,19 +141,20 @@
       </table>
     </div>
 
-    <!-- ═══ QUESTION REVIEW DECK ═══ -->
-    <div class="glass-card review-section animate-fade-in">
-      <h3 style="font-size: 0.95rem; margin-bottom: 16px;"><i class="fa-solid fa-list-check" style="color: var(--cfa-gold); margin-right: 8px;"></i> Step-by-Step Itemized Review</h3>
+    <!-- Step-by-Step Itemized Review - Span 12 -->
+    <div class="glass-card bento-card-span-12 review-section animate-fade-in" style="padding: 28px;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 16px;"><i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> Step-by-Step Itemized Review</h3>
       <div id="reviewList">
         <!-- Filled by JS -->
       </div>
     </div>
 
-    <!-- ═══ FOOTER ═══ -->
-    <div class="result-footer">
+    <!-- Footer Buttons - Span 12 -->
+    <div class="bento-card-span-12" style="display: flex; justify-content: center; margin-top: 10px;">
       <a href="/" class="btn btn-primary btn-lg"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Return to Exam Setup</a>
     </div>
 
+  </div>
   </div>
 
   <script>
@@ -155,27 +165,26 @@
       const passed = data.score_pct >= currentMPS;
       const header = document.getElementById('resultHeader');
       
-      // Compute stroke-dashoffset for the SVG ring gauge
       const circumference = 364.4; // 2 * PI * r (r=58)
       const offset = circumference - (data.score_pct / 100) * circumference;
 
       header.innerHTML = `
         <div style="position: relative; width: 140px; height: 140px; margin-bottom: 18px;">
           <svg style="transform: rotate(-90deg); width: 140px; height: 140px;">
-            <circle cx="70" cy="70" r="58" stroke="var(--border-subtle)" stroke-width="8" fill="transparent" />
+            <circle cx="70" cy="70" r="58" stroke="rgba(255,255,255,0.04)" stroke-width="8" fill="transparent" />
             <circle cx="70" cy="70" r="58" stroke="${passed ? 'var(--color-correct)' : 'var(--color-incorrect)'}" stroke-width="10" fill="transparent"
-              stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" style="transition: stroke-dashoffset 0.8s ease-out; stroke-linecap: round;" />
+              stroke-dasharray="${circumference}" stroke-dashoffset="${offset}" style="transition: stroke-dashoffset 0.8s ease-out; stroke-linecap: round; filter: drop-shadow(0 0 8px ${passed ? 'rgba(16,185,129,0.3)' : 'rgba(244,63,94,0.3)'});" />
           </svg>
           <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <span style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary);">${data.score_pct}%</span>
-            <span style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em; font-weight: 700;">Score</span>
+            <span style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary);">${data.score_pct}%</span>
+            <span style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; font-weight: 700;">Score</span>
           </div>
         </div>
         <div class="verdict ${passed ? 'pass' : 'fail'}">
           ${passed ? '<i class="fa-solid fa-circle-check" style="margin-right: 8px;"></i> PASS' : '<i class="fa-solid fa-circle-xmark" style="margin-right: 8px;"></i> FAIL'}
         </div>
-        <p style="color: var(--text-secondary); margin-top: 8px; font-size: 0.92rem; font-weight: 500;">
-          ${data.exam_session} Session — Passing Limit: ${currentMPS}% MPS
+        <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.88rem; font-weight: 600;">
+          MPS Limit: ${currentMPS}%
         </p>
       `;
     }
@@ -183,17 +192,17 @@
     function renderStatCards() {
       const cards = document.getElementById('statCards');
       const stats = [
-        { value: data.total, label: 'Total Questions' },
+        { value: data.total, label: 'Questions' },
         { value: data.attempted, label: 'Attempted' },
         { value: data.correct, label: 'Correct' },
         { value: `${data.accuracy}%`, label: 'Accuracy' },
-        { value: `${data.points}/${data.max_points}`, label: 'Points Earned' }
+        { value: `${data.points}/${data.max_points}`, label: 'Points' }
       ];
 
       cards.innerHTML = stats.map(s => `
         <div class="glass-card stat-card">
           <div class="stat-value">${s.value}</div>
-          <div class="stat-label">${s.label}</div>
+          <div class="stat-label heavy-tracking">${s.label}</div>
         </div>
       `).join('');
     }
@@ -226,16 +235,16 @@
         else if (acc >= 50) barColor = 'var(--color-flagged)';
 
         return `
-          <tr>
-            <td style="font-weight: 600;">${name}</td>
-            <td>${t.total}</td>
-            <td>${t.correct} / ${t.attempted}</td>
-            <td>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+            <td style="font-weight: 600; padding: 14px 8px;">${name}</td>
+            <td style="padding: 14px 8px;">${t.total}</td>
+            <td style="padding: 14px 8px;">${t.correct} / ${t.attempted}</td>
+            <td style="padding: 14px 8px;">
               <div class="accuracy-bar">
                 <div class="bar-track">
                   <div class="bar-fill" style="width: ${acc}%; background: ${barColor};"></div>
                 </div>
-                <span class="bar-value" style="color: ${barColor};">${acc}%</span>
+                <span class="bar-value" style="color: ${barColor}; font-weight:700;">${acc}%</span>
               </div>
             </td>
           </tr>
@@ -277,7 +286,6 @@
           `;
         }).join('');
 
-        // Map confidence color pill choice display
         let confPillColor = 'var(--text-muted)';
         if (r.confidence === 'High') confPillColor = 'var(--color-correct)';
         else if (r.confidence === 'Guess') confPillColor = 'var(--color-flagged)';
@@ -295,7 +303,6 @@
             <div class="review-item-body">
               <div class="review-q-text" style="font-weight: 600; margin-bottom: 16px;">${r.text}</div>
               
-              <!-- Verdict & Flag Badges -->
               <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;">
                 <span class="review-verdict-badge ${statusClass}">
                   ${verdictText}
@@ -305,7 +312,6 @@
                 <span class="review-verdict-badge unanswered" style="border: 1px solid var(--border-subtle); color: ${confPillColor};">Confidence: ${r.confidence}</span>
               </div>
 
-              <!-- Answer Comparison Row -->
               <div class="answer-comparison">
                 <div class="comp-item">
                   <span class="comp-label">Chosen Answer:</span>
@@ -319,12 +325,10 @@
                 </div>
               </div>
 
-              <!-- Options List -->
               <div class="review-options" style="margin-bottom: 16px;">
                 ${optionsHtml}
               </div>
 
-              <!-- Explanation Block -->
               ${r.explanation ? `
               <div class="explanation-box">
                 <div class="expl-title">Explanation &amp; Rationale</div>
@@ -348,7 +352,6 @@
       masteryBadge.textContent = data.mastery_class;
       masteryBadge.style.background = data.mastery_color;
 
-      // Surprise Metrics Matrix Numbers
       document.getElementById('overconfidenceCount').textContent = data.overconfidence_count;
       document.getElementById('luckyGuessesCount').textContent = data.lucky_guesses_count;
 
@@ -357,6 +360,7 @@
       renderTopicTable();
       renderReview();
       renderTimeChart();
+      applySpatialEffects();
     }
 
     // ── Time Spent Bar Chart ──
@@ -422,7 +426,7 @@
                 display: true,
                 text: 'Seconds spent',
                 color: textColor,
-                font: { family: 'Poppins', weight: '600' }
+                font: { family: 'Plus Jakarta Sans', weight: '700' }
               }
             },
             x: {
@@ -473,6 +477,23 @@
     
     updateThemeToggleUI(localStorage.getItem('theme') || 'dark');
     init();
+
+    // ── 3D Interactive Spatial Computing Script ──
+    function applySpatialEffects() {
+      const spatialCards = document.querySelectorAll('.glass-card, .sidebar-panel, .review-item, .comp-item, .review-option, .explanation-box');
+      spatialCards.forEach(card => {
+        if (card.dataset.spatialBound) return;
+        card.dataset.spatialBound = "true";
+
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    }
   </script>
 </body>
 </html>

@@ -119,21 +119,21 @@ def _get_gemini_client():
 
 class ChoiceModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    label: str = Field(description="Choice label, e.g., A, B, C, D")
-    text: str = Field(description="Choice text content")
+    label: str
+    text: str
 
 
 class QuestionModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
     id: int
     page_number: int = Field(description="0-indexed page number of the PDF where this question is located")
-    text: str = Field(description="Full question stem. Include HTML tags for tables. Preserve math symbols as Unicode. Insert [[DIAGRAM:page_X_index_Y]] at the logical position where a diagram/figure appears.")
+    text: str = Field(description="Full question stem. Include HTML tags for tables. Preserve math symbols as Unicode. Write [DIAGRAM_INJECT] in the text field where the image belongs.")
     choices: list[ChoiceModel] = Field(description="List of choices for multiple choice questions, e.g. [{'label': 'A', 'text': 'val'}, ...]. Empty list for integer-type.")
     correct: str = Field(description="Correct answer letter (A-E) or numeric string, or empty string")
     is_mcq: bool = Field(description="True when question has 2+ choices")
     explanation: str | None = None
     vignette: str | None = Field(default=None, description="Shared vignette passage, if any")
-    has_diagram: bool = Field(default=False, description="True if this question contains or references a diagram/figure")
+    diagram_bbox: list[float] = Field(default_factory=list, description="Exactly 4 floats [ymin, xmin, ymax, xmax] scaled proportionally from 0.0 to 1000.0 based on page dimensions, or [] if no visual")
 
 
 # =============================================================================
@@ -197,7 +197,6 @@ def _render_pages_to_images(doc) -> list[dict]:
     """
     Render each PDF page to a 300 DPI PNG image.
     Returns list of {page_num, image_bytes, width_pts, height_pts}.
-    Skips blank/cover pages automatically.
     """
     DPI = 300
     matrix = fitz.Matrix(DPI / 72, DPI / 72)
@@ -205,12 +204,6 @@ def _render_pages_to_images(doc) -> list[dict]:
 
     for page_num in range(len(doc)):
         page = doc[page_num]
-
-        # Skip near-blank pages (covers, separators)
-        text_len = len(page.get_text("text").strip())
-        img_count = len(page.get_images())
-        if text_len < 30 and img_count == 0:
-            continue
 
         pix = page.get_pixmap(matrix=matrix)
         img_bytes = pix.tobytes("png")
@@ -227,29 +220,17 @@ def _render_pages_to_images(doc) -> list[dict]:
 
 # -- Stage 2: Gemini Vision Extraction ----------------------------------------
 
-_VISION_SYSTEM_INSTRUCTION = """You are an elite academic document parsing engine optimized for high-stakes professional exams (CFA, FRM, JEE, NEET). You are processing high-resolution 300 DPI page images. Your output must strictly be a raw JSON array of objects matching the schema.
+_VISION_SYSTEM_INSTRUCTION = """
+You are an elite, universal document parsing engine. Your objective is to process high-resolution images of exam papers and extract the content into a strictly formatted JSON array.
 
-STRICT INGESTION MANDATES:
-
-1. POSITION-BASED OPTION SPLITTING:
-   - Identify option layouts instantly. Even if options are printed horizontally side-by-side or in multi-column grids (e.g., "A. 12V  B. 24V  C. 36V"), you must forcefully split and tokenize them into clean, separate key-value pairs inside the JSON mapping: {"A": "12V", "B": "24V", ...}. NEVER concatenate multiple choices into a single string.
-
-2. MATH & SCIENTIFIC SYMBOL PRESERVATION:
-   - Preserve all mathematical, thermodynamic, engineering, and circuit operators natively as clean Unicode string representations (e.g., π, Δ, Ω, α, β, γ, θ, ∞, ±, √, ∑, ∫).
-   - Use strict HTML <sup> and <sub> formatting for structural superscripts and subscripts. Never output empty box placeholders like '□'.
-
-3. STRICT INLINE IMAGE & DIAGRAM ANCHORING (NO COORDINATES):
-   - Do NOT guess or output pixel/percentage bounding box coordinates for diagrams, graphs, circuits, or figures. Coordinates cause cropping failures.
-   - Instead, the absolute instant you detect a visual element (diagram, chart, graph, illustration) inside a question or vignette, you MUST insert a hard structural token string: `[[DIAGRAM:page_X_index_Y]]` directly into the text field at the exact logical position where the visual appears (where X is the 0-indexed page number and Y is the sequential index of the image on that specific page, starting from 1).
-   - Mark `has_diagram = true` whenever you inject this token.
-
-4. TEXT-BASED DATA GRIDS (TABLES):
-   - If a visual block represents a structured text data grid or financial statement table, do NOT treat it as a diagram image. Re-render it completely as a standard, responsive HTML <table> (using <tr>, <th>, <td> tags with inline borders) embedded directly within the core question text string.
-
-5. SEQUENTIAL FLOW SEGMENTATION:
-   - Truncate parsing sequences instantly the moment solution anchors like "Answer Key", "Solutions", "Explanations", or "Answer Sheet" appear on the current workspace. Do not ingest past this boundary.
-
-OUTPUT FORMAT: Return only a clean, structurally valid JSON array conforming strictly to the requested QuestionModel schema. Do not wrap in markdown blocks like ```json."""
+CRITICAL RULES:
+1. UNIVERSAL OPTION SPLITTING: Split inline/side-by-side options into separate objects in the `choices` array. Strip prefixes (A, B, 1, 2) from the text and put them in the `label`.
+2. INDEPENDENT QUESTION ISOLATION: Treat every numbered item as an independent object. Do not merge distinct questions.
+3. SPATIAL BOUNDING BOXES FOR VISUALS (CRITICAL): If a question contains a diagram, graph, circuit, or complex unreadable table, DO NOT describe it in text. Populate the `diagram_bbox` array with exact relative coordinates [ymin, xmin, ymax, xmax], scaled proportionally from 0.0 to 1000.0 based on the page dimensions. If no visual, return []. Write [DIAGRAM_INJECT] in the `text` field where the image belongs.
+4. NATIVE HTML TABLES: Convert readable text data tables into clean HTML (<table>, <tr>, <th>, <td>) embedded in the `text` field.
+5. MATH PRESERVATION: Preserve all math symbols as Unicode (π, Δ, Ω). Use HTML <sup> and <sub>. Never output □.
+6. NOISE FILTERING: Ignore headers, footers, page numbers, and section titles like "SECTION-B".
+"""
 
 
 def _call_gemini_vision(page_images: list[dict], batch_start_id: int = 1) -> list[dict]:
@@ -302,7 +283,7 @@ def _call_gemini_vision(page_images: list[dict], batch_start_id: int = 1) -> lis
             f"(pages: {', '.join(page_desc_parts)}). "
             f"Start question numbering from {batch_start_id + len(all_questions)}. "
             f"For every diagram/figure/chart, return its precise bounding box coordinates "
-            f"as percentages of page dimensions in the diagram_bbox field. "
+            f"as [ymin, xmin, ymax, xmax] scaled 0-1000 in the diagram_bbox field. "
             f"Return structured JSON array."
         )
         content_parts.append(types.Part.from_text(text=instruction_text))
@@ -330,475 +311,82 @@ def _call_gemini_vision(page_images: list[dict], batch_start_id: int = 1) -> lis
     return all_questions
 
 
-def _merge_bboxes(rects: list, threshold: float = 15.0) -> list:
+def _inject_diagrams_from_bbox(questions: list[dict], page_images: list[dict]) -> None:
     """
-    Merge rects that overlap or are very close vertically/horizontally.
+    Loop through questions. If diagram_bbox contains exactly 4 floats,
+    open the corresponding high-res PNG from page_images.
+    Calculate the exact pixel crop based on 0-1000 scale coordinate values.
+    Crop using PIL, save the cropped image to STATIC_MEDIA_DIR,
+    and replace/append [DIAGRAM_INJECT] in the question stem with the correct HTML image tag.
     """
-    if not rects:
-        return []
-    
-    rects = sorted(rects, key=lambda r: r.y0)
-    merged = []
-    
-    for r in rects:
-        if not merged:
-            merged.append(fitz.Rect(r))
-            continue
-        
-        placed = False
-        for idx, m in enumerate(merged):
-            h_overlap = not (r.x1 < m.x0 - threshold or r.x0 > m.x1 + threshold)
-            v_overlap = not (r.y1 < m.y0 - threshold or r.y0 > m.y1 + threshold)
-            
-            if h_overlap and v_overlap:
-                merged[idx] = m | r  # Union
-                placed = True
-                break
-        
-        if not placed:
-            merged.append(fitz.Rect(r))
-            
-    return merged
+    from PIL import Image
+    import io
+    import uuid
 
+    # Create mapping of page_num -> image_bytes for fast lookup
+    page_img_map = {pi['page_num']: pi['image_bytes'] for pi in page_images}
 
-def _extract_all_page_media(doc) -> list[dict]:
-    """
-    Unconditionally extract all visual assets from every page in the PDF.
-    Does NOT depend on Gemini output at all.
-    Saves cropped PNG files as page_{page_num}_img_{index}.png (1-indexed).
+    for q in questions:
+        bbox = q.get('diagram_bbox')
+        if isinstance(bbox, list) and len(bbox) == 4:
+            ymin, xmin, ymax, xmax = bbox
+            # Ensure coordinates are within [0, 1000]
+            ymin = max(0.0, min(float(ymin), 1000.0))
+            xmin = max(0.0, min(float(xmin), 1000.0))
+            ymax = max(0.0, min(float(ymax), 1000.0))
+            xmax = max(0.0, min(float(xmax), 1000.0))
 
-    Returns list of media metadata:
-      {'page': int, 'index': int, 'img_name': str}
-    """
-    HEADER_FRAC = 0.12
-    FOOTER_FRAC = 0.90
-    extracted_metadata = []
+            # Check if this is a non-empty bounding box
+            if ymax <= ymin or xmax <= xmin:
+                continue
 
-    for page_num in range(len(doc)):
-        page = doc[page_num]
-        page_w = page.rect.width
-        page_h = page.rect.height
-        page_area = page_w * page_h
-        HEADER_Y = page_h * HEADER_FRAC
-        FOOTER_Y = page_h * FOOTER_FRAC
-
-        visual_bboxes = []
-
-        # Raster images
-        try:
-            for img_info in page.get_images():
-                for r in page.get_image_rects(img_info[0]):
-                    if (r.y0 < HEADER_Y or r.y1 > FOOTER_Y) and (r.height < 30 or r.width < 100):
-                        continue
-                    if r.width < 20 or r.height < 20:
-                        continue
-                    visual_bboxes.append(r)
-        except Exception:
-            pass
-
-        # Image blocks from text dict
-        try:
-            blocks_dict = page.get_text('dict')['blocks']
-            for b in blocks_dict:
-                if b['type'] == 1:  # image block
-                    r = fitz.Rect(b['bbox'])
-                    if (r.y0 < HEADER_Y or r.y1 > FOOTER_Y) and (r.height < 30 or r.width < 100):
-                        continue
-                    if r.width < 20 or r.height < 20:
-                        continue
-                    visual_bboxes.append(r)
-        except Exception:
-            pass
-
-        # Vector drawings (diagrams, circuits, graphs)
-        try:
-            for drw in page.get_drawings():
-                r = drw['rect']
-                if (r.y0 < HEADER_Y or r.y1 > FOOTER_Y) and (r.height < 30 or r.width < 100):
-                    continue
-                if r.width < 25 or r.height < 20:
-                    continue
-                if (r.width * r.height) >= (page_area * 0.7):
-                    continue  # Skip full-page backgrounds
-                visual_bboxes.append(r)
-        except Exception:
-            pass
-
-        if not visual_bboxes:
-            continue
-
-        # Merge overlapping bounding boxes
-        merged = _merge_bboxes(visual_bboxes)
-        
-        # Sort vertically to ensure stable 1-based indexing on the page
-        merged = sorted(merged, key=lambda rect: rect.y0)
-
-        # Crop and save each visual element
-        for idx, rect in enumerate(merged):
-            index = idx + 1
-            clip = (rect + (-5, -5, 5, 5)).intersect(page.rect)
-            if clip.is_empty or clip.width < 25 or clip.height < 20:
+            page_num = q.get('page_number', 0)
+            if page_num not in page_img_map:
+                print(f"[CROP WARNING] Page {page_num} not found in page_images map (skipped).")
                 continue
 
             try:
-                pix = page.get_pixmap(clip=clip, dpi=150)
-                img_name = f'page_{page_num}_img_{index}.png'
+                img_bytes = page_img_map[page_num]
+                img = Image.open(io.BytesIO(img_bytes))
+                width, height = img.size
+
+                # Calculate coordinates scaled from 0-1000 to actual pixel size
+                ymin_px = (ymin / 1000.0) * height
+                xmin_px = (xmin / 1000.0) * width
+                ymax_px = (ymax / 1000.0) * height
+                xmax_px = (xmax / 1000.0) * width
+
+                # Crop bounding box in PIL is (left, upper, right, lower) -> (xmin, ymin, xmax, ymax)
+                crop_box = (xmin_px, ymin_px, xmax_px, ymax_px)
+                cropped_img = img.crop(crop_box)
+
+                # Save cropped image
+                img_name = f"crop_{uuid.uuid4().hex}.png"
                 img_path = os.path.join(STATIC_MEDIA_DIR, img_name)
-                pix.save(img_path)
-                
-                extracted_metadata.append({
-                    'page': page_num,
-                    'index': index,
-                    'img_name': img_name,
-                    'bbox': (rect.x0, rect.y0, rect.x1, rect.y1)
-                })
-                print(f"[MEDIA] Saved visual: {img_name}", flush=True)
+                cropped_img.save(img_path)
+
+                # HTML tag
+                img_tag = (
+                    f'<div class="diagram-container" style="margin:15px 0;text-align:left;">'
+                    f'<img src="/static/extracted_media/{img_name}" '
+                    f'style="max-width:100%;border-radius:8px;'
+                    f'box-shadow:0 4px 12px rgba(0,0,0,0.18);" '
+                    f'alt="Diagram" loading="lazy">'
+                    f'</div>'
+                )
+
+                # Replace token if present, otherwise append
+                text = q.get('text', '')
+                if '[DIAGRAM_INJECT]' in text:
+                    q['text'] = text.replace('[DIAGRAM_INJECT]', img_tag)
+                else:
+                    q['text'] = text + "\n" + img_tag
+
+                print(f"[CROP] Cropped page {page_num} bbox {bbox} and saved as {img_name} for Q{q['id']}")
+
             except Exception as e:
-                print(f"[MEDIA ERROR] Failed page {page_num} index {index}: {e}", flush=True)
-
-    print(f'[MEDIA] Completed unconditional extraction. Saved {len(extracted_metadata)} page images.', flush=True)
-    return extracted_metadata
-
-
-def _replace_diagram_tokens(questions: list[dict]) -> None:
-    """
-    Search for [[DIAGRAM:page_X_index_Y]] inside question text and vignette,
-    and replace them inline with a responsive HTML image tag pointing to the saved PNG.
-    """
-    import re
-    pattern = re.compile(r'\[\[DIAGRAM:page_(\d+)_index_(\d+)\]\]', re.I)
-
-    for q in questions:
-        if 'media' not in q or not q['media']:
-            q['media'] = {}
-
-        # 1. Update text
-        text = q.get('text', '')
-        matches = pattern.findall(text)
-        for match in matches:
-            page_num = match[0]
-            img_index = match[1]
-            media_key = f"page_{page_num}_index_{img_index}"
-            img_name = f"page_{page_num}_img_{img_index}.png"
-            img_path = os.path.join(STATIC_MEDIA_DIR, img_name)
-
-            if os.path.exists(img_path):
-                html = (
-                    f'<div class="diagram-container" style="margin:15px 0;text-align:left;">'
-                    f'<img src="/static/extracted_media/{img_name}" '
-                    f'style="max-width:100%;border-radius:8px;'
-                    f'box-shadow:0 4px 12px rgba(0,0,0,0.18);" '
-                    f'alt="Diagram" loading="lazy">'
-                    f'</div>'
-                )
-                q['media'][media_key] = html
-                text = re.sub(
-                    rf'\[\[DIAGRAM:page_{page_num}_index_{img_index}\]\]',
-                    html, text, flags=re.I
-                )
-        q['text'] = text
-
-        # 2. Update vignette
-        vig = q.get('vignette') or ''
-        if vig:
-            vig_matches = pattern.findall(vig)
-            for match in vig_matches:
-                page_num = match[0]
-                img_index = match[1]
-                media_key = f"page_{page_num}_index_{img_index}"
-                img_name = f"page_{page_num}_img_{img_index}.png"
-                img_path = os.path.join(STATIC_MEDIA_DIR, img_name)
-
-                if os.path.exists(img_path):
-                    html = (
-                        f'<div class="diagram-container" style="margin:15px 0;text-align:left;">'
-                        f'<img src="/static/extracted_media/{img_name}" '
-                        f'style="max-width:100%;border-radius:8px;'
-                        f'box-shadow:0 4px 12px rgba(0,0,0,0.18);" '
-                        f'alt="Diagram" loading="lazy">'
-                        f'</div>'
-                    )
-                    q['media'][media_key] = html
-                    vig = re.sub(
-                        rf'\[\[DIAGRAM:page_{page_num}_index_{img_index}\]\]',
-                        html, vig, flags=re.I
-                    )
-            q['vignette'] = vig
-
-
-def _find_question_y_position(page, stem: str) -> float | None:
-    """
-    Search for a question stem on a page at multiple resolutions
-    and return the vertical y0 position of the first match.
-    """
-    if not stem:
-        return None
-    # Strip HTML tags
-    clean = re.sub(r'<[^>]+>', '', stem)
-    # Normalize spaces
-    clean = re.sub(r'\s+', ' ', clean).strip()
-    
-    # Try different substring lengths directly on the normalized text
-    for length in [35, 20, 12]:
-        term = clean[:length].strip()
-        if len(term) >= 6:
-            rects = page.search_for(term)
-            if rects:
-                return rects[0].y0
-                
-    # Fallback: try first 3 words
-    words = [w.strip() for w in clean.split() if w.strip()]
-    if len(words) >= 2:
-        term = ' '.join(words[:3])
-        rects = page.search_for(term)
-        if rects:
-            return rects[0].y0
-            
-    return None
-
-
-def _inject_pdf_tables(doc, questions: list[dict]) -> None:
-    """
-    Extract digital tables via pdfplumber from each page,
-    locate their corresponding questions on that page by vertical position,
-    and inject the formatted HTML table into the question stem.
-    """
-    try:
-        import pdfplumber
-        pl_pdf = pdfplumber.open(doc.name)
-    except Exception as e:
-        print(f"[TABLE INJECTION ERROR] Failed to open pdfplumber: {e}", flush=True)
-        return
-
-    # Group questions by page_number
-    page_to_qs = {}
-    for q in questions:
-        p_num = q.get('page_number', 0)
-        page_to_qs.setdefault(p_num, []).append(q)
-
-    HEADER_FRAC = 0.12
-    FOOTER_FRAC = 0.90
-
-    for page_num, qs in page_to_qs.items():
-        if page_num >= len(pl_pdf.pages):
-            continue
-
-        page = doc[page_num]
-        page_h = page.rect.height
-        HEADER_Y = page_h * HEADER_FRAC
-        FOOTER_Y = page_h * FOOTER_FRAC
-
-        try:
-            pl_page = pl_pdf.pages[page_num]
-            tables = pl_page.find_tables()
-            if not tables:
-                continue
-
-            print(f"[TABLE INJECT] Found {len(tables)} tables on page {page_num}", flush=True)
-
-            # 1. Determine vertical positions of questions on this page
-            q_coords = []
-            for q in qs:
-                y_pos = _find_question_y_position(page, q.get('original_stem', q.get('text', '')))
-                if y_pos is None:
-                    q_coords.append((q, -1))
-                else:
-                    q_coords.append((q, y_pos))
-
-            # Distribute estimated ones evenly based on order if search failed
-            none_count = sum(1 for item in q_coords if item[1] == -1)
-            if none_count > 0:
-                step = (FOOTER_Y - HEADER_Y) / (len(qs) + 1)
-                curr_y = HEADER_Y + step
-                new_q_coords = []
-                for q, y in q_coords:
-                    if y == -1:
-                        new_q_coords.append((q, curr_y))
-                        curr_y += step
-                    else:
-                        new_q_coords.append((q, y))
-                q_coords = new_q_coords
-
-            # Sort questions vertically
-            q_coords.sort(key=lambda item: item[1])
-
-            # 2. Match each table to the nearest question
-            for tbl in tables:
-                bx = tbl.bbox # (x0, y0, x1, y1) in points
-                if bx[1] < HEADER_Y or bx[3] > FOOTER_Y:
-                    continue # Skip headers and footers
-                
-                extracted = tbl.extract()
-                if not extracted or not any(any(cell for cell in row) for row in extracted):
-                    continue
-
-                # Format the table as HTML
-                html = (
-                    '<div class="table-responsive" style="overflow-x:auto;margin:15px 0;">'
-                    '<table border="1" style="border-collapse:collapse;width:100%;font-size:14px;'
-                    'background:rgba(255,255,255,0.05);">'
-                )
-                for r_idx, row in enumerate(extracted):
-                    html += '<tr>'
-                    for cell in row:
-                        ct = str(cell).replace('\n', '<br>') if cell else ''
-                        tag = 'th' if r_idx == 0 else 'td'
-                        bg = ' background:rgba(128,128,128,0.12);' if r_idx == 0 else ''
-                        html += f'<{tag} style="padding:9px 12px;border:1px solid rgba(128,128,128,0.3);{bg}">{ct}</{tag}>'
-                    html += '</tr>'
-                html += '</table></div>'
-
-                # Table y center coordinate
-                tbl_y = (bx[1] + bx[3]) / 2
-
-                # Find the question closest to tbl_y on the page
-                best_q = None
-                best_dist = float('inf')
-                best_q_y = 0
-                for q, y in q_coords:
-                    dist = abs(y - tbl_y)
-                    if dist < best_dist:
-                        best_dist = dist
-                        best_q = q
-                        best_q_y = y
-
-                if best_q:
-                    current_text = best_q.get('text', '')
-                    
-                    # Avoid duplicate table injection (if Gemini or parser already did it)
-                    cell_sample = ""
-                    for row in extracted[:2]:
-                        for cell in row:
-                            if cell and len(str(cell)) > 3:
-                                cell_sample = str(cell).strip()
-                                break
-                        if cell_sample:
-                            break
-                            
-                    if cell_sample and cell_sample in current_text:
-                        print(f"[TABLE INJECT] Table sample '{cell_sample}' already in Q{best_q['id']}, skipping", flush=True)
-                        continue
-
-                    if tbl_y < best_q_y:
-                        # Table sits above the question
-                        best_q['text'] = html + "\n" + current_text
-                    else:
-                        best_q['text'] = current_text + "\n" + html
-                    print(f"[TABLE INJECT] Injected table on page {page_num} into Q{best_q['id']}", flush=True)
-
-        except Exception as ex:
-            print(f"[TABLE INJECT ERROR] Failed page {page_num}: {ex}", flush=True)
-
-    try:
-        pl_pdf.close()
-    except Exception:
-        pass
-
-
-def _inject_unreferenced_media(doc, questions: list[dict], media_metadata: list[dict]) -> None:
-    """
-    Identifies visual media (diagrams, image tables, charts) that were extracted
-    but are not referenced anywhere in the question text or vignettes.
-    Maps them to the vertically nearest question on the same page and prepends/appends them.
-    """
-    # Group media by page
-    page_to_media = {}
-    for item in media_metadata:
-        page_to_media.setdefault(item['page'], []).append(item)
-
-    # Group questions by page
-    page_to_qs = {}
-    for q in questions:
-        page_to_qs.setdefault(q.get('page_number', 0), []).append(q)
-
-    HEADER_FRAC = 0.12
-    FOOTER_FRAC = 0.90
-
-    for page_num, media_list in page_to_media.items():
-        qs = page_to_qs.get(page_num, [])
-        if not qs:
-            continue
-
-        page = doc[page_num]
-        page_h = page.rect.height
-        HEADER_Y = page_h * HEADER_FRAC
-        FOOTER_Y = page_h * FOOTER_FRAC
-
-        # Determine vertical coordinates of questions on this page
-        q_coords = []
-        for q in qs:
-            y_pos = _find_question_y_position(page, q.get('original_stem', q.get('text', '')))
-            if y_pos is None:
-                q_coords.append((q, -1))
-            else:
-                q_coords.append((q, y_pos))
-
-        # Distribute estimated ones evenly based on order if search failed
-        none_count = sum(1 for item in q_coords if item[1] == -1)
-        if none_count > 0:
-            step = (FOOTER_Y - HEADER_Y) / (len(qs) + 1)
-            curr_y = HEADER_Y + step
-            new_q_coords = []
-            for q, y in q_coords:
-                if y == -1:
-                    new_q_coords.append((q, curr_y))
-                    curr_y += step
-                else:
-                    new_q_coords.append((q, y))
-            q_coords = new_q_coords
-
-        # Sort questions vertically
-        q_coords.sort(key=lambda item: item[1])
-
-        for media in media_list:
-            img_name = media['img_name']
-            
-            # Check if this image name or token is already referenced in any question on this page
-            referenced = False
-            token_sig_1 = f"page_{media['page']}_img_{media['index']}.png"
-            token_sig_2 = f"page_{media['page']}_index_{media['index']}"
-            for q in qs:
-                q_text_all = (q.get('text', '') + ' ' + (q.get('vignette') or '')).lower()
-                if token_sig_1.lower() in q_text_all or token_sig_2.lower() in q_text_all:
-                    referenced = True
-                    break
-            
-            if referenced:
-                continue
-
-            # It's unreferenced! Map it to the closest question vertically.
-            bbox = media['bbox']
-            media_y = (bbox[1] + bbox[3]) / 2
-
-            best_q = None
-            best_dist = float('inf')
-            best_q_y = 0
-            for q, y in q_coords:
-                dist = abs(y - media_y)
-                if dist < best_dist:
-                    best_dist = dist
-                    best_q = q
-                    best_q_y = y
-
-            if best_q:
-                # Build HTML image tag
-                html = (
-                    f'<div class="diagram-container" style="margin:15px 0;text-align:left;">'
-                    f'<img src="/static/extracted_media/{img_name}" '
-                    f'style="max-width:100%;border-radius:8px;'
-                    f'box-shadow:0 4px 12px rgba(0,0,0,0.18);" '
-                    f'alt="Diagram" loading="lazy">'
-                    f'</div>'
-                )
-                
-                current_text = best_q.get('text', '')
-                if media_y < best_q_y:
-                    # Prepend if visual block is above question text
-                    best_q['text'] = html + "\n" + current_text
-                else:
-                    # Append if visual block is below question text
-                    best_q['text'] = current_text + "\n" + html
-                print(f"[MEDIA INJECT] Injected unreferenced visual '{img_name}' on page {page_num} into Q{best_q['id']}", flush=True)
+                print(f"[CROP ERROR] Failed to crop diagram for Q{q['id']} on page {page_num}: {e}")
+                traceback.print_exc()
 
 
 # -- Stage 4: Pydantic Auto-Correction ----------------------------------------
@@ -897,6 +485,15 @@ def _validate_and_correct(raw_questions: list[dict], global_answers: dict) -> li
         explanation = _fix_symbols(item.get('explanation') or '')
         vignette = _fix_symbols(item.get('vignette') or '')
 
+        diagram_bbox = item.get('diagram_bbox')
+        if not isinstance(diagram_bbox, list):
+            diagram_bbox = []
+        else:
+            try:
+                diagram_bbox = [float(x) for x in diagram_bbox]
+            except (ValueError, TypeError):
+                diagram_bbox = []
+
         corrected.append({
             'id': q_id,
             'page_number': int(item.get('page_number', 0)),
@@ -911,8 +508,7 @@ def _validate_and_correct(raw_questions: list[dict], global_answers: dict) -> li
             'q_type': q_type,
             'plain_text': re.sub(r'<[^>]+>', '', q_text),
             'media': {},
-            'has_diagram': item.get('has_diagram', False),
-            'diagram_bbox': item.get('diagram_bbox'),
+            'diagram_bbox': diagram_bbox,
         })
 
     return corrected
@@ -1160,11 +756,10 @@ def extract_questions_vision(pdf_path: str) -> list[dict]:
     """
     Vision-First Multimodal Ingestion Pipeline.
 
-    1. UNCONDITIONALLY extract and save all visuals as page_X_img_Y.png
-    2. Render pages to 300 DPI images for Gemini
-    3. Send images to Gemini 2.0 Flash for question text structuring and token injection
-    4. Validate and auto-correct with Pydantic
-    5. Resolve inline diagram tokens [[DIAGRAM:page_X_index_Y]] on the backend
+    1. Render pages to 300 DPI PNG images
+    2. Send images to Gemini 2.0 Flash for structured extraction & bounding boxes
+    3. Validate and auto-correct with Pydantic
+    4. Crop bounding boxes natively using Pillow and inject HTML tags
     """
     doc = fitz.open(pdf_path)
 
@@ -1176,11 +771,7 @@ def extract_questions_vision(pdf_path: str) -> list[dict]:
             raw_text += t + "\n"
     global_answers = _parse_global_answer_key(raw_text)
 
-    # Stage 1: UNCONDITIONALLY extract ALL visual media from every page
-    print("[PIPELINE] Extracting all images, diagrams, and tables from PDF...")
-    media_metadata = _extract_all_page_media(doc)
-
-    # Stage 2: Render pages to high-DPI images for Gemini
+    # Stage 1: Render pages to high-DPI images for Gemini
     print(f"[PIPELINE] Rendering {len(doc)} pages at 300 DPI...")
     page_images = _render_pages_to_images(doc)
     print(f"[PIPELINE] {len(page_images)} pages rendered (blank pages skipped).")
@@ -1189,7 +780,7 @@ def extract_questions_vision(pdf_path: str) -> list[dict]:
         doc.close()
         return []
 
-    # Stage 3: Gemini Vision structured extraction (for question text/options)
+    # Stage 2: Gemini Vision structured extraction (for question text/options)
     print("[PIPELINE] Sending page images to Gemini 2.0 Flash...")
     raw_questions = _call_gemini_vision(page_images)
     print(f"[PIPELINE] Gemini returned {len(raw_questions)} questions.")
@@ -1199,29 +790,17 @@ def extract_questions_vision(pdf_path: str) -> list[dict]:
         print("[PIPELINE] Gemini returned no results. Falling back to text parser...")
         questions = _fallback_text_parser(doc)
     else:
-        # Stage 4: Validate and auto-correct
+        # Stage 3: Validate and auto-correct
         print("[PIPELINE] Running Pydantic validation and auto-correction...")
         questions = _validate_and_correct(raw_questions, global_answers)
         print(f"[PIPELINE] {len(questions)} questions validated.")
 
-    # Stage 5: Resolve inline [[DIAGRAM:page_X_index_Y]] tokens
-    print("[PIPELINE] Resolving diagram tokens...")
-    _replace_diagram_tokens(questions)
-    print("[PIPELINE] Diagram token resolution complete.")
-
-    # Stage 6: Inject PDF tables (ALWAYS runs as layout-aware safety layer)
-    print("[PIPELINE] Injecting text-based PDF tables...")
-    _inject_pdf_tables(doc, questions)
-    print("[PIPELINE] PDF table injection complete.")
-
-    # Stage 7: Inject unreferenced visual media (layouts/diagrams/image-tables)
-    print("[PIPELINE] Injecting unreferenced visual media...")
-    _inject_unreferenced_media(doc, questions, media_metadata)
-    print("[PIPELINE] Unreferenced visual media injection complete.")
+        # Stage 4: Process Pillow crops for diagram_bbox
+        print("[PIPELINE] Processing Pillow crops for diagram bboxes...")
+        _inject_diagrams_from_bbox(questions, page_images)
 
     # Clean up internal fields not needed by frontend
     for q in questions:
-        q.pop('has_diagram', None)
         q.pop('diagram_bbox', None)
 
     doc.close()

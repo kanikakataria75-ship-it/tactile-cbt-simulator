@@ -92,6 +92,48 @@
       "avg_time_correct": 0.0,
       "avg_time_incorrect": 15.0,
       "mastery_class": "Requires Immediate Review"
+    },
+    {
+      "id": "9151bcad-ceed-490e-82c5-68bd137033c7",
+      "score_pct": 4.4,
+      "timestamp": "2026-06-27T15:11:27.885128",
+      "attempted": 11,
+      "correct": 4
+    },
+    {
+      "id": "64344432-8ffe-44ce-9d26-e756b341d59d",
+      "score_pct": 2.2,
+      "timestamp": "2026-06-27T15:19:56.356468",
+      "attempted": 8,
+      "correct": 2
+    },
+    {
+      "id": "f8c5bb1d-b87d-4ac2-a898-8dfe05872ee8",
+      "score_pct": 0.0,
+      "timestamp": "2026-06-27T16:50:15.842943",
+      "attempted": 0,
+      "correct": 0
+    },
+    {
+      "id": "1f512800-3929-492d-8251-a8f138ce0b2c",
+      "score_pct": 0.0,
+      "timestamp": "2026-06-27T16:51:10.364094",
+      "attempted": 0,
+      "correct": 0
+    },
+    {
+      "id": "fe7bf406-4270-430d-a96d-5ab8dd3673ab",
+      "score_pct": 0.0,
+      "timestamp": "2026-06-27T17:18:46.548416",
+      "attempted": 2,
+      "correct": 0
+    },
+    {
+      "id": "65b4a2a7-4c35-41bc-9445-e1c51d31cce8",
+      "score_pct": 7.1,
+      "timestamp": "2026-06-27T17:39:01.880595",
+      "attempted": 2,
+      "correct": 1
     }
   ],
   "error_vault": [
@@ -276,6 +318,2957 @@
       "topic": "General",
       "vignette": null,
       "explanation": "Mezzanine stage capital prepares a company for and IPO. Angel investing and early-stage\nfinancing describe venture capital in a company's formative stages.\n(Module 80.1, LOS 80.a)"
+    },
+    {
+      "id": 1,
+      "page_number": 0,
+      "text": "Which of the following statements is most accurate? Cryptocurrencies:",
+      "original_stem": "Which of the following statements is most accurate? Cryptocurrencies:",
+      "choices": {
+        "A": "exhibit low volatility",
+        "B": "have no limits on the total amount of currency that may be issued",
+        "C": "allow transactions between parties without the need for an intermediary"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following statements is most accurate? Cryptocurrencies:",
+      "media": {}
+    },
+    {
+      "id": 3,
+      "page_number": 0,
+      "text": "If a bond has a modified duration of 7.1 and convexity of 49.2, the percentage \nchange in price for a 50 basis point increase in yield is closest to:",
+      "original_stem": "If a bond has a modified duration of 7.1 and convexity of 49.2, the percentage \nchange in price for a 50 basis point increase in yield is closest to:",
+      "choices": {
+        "A": "-3.61%",
+        "B": "-3.49%",
+        "C": "-1.65%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If a bond has a modified duration of 7.1 and convexity of 49.2, the percentage \nchange in price for a 50 basis point increase in yield is closest to:",
+      "media": {}
+    },
+    {
+      "id": 4,
+      "page_number": 0,
+      "text": "Which of the following hedge fund strategies emphasizes a top-down approach?",
+      "original_stem": "Which of the following hedge fund strategies emphasizes a top-down approach?",
+      "choices": {
+        "A": "Macro",
+        "B": "Equity hedge",
+        "C": "Event-driven"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following hedge fund strategies emphasizes a top-down approach?",
+      "media": {}
+    },
+    {
+      "id": 5,
+      "page_number": 0,
+      "text": "Which of the following most likely exhibits negative convexity?",
+      "original_stem": "Which of the following most likely exhibits negative convexity?",
+      "choices": {
+        "A": "A callable bond",
+        "B": "A putable bond",
+        "C": "An option-free bond"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following most likely exhibits negative convexity?",
+      "media": {}
+    },
+    {
+      "id": 6,
+      "page_number": 0,
+      "text": "The risk-free rate is 5%, and the market risk premium is 8%. If the beta of TRL \nCorp. is 1.5, based on the capital asset pricing model (CAPM), the expected return of \nTRL's stock is closest to:",
+      "original_stem": "The risk-free rate is 5%, and the market risk premium is 8%. If the beta of TRL \nCorp. is 1.5, based on the capital asset pricing model (CAPM), the expected return of \nTRL's stock is closest to:",
+      "choices": {
+        "A": "9.5%",
+        "B": "15.5%",
+        "C": "17.0%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The risk-free rate is 5%, and the market risk premium is 8%. If the beta of TRL \nCorp. is 1.5, based on the capital asset pricing model (CAPM), the expected return of \nTRL's stock is closest to:",
+      "media": {}
+    },
+    {
+      "id": 9,
+      "page_number": 1,
+      "text": "All else being equal, which of the following indexes requires frequent rebalancing \nto adjust for price changes in the underlying securities?",
+      "original_stem": "All else being equal, which of the following indexes requires frequent rebalancing \nto adjust for price changes in the underlying securities?",
+      "choices": {
+        "A": "Price-weighted index",
+        "B": "Equal-weighted index",
+        "C": "Market-capitalization-weighted index"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "All else being equal, which of the following indexes requires frequent rebalancing \nto adjust for price changes in the underlying securities?",
+      "media": {}
+    },
+    {
+      "id": 10,
+      "page_number": 1,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_1_img_2.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nIf the required rate of return is 7% and the company's marginal tax rate is 30%, \nthe preferred shares are most likely:",
+      "original_stem": "If the required rate of return is 7% and the company's marginal tax rate is 30%, \nthe preferred shares are most likely:",
+      "choices": {
+        "A": "undervalued",
+        "B": "fairly valued",
+        "C": "overvalued"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If the required rate of return is 7% and the company's marginal tax rate is 30%, \nthe preferred shares are most likely:",
+      "media": {}
+    },
+    {
+      "id": 12,
+      "page_number": 2,
+      "text": "Which of the following is most likely a factor that results in different credit \nratings for debt issued by a subsidiary and debt issued by its parent company?",
+      "original_stem": "Which of the following is most likely a factor that results in different credit \nratings for debt issued by a subsidiary and debt issued by its parent company?",
+      "choices": {
+        "A": "Differences in duration",
+        "B": "Structural subordination",
+        "C": "Cross-default provisions"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following is most likely a factor that results in different credit \nratings for debt issued by a subsidiary and debt issued by its parent company?",
+      "media": {}
+    },
+    {
+      "id": 13,
+      "page_number": 2,
+      "text": "Which of the following types of investors most likely has a long-term investment \ntime horizon and high liquidity needs?",
+      "original_stem": "Which of the following types of investors most likely has a long-term investment \ntime horizon and high liquidity needs?",
+      "choices": {
+        "A": "Endowments",
+        "B": "Life insurance companies",
+        "C": "Defined benefit pension plans"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following types of investors most likely has a long-term investment \ntime horizon and high liquidity needs?",
+      "media": {}
+    },
+    {
+      "id": 14,
+      "page_number": 2,
+      "text": "In a semi-strong-form efficient market, which of the following is reflected in \nprices?",
+      "original_stem": "In a semi-strong-form efficient market, which of the following is reflected in \nprices?",
+      "choices": {
+        "A": "Past market data only",
+        "B": "Private information only",
+        "C": "Both past market data and private information"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "In a semi-strong-form efficient market, which of the following is reflected in \nprices?",
+      "media": {}
+    },
+    {
+      "id": 15,
+      "page_number": 2,
+      "text": "With respect to securitization, time tranching is best described as the \nredistribution of:",
+      "original_stem": "With respect to securitization, time tranching is best described as the \nredistribution of:",
+      "choices": {
+        "A": "default risk",
+        "B": "inflation risk",
+        "C": "prepayment risk"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "With respect to securitization, time tranching is best described as the \nredistribution of:",
+      "media": {}
+    },
+    {
+      "id": 16,
+      "page_number": 2,
+      "text": "The mental discomfort that occurs when new information conflicts with \npreviously held beliefs is best described as:",
+      "original_stem": "The mental discomfort that occurs when new information conflicts with \npreviously held beliefs is best described as:",
+      "choices": {
+        "A": "regret aversion",
+        "B": "mental accounting",
+        "C": "cognitive dissonance"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The mental discomfort that occurs when new information conflicts with \npreviously held beliefs is best described as:",
+      "media": {}
+    },
+    {
+      "id": 17,
+      "page_number": 3,
+      "text": "According to behavioral finance, observed overreaction in securities markets \nmost likely occurs because of:",
+      "original_stem": "According to behavioral finance, observed overreaction in securities markets \nmost likely occurs because of:",
+      "choices": {
+        "A": "loss aversion",
+        "B": "disposition effect",
+        "C": "gambler's fallacy"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "According to behavioral finance, observed overreaction in securities markets \nmost likely occurs because of:",
+      "media": {}
+    },
+    {
+      "id": 18,
+      "page_number": 3,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_3_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nIf the risk-free rate is 3%, Jensen's alpha for the portfolio is:",
+      "original_stem": "If the risk-free rate is 3%, Jensen's alpha for the portfolio is:",
+      "choices": {
+        "A": "-4.0%",
+        "B": "-0.4%",
+        "C": "0.4%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If the risk-free rate is 3%, Jensen's alpha for the portfolio is:",
+      "media": {}
+    },
+    {
+      "id": 19,
+      "page_number": 3,
+      "text": "Which of the following is least likely a component of yield spread?",
+      "original_stem": "Which of the following is least likely a component of yield spread?",
+      "choices": {
+        "A": "Taxation",
+        "B": "Credit risk",
+        "C": "Expected inflation rate"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following is least likely a component of yield spread?",
+      "media": {}
+    },
+    {
+      "id": 20,
+      "page_number": 3,
+      "text": "In comparison to the makeup of fixed-income indexes, the constituent securities \nof equity indexes are best described as:\n<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_3_img_2.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>",
+      "original_stem": "In comparison to the makeup of fixed-income indexes, the constituent securities \nof equity indexes are best described as:",
+      "choices": {
+        "A": "more liquid",
+        "B": "harder to price",
+        "C": "drawn from a larger universe"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "In comparison to the makeup of fixed-income indexes, the constituent securities \nof equity indexes are best described as:",
+      "media": {}
+    },
+    {
+      "id": 21,
+      "page_number": 4,
+      "text": "If the dividend payout ratio is 45%, the sustainable growth rate is closest to:",
+      "original_stem": "If the dividend payout ratio is 45%, the sustainable growth rate is closest to:",
+      "choices": {
+        "A": "7%",
+        "B": "9%",
+        "C": "11%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If the dividend payout ratio is 45%, the sustainable growth rate is closest to:",
+      "media": {}
+    },
+    {
+      "id": 22,
+      "page_number": 4,
+      "text": "Which of the following is most accurate? A derivative:",
+      "original_stem": "Which of the following is most accurate? A derivative:",
+      "choices": {
+        "A": "transforms risk of the underlying",
+        "B": "derives its value from an underlying",
+        "C": "derives its value based on the principle that arbitrage opportunities exist in the"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following is most accurate? A derivative:",
+      "media": {}
+    },
+    {
+      "id": 23,
+      "page_number": 4,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_4_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nmarket.\n\nAccording to put-call-forward parity, the price of a 9-month fiduciary call is \nclosest to:",
+      "original_stem": "According to put-call-forward parity, the price of a 9-month fiduciary call is \nclosest to:",
+      "choices": {
+        "A": "$12.89",
+        "B": "$13.00",
+        "C": "$13.11"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "market.\n\nAccording to put-call-forward parity, the price of a 9-month fiduciary call is \nclosest to:",
+      "media": {}
+    },
+    {
+      "id": 24,
+      "page_number": 4,
+      "text": "Compared to trading an underlying directly, trading a derivative on the \nunderlying most likely involves:",
+      "original_stem": "Compared to trading an underlying directly, trading a derivative on the \nunderlying most likely involves:",
+      "choices": {
+        "A": "higher transaction costs",
+        "B": "a lower degree of leverage",
+        "C": "a smaller amount of required of recapital"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Compared to trading an underlying directly, trading a derivative on the \nunderlying most likely involves:",
+      "media": {}
+    },
+    {
+      "id": 25,
+      "page_number": 4,
+      "text": "During its life, the value of a forward contract is most likely equal to the price of \nthe underlying minus the price of the:",
+      "original_stem": "During its life, the value of a forward contract is most likely equal to the price of \nthe underlying minus the price of the:",
+      "choices": {
+        "A": "forward",
+        "B": "forward, discounted over the original term of the contract",
+        "C": "forward, discounted over the remaining term of the contract"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "During its life, the value of a forward contract is most likely equal to the price of \nthe underlying minus the price of the:",
+      "media": {}
+    },
+    {
+      "id": 26,
+      "page_number": 4,
+      "text": "All else being equal, a bond issuer is most likely to be evaluated as less \ncreditworthy than its peers if it has a:",
+      "original_stem": "All else being equal, a bond issuer is most likely to be evaluated as less \ncreditworthy than its peers if it has a:",
+      "choices": {
+        "A": "lower debt/EBITDA and a lower EBITDA/interest expense",
+        "B": "lower debt/EBITDA and a higher EBITDA/interest expense",
+        "C": "higher debt/EBITDA and a lower EBITDA/interest expense"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "All else being equal, a bond issuer is most likely to be evaluated as less \ncreditworthy than its peers if it has a:",
+      "media": {}
+    },
+    {
+      "id": 27,
+      "page_number": 5,
+      "text": "Which of the following is most likely considered an investor constraint in an \ninvestment policy statement?",
+      "original_stem": "Which of the following is most likely considered an investor constraint in an \ninvestment policy statement?",
+      "choices": {
+        "A": "Time horizon",
+        "B": "Risk tolerance",
+        "C": "Return requirement"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following is most likely considered an investor constraint in an \ninvestment policy statement?",
+      "media": {}
+    },
+    {
+      "id": 28,
+      "page_number": 5,
+      "text": "A lifecycle fund will most likely:",
+      "original_stem": "A lifecycle fund will most likely:",
+      "choices": {
+        "A": "maintain a fixed asset allocation of stocks and bonds",
+        "B": "use tactical asset allocation to capture market opportunities",
+        "C": "change the asset allocation as the fund nears its target date"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A lifecycle fund will most likely:",
+      "media": {}
+    },
+    {
+      "id": 29,
+      "page_number": 5,
+      "text": "Measuring the duration of a bond portfolio as a weighted average of the \nindividual bond durations:",
+      "original_stem": "Measuring the duration of a bond portfolio as a weighted average of the \nindividual bond durations:",
+      "choices": {
+        "A": "is difficult to use as a measure of interest rate risk",
+        "B": "assumes the yield curve shifts in a parallel manner",
+        "C": "assumes the yield curve shifts in a non-parallel manner"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Measuring the duration of a bond portfolio as a weighted average of the \nindividual bond durations:",
+      "media": {}
+    },
+    {
+      "id": 30,
+      "page_number": 5,
+      "text": "Analytical duration:",
+      "original_stem": "Analytical duration:",
+      "choices": {
+        "A": "assumes that government bond yields and spreads are independent variables",
+        "B": "is lower than empirical duration for high-yield bonds under market stress",
+        "C": "uses statistical methods and historical bond prices to derive the price-yield"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Analytical duration:",
+      "media": {}
+    },
+    {
+      "id": 31,
+      "page_number": 5,
+      "text": "relationship for bond portfolios.\n\nWhich of the following best describes the process of changing the distribution of \nrisk outcomes by using derivatives?",
+      "original_stem": "Which of the following best describes the process of changing the distribution of \nrisk outcomes by using derivatives?",
+      "choices": {
+        "A": "Risk shifting",
+        "B": "Risk transfer",
+        "C": "Risk avoidance"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "relationship for bond portfolios.\n\nWhich of the following best describes the process of changing the distribution of \nrisk outcomes by using derivatives?",
+      "media": {}
+    },
+    {
+      "id": 32,
+      "page_number": 5,
+      "text": "All else being equal, for option-free bonds, the percentage price change for a \ngiven yield change is most likely greater for a bond:",
+      "original_stem": "All else being equal, for option-free bonds, the percentage price change for a \ngiven yield change is most likely greater for a bond:",
+      "choices": {
+        "A": "with a high coupon than for a bond with a low coupon",
+        "B": "with a short time-to-maturity than for a bond with a long time-to-maturity",
+        "C": "when the market discount rate goes down than when the market discount rate"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "All else being equal, for option-free bonds, the percentage price change for a \ngiven yield change is most likely greater for a bond:",
+      "media": {}
+    },
+    {
+      "id": 33,
+      "page_number": 6,
+      "text": "goes up.\n\nA swap is similar to a series of implicit forward contracts with each contract \ncreated at a price that corresponds to the:",
+      "original_stem": "A swap is similar to a series of implicit forward contracts with each contract \ncreated at a price that corresponds to the:",
+      "choices": {
+        "A": "floating rate on the swap at each payment date",
+        "B": "net cash flows on the swap at each payment date",
+        "C": "fixed price of the swap with payments made at the same dates as the series of"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "goes up.\n\nA swap is similar to a series of implicit forward contracts with each contract \ncreated at a price that corresponds to the:",
+      "media": {}
+    },
+    {
+      "id": 34,
+      "page_number": 6,
+      "text": "forward contracts.\n\nThe capital asset pricing model (CAPM) is based on the assumption that \ninvestors are risk:",
+      "original_stem": "The capital asset pricing model (CAPM) is based on the assumption that \ninvestors are risk:",
+      "choices": {
+        "A": "averse",
+        "B": "neutral",
+        "C": "seeking"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "forward contracts.\n\nThe capital asset pricing model (CAPM) is based on the assumption that \ninvestors are risk:",
+      "media": {}
+    },
+    {
+      "id": 35,
+      "page_number": 6,
+      "text": "Based on put-call parity, an investor holding a long position in an underlying \nasset most likely creates a risk-free position by:",
+      "original_stem": "Based on put-call parity, an investor holding a long position in an underlying \nasset most likely creates a risk-free position by:",
+      "choices": {
+        "A": "only selling a call",
+        "B": "selling a put and buying a call",
+        "C": "selling a call and buying a put"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Based on put-call parity, an investor holding a long position in an underlying \nasset most likely creates a risk-free position by:",
+      "media": {}
+    },
+    {
+      "id": 36,
+      "page_number": 6,
+      "text": "All else being equal, which of the following bonds most likely has the lowest \nprice?\n<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_6_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>",
+      "original_stem": "All else being equal, which of the following bonds most likely has the lowest \nprice?",
+      "choices": {
+        "A": "Putable bond",
+        "B": "Callable bond",
+        "C": "Option-free bond"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "All else being equal, which of the following bonds most likely has the lowest \nprice?",
+      "media": {}
+    },
+    {
+      "id": 37,
+      "page_number": 7,
+      "text": "If the portfolio's standard deviation of returns is 20.4%, the correlation between \nthe securities is closest to:",
+      "original_stem": "If the portfolio's standard deviation of returns is 20.4%, the correlation between \nthe securities is closest to:",
+      "choices": {
+        "A": "-1",
+        "B": "0",
+        "C": "1"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If the portfolio's standard deviation of returns is 20.4%, the correlation between \nthe securities is closest to:",
+      "media": {}
+    },
+    {
+      "id": 38,
+      "page_number": 7,
+      "text": "Industry classification systems are developed by:",
+      "original_stem": "Industry classification systems are developed by:",
+      "choices": {
+        "A": "commercial entities only",
+        "B": "governmental agencies only",
+        "C": "both commercial entities and government agencies"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Industry classification systems are developed by:",
+      "media": {}
+    },
+    {
+      "id": 39,
+      "page_number": 7,
+      "text": "Using the one-period binomial option pricing model, the value of an option will \nbe affected by:",
+      "original_stem": "Using the one-period binomial option pricing model, the value of an option will \nbe affected by:",
+      "choices": {
+        "A": "the volatility of the underlying",
+        "B": "a measure of investor risk aversion",
+        "C": "the probabilities of up and down moves in the underlying"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Using the one-period binomial option pricing model, the value of an option will \nbe affected by:",
+      "media": {}
+    },
+    {
+      "id": 40,
+      "page_number": 7,
+      "text": "An analyst uses a valuation model to estimate the value of an option-free bond at \n92.733 to yield 11%. If the value is 94.474 for a 60 bps decrease in yield and 91.041 \nfor a 60 bps increase in yield, the approximate modified duration of the bond is closest \nto:",
+      "original_stem": "An analyst uses a valuation model to estimate the value of an option-free bond at \n92.733 to yield 11%. If the value is 94.474 for a 60 bps decrease in yield and 91.041 \nfor a 60 bps increase in yield, the approximate modified duration of the bond is closest \nto:",
+      "choices": {
+        "A": "1.85",
+        "B": "3.09",
+        "C": "6.17"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "An analyst uses a valuation model to estimate the value of an option-free bond at \n92.733 to yield 11%. If the value is 94.474 for a 60 bps decrease in yield and 91.041 \nfor a 60 bps increase in yield, the approximate modified duration of the bond is closest \nto:",
+      "media": {}
+    },
+    {
+      "id": 41,
+      "page_number": 7,
+      "text": "For an option-free bond, effective duration:",
+      "original_stem": "For an option-free bond, effective duration:",
+      "choices": {
+        "A": "will be equal to modified duration if the yield curve is absolutely flat",
+        "B": "measures interest rate risk for both parallel and non-parallel benchmark yield",
+        "C": "is an estimate of the percentage change in bond price given a change in the"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "For an option-free bond, effective duration:",
+      "media": {}
+    },
+    {
+      "id": 42,
+      "page_number": 7,
+      "text": "bond's yield to maturity.\n\nSecurities dealers most likely:",
+      "original_stem": "Securities dealers most likely:",
+      "choices": {
+        "A": "arrange IPOs",
+        "B": "provide liquidity",
+        "C": "securitize assets"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "bond's yield to maturity.\n\nSecurities dealers most likely:",
+      "media": {}
+    },
+    {
+      "id": 43,
+      "page_number": 8,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_8_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nThe price of a three-year, 5% annual-pay bond is closest to:",
+      "original_stem": "The price of a three-year, 5% annual-pay bond is closest to:",
+      "choices": {
+        "A": "107.42",
+        "B": "109.18",
+        "C": "111.73"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The price of a three-year, 5% annual-pay bond is closest to:",
+      "media": {}
+    },
+    {
+      "id": 44,
+      "page_number": 8,
+      "text": "A company's cost of equity is a proxy for the:",
+      "original_stem": "A company's cost of equity is a proxy for the:",
+      "choices": {
+        "A": "company's intrinsic value",
+        "B": "company's accounting return on equity",
+        "C": "minimum required rate of return of investors in the company's equity"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A company's cost of equity is a proxy for the:",
+      "media": {}
+    },
+    {
+      "id": 45,
+      "page_number": 8,
+      "text": "At initiation, the price of a forward contract is most likely:",
+      "original_stem": "At initiation, the price of a forward contract is most likely:",
+      "choices": {
+        "A": "less than the value of the forward contract",
+        "B": "equal to the value of the forward contract",
+        "C": "greater than the value of the forward contract"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "At initiation, the price of a forward contract is most likely:",
+      "media": {}
+    },
+    {
+      "id": 46,
+      "page_number": 8,
+      "text": "Which of the following statements about private debt is most accurate? \nMezzanine debt is:",
+      "original_stem": "Which of the following statements about private debt is most accurate? \nMezzanine debt is:",
+      "choices": {
+        "A": "funding provided to start-up or early-stage companies generating negative cash",
+        "B": "subordinated to senior secured debt but senior to equity in the borrower's",
+        "C": "a hybrid loan structure that combines different tranches of secured and"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following statements about private debt is most accurate? \nMezzanine debt is:",
+      "media": {}
+    },
+    {
+      "id": 47,
+      "page_number": 8,
+      "text": "unsecured debt into a single loan.\n\nEnterprise value is most useful when:",
+      "original_stem": "Enterprise value is most useful when:",
+      "choices": {
+        "A": "determining a measure of dividend-paying capacity",
+        "B": "no market quotations for the company's debt are available",
+        "C": "comparing companies with significant differences in capital structure"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "unsecured debt into a single loan.\n\nEnterprise value is most useful when:",
+      "media": {}
+    },
+    {
+      "id": 48,
+      "page_number": 9,
+      "text": "Which real estate sector is the largest globally by market value?",
+      "original_stem": "Which real estate sector is the largest globally by market value?",
+      "choices": {
+        "A": "Industrial",
+        "B": "Residential",
+        "C": "Commercial"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which real estate sector is the largest globally by market value?",
+      "media": {}
+    },
+    {
+      "id": 49,
+      "page_number": 9,
+      "text": "Management fees for private equity funds are most likely based on:",
+      "original_stem": "Management fees for private equity funds are most likely based on:",
+      "choices": {
+        "A": "invested capital",
+        "B": "committed capital",
+        "C": "assets under management"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Management fees for private equity funds are most likely based on:",
+      "media": {}
+    },
+    {
+      "id": 50,
+      "page_number": 9,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_9_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nIf the number of constituent shares is constant, the weighting method that results \nin the highest return is:",
+      "original_stem": "If the number of constituent shares is constant, the weighting method that results \nin the highest return is:",
+      "choices": {
+        "A": "price weighting",
+        "B": "equal weighting",
+        "C": "value weighting"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If the number of constituent shares is constant, the weighting method that results \nin the highest return is:",
+      "media": {}
+    },
+    {
+      "id": 51,
+      "page_number": 9,
+      "text": "A greenfield infrastructure investment is best described as an asset that has:",
+      "original_stem": "A greenfield infrastructure investment is best described as an asset that has:",
+      "choices": {
+        "A": "yet to be constructed",
+        "B": "already been constructed",
+        "C": "reached the end of its useful life"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A greenfield infrastructure investment is best described as an asset that has:",
+      "media": {}
+    },
+    {
+      "id": 52,
+      "page_number": 9,
+      "text": "Which of the following drivers of timberland returns is not applicable to \nfarmland?",
+      "original_stem": "Which of the following drivers of timberland returns is not applicable to \nfarmland?",
+      "choices": {
+        "A": "Land prices",
+        "B": "Commodity prices",
+        "C": "Harvesting flexibility"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following drivers of timberland returns is not applicable to \nfarmland?",
+      "media": {}
+    },
+    {
+      "id": 53,
+      "page_number": 10,
+      "text": "An investor buys a stock for $108 on margin by posting 40% of the initial stock \nprice as equity. If the maintenance margin requirement for the position is 20%, a \nmargin call first occurs when the price falls below:",
+      "original_stem": "An investor buys a stock for $108 on margin by posting 40% of the initial stock \nprice as equity. If the maintenance margin requirement for the position is 20%, a \nmargin call first occurs when the price falls below:",
+      "choices": {
+        "A": "$64.80",
+        "B": "$81.00",
+        "C": "$86.40"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "An investor buys a stock for $108 on margin by posting 40% of the initial stock \nprice as equity. If the maintenance margin requirement for the position is 20%, a \nmargin call first occurs when the price falls below:",
+      "media": {}
+    },
+    {
+      "id": 54,
+      "page_number": 10,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_10_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nAll else being equal, the bond with the greatest reinvestment risk is most likely:",
+      "original_stem": "All else being equal, the bond with the greatest reinvestment risk is most likely:",
+      "choices": {
+        "A": "Bond 1",
+        "B": "Bond 2",
+        "C": "Bond 3"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "All else being equal, the bond with the greatest reinvestment risk is most likely:",
+      "media": {}
+    },
+    {
+      "id": 55,
+      "page_number": 10,
+      "text": "Which of the following statements regarding alternative asset co-investing is \ncorrect? \n\u25cb  Statement 1: The investor invests in assets indirectly through a fund. \n\u25cb  Statement 2: The investor possesses rights to invest directly in the same assets.",
+      "original_stem": "Which of the following statements regarding alternative asset co-investing is \ncorrect? \n\u25cb  Statement 1: The investor invests in assets indirectly through a fund. \n\u25cb  Statement 2: The investor possesses rights to invest directly in the same assets.",
+      "choices": {
+        "A": "Statement 1 only",
+        "B": "Statement 2 only",
+        "C": "Both Statement 1 and Statement 2"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following statements regarding alternative asset co-investing is \ncorrect? \n\u25cb  Statement 1: The investor invests in assets indirectly through a fund. \n\u25cb  Statement 2: The investor possesses rights to invest directly in the same assets.",
+      "media": {}
+    },
+    {
+      "id": 56,
+      "page_number": 10,
+      "text": "A European call option has an exercise price of $80 and an option premium of \n$12. The price of the underlying is $75. The intrinsic value of the option is:",
+      "original_stem": "A European call option has an exercise price of $80 and an option premium of \n$12. The price of the underlying is $75. The intrinsic value of the option is:",
+      "choices": {
+        "A": "0",
+        "B": "5",
+        "C": "7"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A European call option has an exercise price of $80 and an option premium of \n$12. The price of the underlying is $75. The intrinsic value of the option is:",
+      "media": {}
+    },
+    {
+      "id": 57,
+      "page_number": 10,
+      "text": "The free-cash-flow-to-equity model:",
+      "original_stem": "The free-cash-flow-to-equity model:",
+      "choices": {
+        "A": "excludes net borrowings",
+        "B": "can be used to value non-dividend paying stocks",
+        "C": "requires an estimate of future dividend payments"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The free-cash-flow-to-equity model:",
+      "media": {}
+    },
+    {
+      "id": 58,
+      "page_number": 11,
+      "text": "If an investor buys a 5-year, 8% annual-pay bond for 96.11, the bond's \nyield-to-maturity is closest to:",
+      "original_stem": "If an investor buys a 5-year, 8% annual-pay bond for 96.11, the bond's \nyield-to-maturity is closest to:",
+      "choices": {
+        "A": "7.33%",
+        "B": "8.32%",
+        "C": "9.00%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If an investor buys a 5-year, 8% annual-pay bond for 96.11, the bond's \nyield-to-maturity is closest to:",
+      "media": {}
+    },
+    {
+      "id": 59,
+      "page_number": 11,
+      "text": "In an investment policy statement, which of the following investment constraints \nmost likely outlines a client's preference for environmentally sustainable investments?",
+      "original_stem": "In an investment policy statement, which of the following investment constraints \nmost likely outlines a client's preference for environmentally sustainable investments?",
+      "choices": {
+        "A": "Time horizon",
+        "B": "Unique circumstances",
+        "C": "Legal and regulatory factors"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "In an investment policy statement, which of the following investment constraints \nmost likely outlines a client's preference for environmentally sustainable investments?",
+      "media": {}
+    },
+    {
+      "id": 60,
+      "page_number": 11,
+      "text": "If the current share price is $60, a trader who wants to purchase the share at $58 \nor less will most likely place a:",
+      "original_stem": "If the current share price is $60, a trader who wants to purchase the share at $58 \nor less will most likely place a:",
+      "choices": {
+        "A": "limit order",
+        "B": "market order",
+        "C": "stop-buy order"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If the current share price is $60, a trader who wants to purchase the share at $58 \nor less will most likely place a:",
+      "media": {}
+    },
+    {
+      "id": 61,
+      "page_number": 11,
+      "text": "Sponsored depository receipts are most likely subject to:",
+      "original_stem": "Sponsored depository receipts are most likely subject to:",
+      "choices": {
+        "A": "less reporting requirements than unsponsored ones",
+        "B": "the same level of reporting requirements as unsponsored ones",
+        "C": "greater reporting requirements than unsponsored ones"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Sponsored depository receipts are most likely subject to:",
+      "media": {}
+    },
+    {
+      "id": 62,
+      "page_number": 11,
+      "text": "Which of the following is best classified as a nonsystematic risk?",
+      "original_stem": "Which of the following is best classified as a nonsystematic risk?",
+      "choices": {
+        "A": "Political uncertainty",
+        "B": "Widespread natural disasters",
+        "C": "Bankruptcy of a major automobile producer"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following is best classified as a nonsystematic risk?",
+      "media": {}
+    },
+    {
+      "id": 63,
+      "page_number": 11,
+      "text": "Four years ago, a 5% coupon, annual-pay bond with a 10-year maturity was \nissued at par. If the current market discount rate is 7%, the price of the bond per 100 of \npar value is closest to:",
+      "original_stem": "Four years ago, a 5% coupon, annual-pay bond with a 10-year maturity was \nissued at par. If the current market discount rate is 7%, the price of the bond per 100 of \npar value is closest to:",
+      "choices": {
+        "A": "90.34",
+        "B": "90.47",
+        "C": "93.23"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Four years ago, a 5% coupon, annual-pay bond with a 10-year maturity was \nissued at par. If the current market discount rate is 7%, the price of the bond per 100 of \npar value is closest to:",
+      "media": {}
+    },
+    {
+      "id": 64,
+      "page_number": 12,
+      "text": "The price of a fixed-rate corporate bond with an annual modified duration of \n7.15 increases from 92 to 97 per 100 of par value. If the government benchmark yield \nincreases by 5 bps, the estimated decline in the spread over the benchmark yield is \nclosest to:",
+      "original_stem": "The price of a fixed-rate corporate bond with an annual modified duration of \n7.15 increases from 92 to 97 per 100 of par value. If the government benchmark yield \nincreases by 5 bps, the estimated decline in the spread over the benchmark yield is \nclosest to:",
+      "choices": {
+        "A": "71 bps",
+        "B": "76 bps",
+        "C": "81 bps"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The price of a fixed-rate corporate bond with an annual modified duration of \n7.15 increases from 92 to 97 per 100 of par value. If the government benchmark yield \nincreases by 5 bps, the estimated decline in the spread over the benchmark yield is \nclosest to:",
+      "media": {}
+    },
+    {
+      "id": 65,
+      "page_number": 12,
+      "text": "Commercial paper with a face value of $25,000,000 and a term of 120 days was \nissued 55 days ago. If the current market value is $24,855,000, the implied discount \nrate assuming a 360-day year is closest to:",
+      "original_stem": "Commercial paper with a face value of $25,000,000 and a term of 120 days was \nissued 55 days ago. If the current market value is $24,855,000, the implied discount \nrate assuming a 360-day year is closest to:",
+      "choices": {
+        "A": "3.21%",
+        "B": "3.23%",
+        "C": "3.80%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Commercial paper with a face value of $25,000,000 and a term of 120 days was \nissued 55 days ago. If the current market value is $24,855,000, the implied discount \nrate assuming a 360-day year is closest to:",
+      "media": {}
+    },
+    {
+      "id": 66,
+      "page_number": 12,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_12_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nIf incentive fees are based on returns in excess of the hurdle rate and are \ncalculated independent of management fees, the investor's net return for the year is:",
+      "original_stem": "If incentive fees are based on returns in excess of the hurdle rate and are \ncalculated independent of management fees, the investor's net return for the year is:",
+      "choices": {
+        "A": "17.30%",
+        "B": "17.80%",
+        "C": "18.35%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "If incentive fees are based on returns in excess of the hurdle rate and are \ncalculated independent of management fees, the investor's net return for the year is:",
+      "media": {}
+    },
+    {
+      "id": 67,
+      "page_number": 12,
+      "text": "The capital allocation line is best described as combinations of a risky portfolio \nand the:",
+      "original_stem": "The capital allocation line is best described as combinations of a risky portfolio \nand the:",
+      "choices": {
+        "A": "risk-free asset",
+        "B": "market portfolio",
+        "C": "minimum variance portfolio"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The capital allocation line is best described as combinations of a risky portfolio \nand the:",
+      "media": {}
+    },
+    {
+      "id": 68,
+      "page_number": 12,
+      "text": "Which of the following most likely provides the greatest redemption flexibility?",
+      "original_stem": "Which of the following most likely provides the greatest redemption flexibility?",
+      "choices": {
+        "A": "Hedge funds",
+        "B": "Private equity funds",
+        "C": "Funds of hedge funds"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following most likely provides the greatest redemption flexibility?",
+      "media": {}
+    },
+    {
+      "id": 69,
+      "page_number": 13,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_13_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nThe cumulative fee (in $ millions) earned by the hedge fund manager for the two \nyears is closest to:",
+      "original_stem": "The cumulative fee (in $ millions) earned by the hedge fund manager for the two \nyears is closest to:",
+      "choices": {
+        "A": "5.2",
+        "B": "7.2",
+        "C": "9.2"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The cumulative fee (in $ millions) earned by the hedge fund manager for the two \nyears is closest to:",
+      "media": {}
+    },
+    {
+      "id": 70,
+      "page_number": 13,
+      "text": "All else being equal, if a company declares a dividend of $1 per share, the \ncompany's share price is most likely to decrease by $1 on the:",
+      "original_stem": "All else being equal, if a company declares a dividend of $1 per share, the \ncompany's share price is most likely to decrease by $1 on the:",
+      "choices": {
+        "A": "declaration date",
+        "B": "ex-dividend date",
+        "C": "holder-of-record date"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "All else being equal, if a company declares a dividend of $1 per share, the \ncompany's share price is most likely to decrease by $1 on the:",
+      "media": {}
+    },
+    {
+      "id": 71,
+      "page_number": 13,
+      "text": "A call option with an exercise price of $38 was bought for $3. The price of the \nunderlying increases from $42 to $47. \nAt expiration, the payoff to the call buyer is equal to:",
+      "original_stem": "A call option with an exercise price of $38 was bought for $3. The price of the \nunderlying increases from $42 to $47. \nAt expiration, the payoff to the call buyer is equal to:",
+      "choices": {
+        "A": "$4",
+        "B": "$6",
+        "C": "$9"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A call option with an exercise price of $38 was bought for $3. The price of the \nunderlying increases from $42 to $47. \nAt expiration, the payoff to the call buyer is equal to:",
+      "media": {}
+    },
+    {
+      "id": 72,
+      "page_number": 13,
+      "text": "Arbitrage is best described as an opportunity to earn:",
+      "original_stem": "Arbitrage is best described as an opportunity to earn:",
+      "choices": {
+        "A": "risk-free returns with no investment capital",
+        "B": "risk-free returns with large amounts of investment capital",
+        "C": "abnormal returns applying an absolute valuation methodology"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Arbitrage is best described as an opportunity to earn:",
+      "media": {}
+    },
+    {
+      "id": 73,
+      "page_number": 14,
+      "text": "In the event of a default, which of the following mortgage structures exposes a \nlender to the greatest risk of loss?",
+      "original_stem": "In the event of a default, which of the following mortgage structures exposes a \nlender to the greatest risk of loss?",
+      "choices": {
+        "A": "Interest-only, recourse loan",
+        "B": "Fully amortizing, recourse loan",
+        "C": "Balloon payment, non-recourse loan"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "In the event of a default, which of the following mortgage structures exposes a \nlender to the greatest risk of loss?",
+      "media": {}
+    },
+    {
+      "id": 74,
+      "page_number": 14,
+      "text": "Contracts entered into at one point in time that require both parties to engage in a \ntransaction at a later point in time on terms agreed upon at the start are called:",
+      "original_stem": "Contracts entered into at one point in time that require both parties to engage in a \ntransaction at a later point in time on terms agreed upon at the start are called:",
+      "choices": {
+        "A": "options contracts",
+        "B": "contingent claims",
+        "C": "forward commitments"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Contracts entered into at one point in time that require both parties to engage in a \ntransaction at a later point in time on terms agreed upon at the start are called:",
+      "media": {}
+    },
+    {
+      "id": 75,
+      "page_number": 14,
+      "text": "A holder of a put option is best described as having a:",
+      "original_stem": "A holder of a put option is best described as having a:",
+      "choices": {
+        "A": "short exposure to the option contract",
+        "B": "long exposure to the underlying instrument",
+        "C": "short exposure to the underlying instrument"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A holder of a put option is best described as having a:",
+      "media": {}
+    },
+    {
+      "id": 76,
+      "page_number": 14,
+      "text": "A risk-neutral investor most likely seeks to maximize:",
+      "original_stem": "A risk-neutral investor most likely seeks to maximize:",
+      "choices": {
+        "A": "both risk and return",
+        "B": "return irrespective of risk",
+        "C": "return for a given level of risk"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A risk-neutral investor most likely seeks to maximize:",
+      "media": {}
+    },
+    {
+      "id": 77,
+      "page_number": 14,
+      "text": "Pricing power is most likely lowest in markets characterized by:",
+      "original_stem": "Pricing power is most likely lowest in markets characterized by:",
+      "choices": {
+        "A": "strong customer loyalty",
+        "B": "high barriers to firm entry",
+        "C": "low switching costs for customers"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Pricing power is most likely lowest in markets characterized by:",
+      "media": {}
+    },
+    {
+      "id": 78,
+      "page_number": 14,
+      "text": "The value of a European call option is inversely related:",
+      "original_stem": "The value of a European call option is inversely related:",
+      "choices": {
+        "A": "only to the risk-free interest rate",
+        "B": "only to the dividends paid by the underlying stock",
+        "C": "both to the risk-free interest rate and to the dividends paid by the underlying"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The value of a European call option is inversely related:",
+      "media": {}
+    },
+    {
+      "id": 79,
+      "page_number": 14,
+      "text": "stock.\n\nIn which of the following stages of the enterprise risk management process will \na company's board most likely identify shortfalls within the company that would cause \nit to fail to achieve critical goals? When:",
+      "original_stem": "In which of the following stages of the enterprise risk management process will \na company's board most likely identify shortfalls within the company that would cause \nit to fail to achieve critical goals? When:",
+      "choices": {
+        "A": "monitoring and mitigating risk",
+        "B": "making the risk tolerance decision",
+        "C": "allocating capital to risky activities"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "stock.\n\nIn which of the following stages of the enterprise risk management process will \na company's board most likely identify shortfalls within the company that would cause \nit to fail to achieve critical goals? When:",
+      "media": {}
+    },
+    {
+      "id": 80,
+      "page_number": 15,
+      "text": "The underlying assets of an asset-backed security are directly owned by the:",
+      "original_stem": "The underlying assets of an asset-backed security are directly owned by the:",
+      "choices": {
+        "A": "originator",
+        "B": "special purpose vehicle",
+        "C": "investors in the asset-backed securities"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The underlying assets of an asset-backed security are directly owned by the:",
+      "media": {}
+    },
+    {
+      "id": 81,
+      "page_number": 15,
+      "text": "The earnings multiplier for a stock increases with a decrease in the:",
+      "original_stem": "The earnings multiplier for a stock increases with a decrease in the:",
+      "choices": {
+        "A": "expected dividend growth rate",
+        "B": "expected dividend payout ratio",
+        "C": "estimated required rate of return on equity"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The earnings multiplier for a stock increases with a decrease in the:",
+      "media": {}
+    },
+    {
+      "id": 82,
+      "page_number": 15,
+      "text": "With respect to portfolio construction, combining long-term capital market \nexpectations with the objectives and constraints from the investment policy statement \ndetermines a portfolio's:",
+      "original_stem": "With respect to portfolio construction, combining long-term capital market \nexpectations with the objectives and constraints from the investment policy statement \ndetermines a portfolio's:",
+      "choices": {
+        "A": "security selection",
+        "B": "tactical asset allocation",
+        "C": "strategic asset allocation"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "With respect to portfolio construction, combining long-term capital market \nexpectations with the objectives and constraints from the investment policy statement \ndetermines a portfolio's:",
+      "media": {}
+    },
+    {
+      "id": 83,
+      "page_number": 15,
+      "text": "The central bank funds market is most likely used by:",
+      "original_stem": "The central bank funds market is most likely used by:",
+      "choices": {
+        "A": "central banks looking to obtain short-term funding",
+        "B": "lenders of last resort to transfer funds between each other",
+        "C": "banks to manage the imbalances in their required reserves"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "The central bank funds market is most likely used by:",
+      "media": {}
+    },
+    {
+      "id": 84,
+      "page_number": 15,
+      "text": "Consider a put option selling for $4 in which the exercise price is $58. What is \nthe profit for a put buyer if the price of the underlying at expiration is $57?",
+      "original_stem": "Consider a put option selling for $4 in which the exercise price is $58. What is \nthe profit for a put buyer if the price of the underlying at expiration is $57?",
+      "choices": {
+        "A": "-$3",
+        "B": "$1",
+        "C": "$3"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Consider a put option selling for $4 in which the exercise price is $58. What is \nthe profit for a put buyer if the price of the underlying at expiration is $57?",
+      "media": {}
+    },
+    {
+      "id": 85,
+      "page_number": 15,
+      "text": "In an equally weighted portfolio of many assets, an increase in the correlation \nbetween the assets' returns most likely decreases the portfolio's:",
+      "original_stem": "In an equally weighted portfolio of many assets, an increase in the correlation \nbetween the assets' returns most likely decreases the portfolio's:",
+      "choices": {
+        "A": "overall risk",
+        "B": "expected return",
+        "C": "diversification benefit"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "In an equally weighted portfolio of many assets, an increase in the correlation \nbetween the assets' returns most likely decreases the portfolio's:",
+      "media": {}
+    },
+    {
+      "id": 86,
+      "page_number": 15,
+      "text": "Which of the following is most likely considered an affirmative covenant?",
+      "original_stem": "Which of the following is most likely considered an affirmative covenant?",
+      "choices": {
+        "A": "A minimum interest coverage ratio",
+        "B": "A limit on the level of share buybacks",
+        "C": "What the issuer will do with the proceeds of a bond issue"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Which of the following is most likely considered an affirmative covenant?",
+      "media": {}
+    },
+    {
+      "id": 87,
+      "page_number": 16,
+      "text": "An investor purchased shares on margin at \u20ac50 per share using a leverage ratio \nof 2.0. If the shares are sold for \u20ac70 per share, the return on the investor's equity \ninvestment is:",
+      "original_stem": "An investor purchased shares on margin at \u20ac50 per share using a leverage ratio \nof 2.0. If the shares are sold for \u20ac70 per share, the return on the investor's equity \ninvestment is:",
+      "choices": {
+        "A": "40%",
+        "B": "80%",
+        "C": "180%"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "An investor purchased shares on margin at \u20ac50 per share using a leverage ratio \nof 2.0. If the shares are sold for \u20ac70 per share, the return on the investor's equity \ninvestment is:",
+      "media": {}
+    },
+    {
+      "id": 88,
+      "page_number": 16,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_16_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nShe receives an order to sell 9,000 shares with a limit price of CHF 42.52. The \naverage price (in CHF) at which the trades will be executed is closest to:",
+      "original_stem": "She receives an order to sell 9,000 shares with a limit price of CHF 42.52. The \naverage price (in CHF) at which the trades will be executed is closest to:",
+      "choices": {
+        "A": "42.52",
+        "B": "42.50",
+        "C": "42.53"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "She receives an order to sell 9,000 shares with a limit price of CHF 42.52. The \naverage price (in CHF) at which the trades will be executed is closest to:",
+      "media": {}
+    },
+    {
+      "id": 89,
+      "page_number": 16,
+      "text": "The two-fund separation theorem states that all investors will hold a combination \nof the: \n<div class=\"table-responsive\" style=\"overflow-x:auto;margin:15px 0;\"><table border=\"1\" style=\"border-collapse:collapse;width:100%;max-width:600px;font-size:14px;background:rgba(255,255,255,0.05);\"><tr><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">\u25cf</th><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">risk-free asset and the optimal risky portfolio.</th></tr></table></div>\n\u25cf  risk-free asset and the global minimum-variance portfolio. \n\u25cf  optimal risky portfolio and the global minimum-variance portfolio.",
+      "original_stem": "The two-fund separation theorem states that all investors will hold a combination \nof the: \n<div class=\"table-responsive\" style=\"overflow-x:auto;margin:15px 0;\"><table border=\"1\" style=\"border-collapse:collapse;width:100%;max-width:600px;font-size:14px;background:rgba(255,255,255,0.05);\"><tr><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">\u25cf</th><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">risk-free asset and the optimal risky portfolio.</th></tr></table></div>\n\u25cf  risk-free asset and the global minimum-variance portfolio. \n\u25cf  optimal risky portfolio and the global minimum-variance portfolio.",
+      "choices": {},
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "integer",
+      "plain_text": "The two-fund separation theorem states that all investors will hold a combination \nof the: \n\u25cfrisk-free asset and the optimal risky portfolio.\n\u25cf  risk-free asset and the global minimum-variance portfolio. \n\u25cf  optimal risky portfolio and the global minimum-variance portfolio.",
+      "media": {}
+    },
+    {
+      "id": 90,
+      "page_number": 17,
+      "text": "With respect to an investment policy statement, a maximum acceptable level of \ntracking risk is best described as a(n):",
+      "original_stem": "With respect to an investment policy statement, a maximum acceptable level of \ntracking risk is best described as a(n):",
+      "choices": {
+        "A": "relative risk objective",
+        "B": "absolute risk objective",
+        "C": "systematic risk objective"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "With respect to an investment policy statement, a maximum acceptable level of \ntracking risk is best described as a(n):",
+      "media": {}
+    },
+    {
+      "id": 2,
+      "page_number": 0,
+      "text": "Private equity funds invest:",
+      "original_stem": "Private equity funds invest:",
+      "choices": {
+        "A": "in privately held companies only",
+        "B": "in publicly traded companies only",
+        "C": "both in privately held and in publicly traded companies"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Private equity funds invest:",
+      "media": {}
+    },
+    {
+      "id": 7,
+      "page_number": 1,
+      "text": "<div class=\"diagram-container\" style=\"margin:15px 0;text-align:left;\"><img src=\"/static/extracted_media/page_1_img_1.png\" style=\"max-width:100%;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.18);\" alt=\"Diagram\" loading=\"lazy\"></div>\nUsing the Gordon growth model, the stock's intrinsic value is closest to:",
+      "original_stem": "Using the Gordon growth model, the stock's intrinsic value is closest to:",
+      "choices": {
+        "A": "$24.96",
+        "B": "$42.55",
+        "C": "$44.79"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Using the Gordon growth model, the stock's intrinsic value is closest to:",
+      "media": {}
+    },
+    {
+      "id": 8,
+      "page_number": 1,
+      "text": "A security's market value and intrinsic value are most likely the same if:",
+      "original_stem": "A security's market value and intrinsic value are most likely the same if:",
+      "choices": {
+        "A": "the market is efficient",
+        "B": "active investment is profitable",
+        "C": "the security's cash flows are complex"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "A security's market value and intrinsic value are most likely the same if:",
+      "media": {}
+    },
+    {
+      "id": 11,
+      "page_number": 2,
+      "text": "Compared to a European waterfall, an American waterfall is:",
+      "original_stem": "Compared to a European waterfall, an American waterfall is:",
+      "choices": {
+        "A": "less advantageous to the general partner",
+        "B": "equally advantageous to the general partner",
+        "C": "more advantageous to the general partner"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "Compared to a European waterfall, an American waterfall is:",
+      "media": {}
+    },
+    {
+      "id": 1,
+      "page_number": 0,
+      "text": "To Discover more\nUnits and Measurements\n(Dimensions of Physical Quantities)\n\nThe quantities which have the same dimensions as those of \nsolid angle are:",
+      "original_stem": "The quantities which have the same dimensions as those of \nsolid angle are:",
+      "choices": {
+        "A": "strain and arc",
+        "B": "angular speed and stress",
+        "C": "strain and angle",
+        "D": "stress and angle"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "To Discover more\nUnits and Measurements\n(Dimensions of Physical Quantities)\n\nThe quantities which have the same dimensions as those of \nsolid angle are:",
+      "media": {}
+    },
+    {
+      "id": 2,
+      "page_number": 0,
+      "text": "(Measuring Instruments)\n\nIn a vernier calipers, (N + 1) divisions of vernier scale \ncoincide with N divisions of main scale. If 1 MSD represents \n0.1 mm, the vernier constant (in cm) is:",
+      "original_stem": "In a vernier calipers, (N + 1) divisions of vernier scale \ncoincide with N divisions of main scale. If 1 MSD represents \n0.1 mm, the vernier constant (in cm) is:",
+      "choices": {
+        "A": "100 N",
+        "B": "10(N+ 1)",
+        "C": "1",
+        "D": "1"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "(Measuring Instruments)\n\nIn a vernier calipers, (N + 1) divisions of vernier scale \ncoincide with N divisions of main scale. If 1 MSD represents \n0.1 mm, the vernier constant (in cm) is:",
+      "media": {}
+    },
+    {
+      "id": 3,
+      "page_number": 0,
+      "text": "100(\n1)\n+\nN\nLaws of Motion\n(Motion of Connected Bodies)\n\nA horizontal force 10 N is applied to a block A as shown \nin figure. The mass of blocks A and B are 2 kg and 3 kg, \nrespectively. The blocks slide over a frictionless surface. The \nforce exerted by block A on block B is:\nF = 10 N\nA \n2kg\nB \n3kg",
+      "original_stem": "A horizontal force 10 N is applied to a block A as shown \nin figure. The mass of blocks A and B are 2 kg and 3 kg, \nrespectively. The blocks slide over a frictionless surface. The \nforce exerted by block A on block B is:\nF = 10 N\nA \n2kg\nB \n3kg",
+      "choices": {
+        "A": "6 N",
+        "B": "10 N",
+        "C": "Zero",
+        "D": "4 N"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "100(\n1)\n+\nN\nLaws of Motion\n(Motion of Connected Bodies)\n\nA horizontal force 10 N is applied to a block A as shown \nin figure. The mass of blocks A and B are 2 kg and 3 kg, \nrespectively. The blocks slide over a frictionless surface. The \nforce exerted by block A on block B is:\nF = 10 N\nA \n2kg\nB \n3kg",
+      "media": {}
+    },
+    {
+      "id": 4,
+      "page_number": 0,
+      "text": "(Circular Motion, Banking of Road)\n\nA particle moving with uniform speed in a circular path \nmaintains",
+      "original_stem": "A particle moving with uniform speed in a circular path \nmaintains",
+      "choices": {
+        "A": "constant velocity by varying acceleration",
+        "B": "varying velocity and varying acceleration",
+        "C": "constant velocity",
+        "D": "constant acceleration"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "(Circular Motion, Banking of Road)\n\nA particle moving with uniform speed in a circular path \nmaintains",
+      "media": {}
+    },
+    {
+      "id": 5,
+      "page_number": 0,
+      "text": "A bob is whirled in a horizontal plane by means of a string \nwith an initial speed of w rpm. The tension in the string is T. \nIf speed becomes 20 w while keeping the same radius, the \ntension in the string becomes:",
+      "original_stem": "A bob is whirled in a horizontal plane by means of a string \nwith an initial speed of w rpm. The tension in the string is T. \nIf speed becomes 20 w while keeping the same radius, the \ntension in the string becomes:",
+      "choices": {
+        "A": "4",
+        "B": "2T",
+        "C": "T",
+        "D": "4T"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "A bob is whirled in a horizontal plane by means of a string \nwith an initial speed of w rpm. The tension in the string is T. \nIf speed becomes 20 w while keeping the same radius, the \ntension in the string becomes:",
+      "media": {}
+    },
+    {
+      "id": 6,
+      "page_number": 0,
+      "text": "Work, Energy and Power\n(Power)\n\nAt any instant of time t, the displacement of any particle is \ngiven by 2t \u2013 1 (SI unit) under the influence of force of 5 N. \nThe value of instantaneous power is (in SI unit):",
+      "original_stem": "At any instant of time t, the displacement of any particle is \ngiven by 2t \u2013 1 (SI unit) under the influence of force of 5 N. \nThe value of instantaneous power is (in SI unit):",
+      "choices": {
+        "A": "7 b",
+        "C": "10 d"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Work, Energy and Power\n(Power)\n\nAt any instant of time t, the displacement of any particle is \ngiven by 2t \u2013 1 (SI unit) under the influence of force of 5 N. \nThe value of instantaneous power is (in SI unit):",
+      "media": {}
+    },
+    {
+      "id": 7,
+      "page_number": 0,
+      "text": "5\n(Collision)\n\nTwo bodies A and B of same mass undergo completely \ninelastic one dimensional collision. The body A moves with \nvelocity v1 while body B is at rest before collision. The \nvelocity of the system after collision is v2. The ratio v1: v2 is:",
+      "original_stem": "Two bodies A and B of same mass undergo completely \ninelastic one dimensional collision. The body A moves with \nvelocity v1 while body B is at rest before collision. The \nvelocity of the system after collision is v2. The ratio v1: v2 is:",
+      "choices": {
+        "A": "4 : 1",
+        "B": "1 : 4",
+        "C": "1 : 2",
+        "D": "2 : 1"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "5\n(Collision)\n\nTwo bodies A and B of same mass undergo completely \ninelastic one dimensional collision. The body A moves with \nvelocity v1 while body B is at rest before collision. The \nvelocity of the system after collision is v2. The ratio v1: v2 is:",
+      "media": {}
+    },
+    {
+      "id": 8,
+      "page_number": 0,
+      "text": "System of Particles and Rotational Motion\n(Moment of Inertia, Theorem of Parallel and \nPerpendicular Axis and Energy in Rotation)\n\nThe moment of inertia of a thin rod about an axis passing \nthrough its mid point and perpendicular to the rod is 2400 g \ncm2. The length of the 400 g rod is nearly:",
+      "original_stem": "The moment of inertia of a thin rod about an axis passing \nthrough its mid point and perpendicular to the rod is 2400 g \ncm2. The length of the 400 g rod is nearly:",
+      "choices": {
+        "A": "20.7 cm",
+        "B": "72.0 cm",
+        "C": "8.5 cm",
+        "D": "17.5 cm"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "System of Particles and Rotational Motion\n(Moment of Inertia, Theorem of Parallel and \nPerpendicular Axis and Energy in Rotation)\n\nThe moment of inertia of a thin rod about an axis passing \nthrough its mid point and perpendicular to the rod is 2400 g \ncm2. The length of the 400 g rod is nearly:",
+      "media": {}
+    },
+    {
+      "id": 9,
+      "page_number": 1,
+      "text": "Section-A\n2024\nY\ne\na\nr\nNEET Solved Paper\n\n2\nChapter & Topicwise NEET PYQ's\n(Rolling Motion)\n\nA wheel of a bullock cart is rolling on a level road as shown in \nthe figure below. If its linear speed is v in the direction shown, \nwhich one of the following options is correct (P and Q are \nany highest and lowest points on the wheel, respectively)?\nP\nQ\nv",
+      "original_stem": "A wheel of a bullock cart is rolling on a level road as shown in \nthe figure below. If its linear speed is v in the direction shown, \nwhich one of the following options is correct (P and Q are \nany highest and lowest points on the wheel, respectively)?\nP\nQ\nv",
+      "choices": {
+        "A": "Both the points P and Q move with equal speed",
+        "B": "Point P has zero speed",
+        "C": "Point P moves slower than point Q",
+        "D": "Point P moves faster than point Q"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Section-A\n2024\nY\ne\na\nr\nNEET Solved Paper\n\n2\nChapter & Topicwise NEET PYQ's\n(Rolling Motion)\n\nA wheel of a bullock cart is rolling on a level road as shown in \nthe figure below. If its linear speed is v in the direction shown, \nwhich one of the following options is correct (P and Q are \nany highest and lowest points on the wheel, respectively)?\nP\nQ\nv",
+      "media": {}
+    },
+    {
+      "id": 10,
+      "page_number": 1,
+      "text": "Gravitation\n(Newton\u2019s Law of Gravitation & Acceleration Due to Gravity)\n\nThe mass of a planet is 1 th\n10\nthat of the earth and its diameter \nis half that of the earth. The acceleration due to gravity on that \nplanet is:",
+      "original_stem": "The mass of a planet is 1 th\n10\nthat of the earth and its diameter \nis half that of the earth. The acceleration due to gravity on that \nplanet is:",
+      "choices": {
+        "A": "4.9 m s\u20132",
+        "B": "3.92 m s\u20132",
+        "C": "19.6 m s\u20132",
+        "D": "9.8 m s\u20132"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Gravitation\n(Newton\u2019s Law of Gravitation & Acceleration Due to Gravity)\n\nThe mass of a planet is 1 th\n10\nthat of the earth and its diameter \nis half that of the earth. The acceleration due to gravity on that \nplanet is:",
+      "media": {}
+    },
+    {
+      "id": 11,
+      "page_number": 1,
+      "text": "Mechanical Properties of Solids\n(Stress, Strain and Young\u2019s Modulus)\n\nThe maximum elongation of a steel wire of 1 m length if the \nelastic limit of steel and its Young\u2019s modulus, respectively, \nare 8 \u00d7 108 N m\u20132 and 2 \u00d7 1011 N m\u2013 2, is:",
+      "original_stem": "The maximum elongation of a steel wire of 1 m length if the \nelastic limit of steel and its Young\u2019s modulus, respectively, \nare 8 \u00d7 108 N m\u20132 and 2 \u00d7 1011 N m\u2013 2, is:",
+      "choices": {
+        "A": "40 mm",
+        "B": "8 mm",
+        "C": "4 mm",
+        "D": "0.4 mm"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Mechanical Properties of Solids\n(Stress, Strain and Young\u2019s Modulus)\n\nThe maximum elongation of a steel wire of 1 m length if the \nelastic limit of steel and its Young\u2019s modulus, respectively, \nare 8 \u00d7 108 N m\u20132 and 2 \u00d7 1011 N m\u2013 2, is:",
+      "media": {}
+    },
+    {
+      "id": 12,
+      "page_number": 1,
+      "text": "Mechanical Properties of Fluid\n(Surface Tension and Surface Energy)\n\nA thin flat circular disc of radius 4.5 cm is placed gently over the \nsurface of water. If surface tension of water is 0.07 Nm\u20131, then \nthe excess force required to take it away from the surface is :",
+      "original_stem": "A thin flat circular disc of radius 4.5 cm is placed gently over the \nsurface of water. If surface tension of water is 0.07 Nm\u20131, then \nthe excess force required to take it away from the surface is :",
+      "choices": {
+        "A": "1.98 mN",
+        "B": "99 N",
+        "C": "19.8 mN",
+        "D": "198 N"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Mechanical Properties of Fluid\n(Surface Tension and Surface Energy)\n\nA thin flat circular disc of radius 4.5 cm is placed gently over the \nsurface of water. If surface tension of water is 0.07 Nm\u20131, then \nthe excess force required to take it away from the surface is :",
+      "media": {}
+    },
+    {
+      "id": 13,
+      "page_number": 1,
+      "text": "Thermodynamics\n(Thermodynamic Processes and First Law of Thermodynamics)\n\nA thermodynamic system is taken through the cycle abcda. \nThe work done by the gas along the path bc is:\nP\nV\n300 kPa\nd\na\nc\nb\n100 kPa\n100 cm3\n400 cm3",
+      "original_stem": "A thermodynamic system is taken through the cycle abcda. \nThe work done by the gas along the path bc is:\nP\nV\n300 kPa\nd\na\nc\nb\n100 kPa\n100 cm3\n400 cm3",
+      "choices": {
+        "A": "\u2013 90J",
+        "B": "\u2013 60J",
+        "C": "Zero",
+        "D": "30J"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Thermodynamics\n(Thermodynamic Processes and First Law of Thermodynamics)\n\nA thermodynamic system is taken through the cycle abcda. \nThe work done by the gas along the path bc is:\nP\nV\n300 kPa\nd\na\nc\nb\n100 kPa\n100 cm3\n400 cm3",
+      "media": {}
+    },
+    {
+      "id": 14,
+      "page_number": 1,
+      "text": "Oscillations\n(Time Period and Frequency)\n\nIf x = 5 sin\n3\nt\n\u03c0\n\uf8eb\n\uf8f6\n\u03c0 +\n\uf8ec\n\uf8f7\n\uf8ed\n<div class=\"table-responsive\" style=\"overflow-x:auto;margin:15px 0;\"><table border=\"1\" style=\"border-collapse:collapse;width:100%;max-width:600px;font-size:14px;background:rgba(255,255,255,0.05);\"><tr><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">\uf8f8</th><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">m represents the motion on a particle</th></tr></table></div>\nexecuting simple harmonic motion, the amplitude and time \nperiod of motion, respectively, are:",
+      "original_stem": "If x = 5 sin\n3\nt\n\u03c0\n\uf8eb\n\uf8f6\n\u03c0 +\n\uf8ec\n\uf8f7\n\uf8ed\n<div class=\"table-responsive\" style=\"overflow-x:auto;margin:15px 0;\"><table border=\"1\" style=\"border-collapse:collapse;width:100%;max-width:600px;font-size:14px;background:rgba(255,255,255,0.05);\"><tr><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">\uf8f8</th><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">m represents the motion on a particle</th></tr></table></div>\nexecuting simple harmonic motion, the amplitude and time \nperiod of motion, respectively, are:",
+      "choices": {
+        "A": "5 cm, 1 s",
+        "B": "5 m, 1 s",
+        "C": "5 cm, 2 s",
+        "D": "5 m, 2 s"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Oscillations\n(Time Period and Frequency)\n\nIf x = 5 sin\n3\nt\n\u03c0\n\uf8eb\n\uf8f6\n\u03c0 +\n\uf8ec\n\uf8f7\n\uf8ed\n\uf8f8m represents the motion on a particle\nexecuting simple harmonic motion, the amplitude and time \nperiod of motion, respectively, are:",
+      "media": {}
+    },
+    {
+      "id": 15,
+      "page_number": 1,
+      "text": "Electrostatic Potential and Capacitance\n(Electric Potential)\n\nGiven below are two statements: one is labelled as Assertion \nA and the other is labelled as Reason R.\n \n Assertion A: The potential (V) at any axial point, at 2 m distance \n(r) from the centre of the dipole of dipole moment vector P\n\u001f\n of \nmagnitude, 4 \u00d7 10\u20136C m, is \u00b1 9 \u00d7 103 V.\n9\n0\n1\nTake\n9 10 SI Units\n4\n\uf8eb\n\uf8f6\n=\n\u00d7\n\uf8ec\n\uf8f7\n\u03c0\u2208\n\uf8ed\n\uf8f8\n \nReason R: \n2\n0\n2\n,\n4\nP\nV\nr\n= \u00b1 \u03c0\u2208\n where r is the distance of any \naxial point, situated at 2 m from the centre of the dipole. \nIn the light of the above statements, choose the correct answer \nfrom the options given below:",
+      "original_stem": "Given below are two statements: one is labelled as Assertion \nA and the other is labelled as Reason R.\n \n Assertion A: The potential (V) at any axial point, at 2 m distance \n(r) from the centre of the dipole of dipole moment vector P\n\u001f\n of \nmagnitude, 4 \u00d7 10\u20136C m, is \u00b1 9 \u00d7 103 V.\n9\n0\n1\nTake\n9 10 SI Units\n4\n\uf8eb\n\uf8f6\n=\n\u00d7\n\uf8ec\n\uf8f7\n\u03c0\u2208\n\uf8ed\n\uf8f8\n \nReason R: \n2\n0\n2\n,\n4\nP\nV\nr\n= \u00b1 \u03c0\u2208\n where r is the distance of any \naxial point, situated at 2 m from the centre of the dipole. \nIn the light of the above statements, choose the correct answer \nfrom the options given below:",
+      "choices": {
+        "A": "d.  Both A and R are true and R is NOT the correct explanation",
+        "B": "A is false but R is true",
+        "C": "Both A and R are true and R is the correct explanation of"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "of \nA.\nd.  Both A and R are true and R is NOT the correct explanation \nof A.\n(Potential Difference and Work Done)",
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Electrostatic Potential and Capacitance\n(Electric Potential)\n\nGiven below are two statements: one is labelled as Assertion \nA and the other is labelled as Reason R.\n \n Assertion A: The potential (V) at any axial point, at 2 m distance \n(r) from the centre of the dipole of dipole moment vector P\n\u001f\n of \nmagnitude, 4 \u00d7 10\u20136C m, is \u00b1 9 \u00d7 103 V.\n9\n0\n1\nTake\n9 10 SI Units\n4\n\uf8eb\n\uf8f6\n=\n\u00d7\n\uf8ec\n\uf8f7\n\u03c0\u2208\n\uf8ed\n\uf8f8\n \nReason R: \n2\n0\n2\n,\n4\nP\nV\nr\n= \u00b1 \u03c0\u2208\n where r is the distance of any \naxial point, situated at 2 m from the centre of the dipole. \nIn the light of the above statements, choose the correct answer \nfrom the options given below:",
+      "media": {}
+    },
+    {
+      "id": 16,
+      "page_number": 1,
+      "text": "of A.\n(Potential Difference and Work Done)\n\nA thin spherical shell is charged by some source. The potential \ndifference between the two points C and P (in V) shown in the \ngiven is: \n9\n0\n1\nTake\n9 10 SI units\n4\n\uf8eb\n\uf8f6\n=\n\u00d7\n\uf8ec\n\uf8f7\n\u03c0\u2208\n\uf8ed\n\uf8f8\nP\nR = 3 cm\nq = 1 mC\nC",
+      "original_stem": "A thin spherical shell is charged by some source. The potential \ndifference between the two points C and P (in V) shown in the \ngiven is: \n9\n0\n1\nTake\n9 10 SI units\n4\n\uf8eb\n\uf8f6\n=\n\u00d7\n\uf8ec\n\uf8f7\n\u03c0\u2208\n\uf8ed\n\uf8f8\nP\nR = 3 cm\nq = 1 mC\nC",
+      "choices": {
+        "A": "0.5 \u00d7 105",
+        "B": "zero",
+        "C": "3 \u00d7 105",
+        "D": "4 \u00d7 105"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "of A.\n(Potential Difference and Work Done)\n\nA thin spherical shell is charged by some source. The potential \ndifference between the two points C and P (in V) shown in the \ngiven is: \n9\n0\n1\nTake\n9 10 SI units\n4\n\uf8eb\n\uf8f6\n=\n\u00d7\n\uf8ec\n\uf8f7\n\u03c0\u2208\n\uf8ed\n\uf8f8\nP\nR = 3 cm\nq = 1 mC\nC",
+      "media": {}
+    },
+    {
+      "id": 17,
+      "page_number": 2,
+      "text": "To Discover more\nNEET 2024 Solved Paper\n3\n(Grouping of Capacitors)\n\nIn the following circuit, the equivalent capacitance between \nterminal A and terminal B is:\n2 mF\nA\nB\n2 mF\n2 mF\n2 mF\n2 mF",
+      "original_stem": "In the following circuit, the equivalent capacitance between \nterminal A and terminal B is:\n2 mF\nA\nB\n2 mF\n2 mF\n2 mF\n2 mF",
+      "choices": {
+        "A": "0.5 mF",
+        "B": "4 mF",
+        "C": "2 mF",
+        "D": "1 mF"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "To Discover more\nNEET 2024 Solved Paper\n3\n(Grouping of Capacitors)\n\nIn the following circuit, the equivalent capacitance between \nterminal A and terminal B is:\n2 mF\nA\nB\n2 mF\n2 mF\n2 mF\n2 mF",
+      "media": {}
+    },
+    {
+      "id": 18,
+      "page_number": 2,
+      "text": "Current Electricity\n(Combination of Resistance)\n\nA wire of length \u2018l\u2019 and resistance 100W is divided into \n10 equal parts. The first 5 parts are connected in series \nwhile the next 5 parts are connected in parallel. The two \ncombinations are again connected in series. The resistance of \nthis final combination is:",
+      "original_stem": "A wire of length \u2018l\u2019 and resistance 100W is divided into \n10 equal parts. The first 5 parts are connected in series \nwhile the next 5 parts are connected in parallel. The two \ncombinations are again connected in series. The resistance of \nthis final combination is:",
+      "choices": {
+        "A": "55 W",
+        "B": "60 W",
+        "C": "26 W",
+        "D": "52 W"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Current Electricity\n(Combination of Resistance)\n\nA wire of length \u2018l\u2019 and resistance 100W is divided into \n10 equal parts. The first 5 parts are connected in series \nwhile the next 5 parts are connected in parallel. The two \ncombinations are again connected in series. The resistance of \nthis final combination is:",
+      "media": {}
+    },
+    {
+      "id": 19,
+      "page_number": 2,
+      "text": "(Internal Resistance of a Cell and Grouping)\n\nThe terminal voltage of the battery, whose emf is 10V and \ninternal resistance 1W, when connected through an external \nresistance of 4W as shown in the figure is :\n10V\n1 W\n4 W",
+      "original_stem": "The terminal voltage of the battery, whose emf is 10V and \ninternal resistance 1W, when connected through an external \nresistance of 4W as shown in the figure is :\n10V\n1 W\n4 W",
+      "choices": {
+        "A": "8 V",
+        "B": "10 V",
+        "C": "4 V",
+        "D": "6 V"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "(Internal Resistance of a Cell and Grouping)\n\nThe terminal voltage of the battery, whose emf is 10V and \ninternal resistance 1W, when connected through an external \nresistance of 4W as shown in the figure is :\n10V\n1 W\n4 W",
+      "media": {}
+    },
+    {
+      "id": 20,
+      "page_number": 2,
+      "text": "Moving Charges and Magnetism\n(Magnetic Field in Circular Coil)\n\nA tightly wound 100 turns coil of radius 10 cm carries a \ncurrent of 7 A. The magnitude of the magnetic field at the \ncentre of the coil is (Take permeability of free space as 4p \u00d7 \n10\u20137 Sl units):",
+      "original_stem": "A tightly wound 100 turns coil of radius 10 cm carries a \ncurrent of 7 A. The magnitude of the magnetic field at the \ncentre of the coil is (Take permeability of free space as 4p \u00d7 \n10\u20137 Sl units):",
+      "choices": {
+        "A": "4.4 mT",
+        "B": "44 T",
+        "C": "44 mT",
+        "D": "4.4 T"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Moving Charges and Magnetism\n(Magnetic Field in Circular Coil)\n\nA tightly wound 100 turns coil of radius 10 cm carries a \ncurrent of 7 A. The magnitude of the magnetic field at the \ncentre of the coil is (Take permeability of free space as 4p \u00d7 \n10\u20137 Sl units):",
+      "media": {}
+    },
+    {
+      "id": 21,
+      "page_number": 2,
+      "text": "Magnetism and Matter\n(Magnetic Properties of Materials)\n\nMatch List-I with List-II.\nList-I (Material)\nList-II (Susceptibility (c))",
+      "original_stem": "Match List-I with List-II.\nList-I (Material)\nList-II (Susceptibility (c))",
+      "choices": {
+        "A": "A-III, B-II, C-I, D-IV",
+        "B": "A-IV, B-III, C-II, D-I",
+        "C": "A-II, B-III C-IV, D-I",
+        "D": "A-II, B-I, C-III, D-IV"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Magnetism and Matter\n(Magnetic Properties of Materials)\n\nMatch List-I with List-II.\nList-I (Material)\nList-II (Susceptibility (c))",
+      "media": {}
+    },
+    {
+      "id": 22,
+      "page_number": 2,
+      "text": "Electromagnetic Induction\n(Lenz\u2019s Law)\n\nA\nC\nD\nB\nSolenoid-1\nSolenoid-2\nN\nS\nv\n \n In the above diagram, a strong bar magnet is moving towards \nsolenoid-2 from solenoid-1. The direction of induced current \nin solenoid-1 and that in solenoid-2, respectively, are through \nthe directions:",
+      "original_stem": "A\nC\nD\nB\nSolenoid-1\nSolenoid-2\nN\nS\nv\n \n In the above diagram, a strong bar magnet is moving towards \nsolenoid-2 from solenoid-1. The direction of induced current \nin solenoid-1 and that in solenoid-2, respectively, are through \nthe directions:",
+      "choices": {
+        "A": "AB and CD",
+        "B": "BA and DC",
+        "C": "AB and DC",
+        "D": "BA and CD"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Electromagnetic Induction\n(Lenz\u2019s Law)\n\nA\nC\nD\nB\nSolenoid-1\nSolenoid-2\nN\nS\nv\n \n In the above diagram, a strong bar magnet is moving towards \nsolenoid-2 from solenoid-1. The direction of induced current \nin solenoid-1 and that in solenoid-2, respectively, are through \nthe directions:",
+      "media": {}
+    },
+    {
+      "id": 23,
+      "page_number": 2,
+      "text": "(Dipole)\n\nIn a uniform magnetic field of 0.049 T, a magnetic needle \nperforms 20 complete oscillations in 5 seconds as shown. \nThe moment of inertia of the needle is 9.8 \u00d7 10\u20136 kg m2. If the \nmagnitude of magnetic moment of the needle is x \u00d7 10\u20135 Am2; \nthen the value of \u2018x\u2019 is:\nN\nB\nS",
+      "original_stem": "In a uniform magnetic field of 0.049 T, a magnetic needle \nperforms 20 complete oscillations in 5 seconds as shown. \nThe moment of inertia of the needle is 9.8 \u00d7 10\u20136 kg m2. If the \nmagnitude of magnetic moment of the needle is x \u00d7 10\u20135 Am2; \nthen the value of \u2018x\u2019 is:\nN\nB\nS",
+      "choices": {
+        "A": "50 p2",
+        "B": "1280 p2",
+        "C": "5 p2",
+        "D": "128 p2"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "(Dipole)\n\nIn a uniform magnetic field of 0.049 T, a magnetic needle \nperforms 20 complete oscillations in 5 seconds as shown. \nThe moment of inertia of the needle is 9.8 \u00d7 10\u20136 kg m2. If the \nmagnitude of magnetic moment of the needle is x \u00d7 10\u20135 Am2; \nthen the value of \u2018x\u2019 is:\nN\nB\nS",
+      "media": {}
+    },
+    {
+      "id": 24,
+      "page_number": 2,
+      "text": "Alternative Current\n(Transformer)\n\nIn an ideal transformer, the turns ratio is \n1\n2\n=\nP\ns\nN\nN\n The ratio \nVs : Vp is equal to (the symbols carry their usual meaning):",
+      "original_stem": "In an ideal transformer, the turns ratio is \n1\n2\n=\nP\ns\nN\nN\n The ratio \nVs : Vp is equal to (the symbols carry their usual meaning):",
+      "choices": {
+        "A": "1:1",
+        "B": "1:4",
+        "C": "1:2",
+        "D": "2:1"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Alternative Current\n(Transformer)\n\nIn an ideal transformer, the turns ratio is \n1\n2\n=\nP\ns\nN\nN\n The ratio \nVs : Vp is equal to (the symbols carry their usual meaning):",
+      "media": {}
+    },
+    {
+      "id": 25,
+      "page_number": 2,
+      "text": "Ray Optics and Optical Instruments\n(Refraction Through Prism and Dispersion Through Prism)\n\nA light ray enters through a right angled prism at point P \nwith the angle of incidence 30\u00b0 as shown in figure. It travels \nthrough the prism parallel to its base BC and emerges along \nthe face AC. The refractive index of the prism is:\n\n4\nChapter & Topicwise NEET PYQ's\nA\nP\n30\u00b0\nB\nC",
+      "original_stem": "A light ray enters through a right angled prism at point P \nwith the angle of incidence 30\u00b0 as shown in figure. It travels \nthrough the prism parallel to its base BC and emerges along \nthe face AC. The refractive index of the prism is:\n\n4\nChapter & Topicwise NEET PYQ's\nA\nP\n30\u00b0\nB\nC",
+      "choices": {
+        "A": "3",
+        "B": "3",
+        "C": "5",
+        "D": "5"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Ray Optics and Optical Instruments\n(Refraction Through Prism and Dispersion Through Prism)\n\nA light ray enters through a right angled prism at point P \nwith the angle of incidence 30\u00b0 as shown in figure. It travels \nthrough the prism parallel to its base BC and emerges along \nthe face AC. The refractive index of the prism is:\n\n4\nChapter & Topicwise NEET PYQ's\nA\nP\n30\u00b0\nB\nC",
+      "media": {}
+    },
+    {
+      "id": 26,
+      "page_number": 3,
+      "text": "2\nWave Optics\n(Interference and Young\u2019s Double Slit Experiment)\n\nIf the monochromatic source in Young's double slit \nexperiment is replaced by white light, then",
+      "original_stem": "If the monochromatic source in Young's double slit \nexperiment is replaced by white light, then",
+      "choices": {
+        "A": "there will be a central bright white fringe surrounded by a",
+        "B": "all bright fringes will be of equal width",
+        "C": "interference pattern will disappear",
+        "D": "there will be a central dark fringe surrounded by a few"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "2\nWave Optics\n(Interference and Young\u2019s Double Slit Experiment)\n\nIf the monochromatic source in Young's double slit \nexperiment is replaced by white light, then",
+      "media": {}
+    },
+    {
+      "id": 27,
+      "page_number": 3,
+      "text": "coloured fringes.\n(Polarization Phenomenon, Law of Malus and Brewster\u2019s Law)\n\nAn unpolarised light beam strikes a glass surface at Brewster's \nangle. Then",
+      "original_stem": "An unpolarised light beam strikes a glass surface at Brewster's \nangle. Then",
+      "choices": {
+        "A": "both the reflected and refracted light will be completely",
+        "B": "the reflected light will be completely polarised but the",
+        "C": "the reflected light will be partially polarised",
+        "D": "the refracted light will be completely polarised"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "coloured fringes.\n(Polarization Phenomenon, Law of Malus and Brewster\u2019s Law)\n\nAn unpolarised light beam strikes a glass surface at Brewster's \nangle. Then",
+      "media": {}
+    },
+    {
+      "id": 28,
+      "page_number": 3,
+      "text": "Dual Nature of Radiation and Matter\n(Wave Nature of Matter [De-Broglie Wavelength])\n\nThe graph which shows the variation of \n2\n1\n\uf8eb\n\uf8f6\n\uf8ec\n\uf8f7\n\uf8ed\n\uf8f8\n\u03bb\n and its kinetic \nenergy, E is (where l is de Broglie wavelength of a free \nparticle):",
+      "original_stem": "The graph which shows the variation of \n2\n1\n\uf8eb\n\uf8f6\n\uf8ec\n\uf8f7\n\uf8ed\n\uf8f8\n\u03bb\n and its kinetic \nenergy, E is (where l is de Broglie wavelength of a free \nparticle):",
+      "choices": {
+        "A": "O",
+        "B": "O",
+        "C": "O",
+        "D": "O"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Dual Nature of Radiation and Matter\n(Wave Nature of Matter [De-Broglie Wavelength])\n\nThe graph which shows the variation of \n2\n1\n\uf8eb\n\uf8f6\n\uf8ec\n\uf8f7\n\uf8ed\n\uf8f8\n\u03bb\n and its kinetic \nenergy, E is (where l is de Broglie wavelength of a free \nparticle):",
+      "media": {}
+    },
+    {
+      "id": 29,
+      "page_number": 3,
+      "text": "E\n1\nl2\nParameters of Photon (Momentum, Pressure and Energy)\n\nIf c is the velocity of light in free space, the correct statements \nabout photon among the following are :",
+      "original_stem": "If c is the velocity of light in free space, the correct statements \nabout photon among the following are :",
+      "choices": {
+        "A": "A, C and D only",
+        "B": "A, B, D and E only",
+        "C": "A and B only",
+        "D": "A,  B, C and D only",
+        "E": "Photon possesses positive charge"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "E\n1\nl2\nParameters of Photon (Momentum, Pressure and Energy)\n\nIf c is the velocity of light in free space, the correct statements \nabout photon among the following are :",
+      "media": {}
+    },
+    {
+      "id": 30,
+      "page_number": 3,
+      "text": "Atoms\n(Alpha-Particle Scattering and Rutherford\u2019s Nuclear Model of \nAtom [Distance of Closest Approach and Impact Parameter, \nElectron Orbits])\n\nGiven below are two statements:\n Statement I: Atoms are electrically neutral as they contain \nequal number of positive and negative charges.\nStatement II: Atoms of each element are stable and emit \ntheir characteristic spectrum.\nIn the light of the above statements, choose the most \nappropriate answer from the options given below:",
+      "original_stem": "Given below are two statements:\n Statement I: Atoms are electrically neutral as they contain \nequal number of positive and negative charges.\nStatement II: Atoms of each element are stable and emit \ntheir characteristic spectrum.\nIn the light of the above statements, choose the most \nappropriate answer from the options given below:",
+      "choices": {
+        "A": "Statement I is correct but Statement II is incorrect",
+        "B": "Statement I is incorrect but Statement II is correct",
+        "C": "Both Statement I and Statement II are correct",
+        "D": "Both Statement I and Statement II are incorrect"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Atoms\n(Alpha-Particle Scattering and Rutherford\u2019s Nuclear Model of \nAtom [Distance of Closest Approach and Impact Parameter, \nElectron Orbits])\n\nGiven below are two statements:\n Statement I: Atoms are electrically neutral as they contain \nequal number of positive and negative charges.\nStatement II: Atoms of each element are stable and emit \ntheir characteristic spectrum.\nIn the light of the above statements, choose the most \nappropriate answer from the options given below:",
+      "media": {}
+    },
+    {
+      "id": 31,
+      "page_number": 3,
+      "text": "(Bohr H-atom Model, Radius of Orbit, Velocity and Energy of \nElectrons, Wavelengths of Hydrogen Spectrum and Ionisation)\n\nMatch List I with List II.\nList I\n(Spectral Lines of Hydrogen \nfor transitions from)\nList II\n(Wavelengths (nm))",
+      "original_stem": "Match List I with List II.\nList I\n(Spectral Lines of Hydrogen \nfor transitions from)\nList II\n(Wavelengths (nm))",
+      "choices": {
+        "A": "288, 82",
+        "B": "286, 81",
+        "C": "280, 81",
+        "D": "286, 80"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "(Bohr H-atom Model, Radius of Orbit, Velocity and Energy of \nElectrons, Wavelengths of Hydrogen Spectrum and Ionisation)\n\nMatch List I with List II.\nList I\n(Spectral Lines of Hydrogen \nfor transitions from)\nList II\n(Wavelengths (nm))",
+      "media": {}
+    },
+    {
+      "id": 32,
+      "page_number": 4,
+      "text": "Semiconductor Electronics\n(Optoelectronic Devices)\n\nConsider the following statement A and B and identify the \ncorrect answer:\n(III)\n(II)\n(IV)\nV\n(I)\nI",
+      "original_stem": "Consider the following statement A and B and identify the \ncorrect answer:\n(III)\n(II)\n(IV)\nV\n(I)\nI",
+      "choices": {
+        "A": "Both A and B are correct",
+        "B": "Both A and B are incorrect",
+        "C": "A is correct but B is incorrect",
+        "D": "A is incorrect but B is correct"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Semiconductor Electronics\n(Optoelectronic Devices)\n\nConsider the following statement A and B and identify the \ncorrect answer:\n(III)\n(II)\n(IV)\nV\n(I)\nI",
+      "media": {}
+    },
+    {
+      "id": 33,
+      "page_number": 4,
+      "text": "(Logic gate)\n\nA logic circuit provides the output Y as per the following truth \ntable:\nA\nB\nY\n0\n0\n1\n0\n1\n0\n1\n0\n1\n1\n1\n0\nThe expression for the output Y is:",
+      "original_stem": "A logic circuit provides the output Y as per the following truth \ntable:\nA\nB\nY\n0\n0\n1\n0\n1\n0\n1\n0\n1\n1\n1\n0\nThe expression for the output Y is:",
+      "choices": {
+        "A": "B",
+        "B": "B",
+        "C": "",
+        "D": ""
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "(Logic gate)\n\nA logic circuit provides the output Y as per the following truth \ntable:\nA\nB\nY\n0\n0\n1\n0\n1\n0\n1\n0\n1\n1\n1\n0\nThe expression for the output Y is:",
+      "media": {}
+    },
+    {
+      "id": 34,
+      "page_number": 4,
+      "text": "+\nA B\nA\n\nThe output (Y) of the given logic gate is similar to the output \nof an/a: \nY\nA\nB",
+      "original_stem": "The output (Y) of the given logic gate is similar to the output \nof an/a: \nY\nA\nB",
+      "choices": {
+        "A": "OR gate",
+        "B": "AND gate",
+        "C": "NAND gate",
+        "D": "NOR gate"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "+\nA B\nA\n\nThe output (Y) of the given logic gate is similar to the output \nof an/a: \nY\nA\nB",
+      "media": {}
+    },
+    {
+      "id": 35,
+      "page_number": 4,
+      "text": "Units and Measurements\n(Dimensions of Physical Quantities)\n\nA force defined by F = at2 + bt acts on a particle at given time t. \nThe factor which is dimensionless, if a and b are constants, is:",
+      "original_stem": "A force defined by F = at2 + bt acts on a particle at given time t. \nThe factor which is dimensionless, if a and b are constants, is:",
+      "choices": {
+        "A": "abt",
+        "B": "ab/t",
+        "C": "bt/a",
+        "D": "at/b"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Units and Measurements\n(Dimensions of Physical Quantities)\n\nA force defined by F = at2 + bt acts on a particle at given time t. \nThe factor which is dimensionless, if a and b are constants, is:",
+      "media": {}
+    },
+    {
+      "id": 36,
+      "page_number": 4,
+      "text": "Motion in a Straight Line\n(Graphs)\n\nThe velocity (v) \u2013 time (t) plot of the motion of a body is \nshown below:\nt(s)\n0\nv(ms\u20131)\n \n The acceleration (a) \u2013 time (t) graph that best suits this motion is:",
+      "original_stem": "The velocity (v) \u2013 time (t) plot of the motion of a body is \nshown below:\nt(s)\n0\nv(ms\u20131)\n \n The acceleration (a) \u2013 time (t) graph that best suits this motion is:",
+      "choices": {
+        "A": "a(ms\u20132)",
+        "B": "a(ms\u20132)",
+        "C": "a(ms\u20132)",
+        "D": "a(ms\u20132)"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Motion in a Straight Line\n(Graphs)\n\nThe velocity (v) \u2013 time (t) plot of the motion of a body is \nshown below:\nt(s)\n0\nv(ms\u20131)\n \n The acceleration (a) \u2013 time (t) graph that best suits this motion is:",
+      "media": {}
+    },
+    {
+      "id": 37,
+      "page_number": 4,
+      "text": "t(s)\n0\nGravitation\n(Satellite, Orbital Velocity and Escape Velocity)\n\nThe minimum energy required to launch a satellite of mass m \nfrom the surface of earth of mass M and radius R in a circular \norbit at an altitude of 2R from the surface of the earth is:",
+      "original_stem": "The minimum energy required to launch a satellite of mass m \nfrom the surface of earth of mass M and radius R in a circular \norbit at an altitude of 2R from the surface of the earth is:",
+      "choices": {
+        "A": "GmM",
+        "B": "GmM",
+        "C": "5GmM",
+        "D": "2GmM"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "t(s)\n0\nGravitation\n(Satellite, Orbital Velocity and Escape Velocity)\n\nThe minimum energy required to launch a satellite of mass m \nfrom the surface of earth of mass M and radius R in a circular \norbit at an altitude of 2R from the surface of the earth is:",
+      "media": {}
+    },
+    {
+      "id": 38,
+      "page_number": 5,
+      "text": "3R\nSECTION-B\n\n6\nChapter & Topicwise NEET PYQ's\nThermal Properties of Matter\n(Thermal Expansion)\n\nA metallic bar of Young\u2019s modulus, 0.5 \u00d7 1011 Nm\u20132 and \ncoefficient of linear thermal 10\u20135\u00b0C\u20131 length 1m and area of cross-\nsection 10\u20133 m2 is heated from 0\u00b0C to 100\u00b0C without expansion \nor bending. The compressive force developed in it is:",
+      "original_stem": "A metallic bar of Young\u2019s modulus, 0.5 \u00d7 1011 Nm\u20132 and \ncoefficient of linear thermal 10\u20135\u00b0C\u20131 length 1m and area of cross-\nsection 10\u20133 m2 is heated from 0\u00b0C to 100\u00b0C without expansion \nor bending. The compressive force developed in it is:",
+      "choices": {
+        "A": "100 \u00d7 103N",
+        "B": "2\u00d7103N",
+        "C": "5 \u00d7 103N",
+        "D": "50 \u00d7 103N"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "3R\nSECTION-B\n\n6\nChapter & Topicwise NEET PYQ's\nThermal Properties of Matter\n(Thermal Expansion)\n\nA metallic bar of Young\u2019s modulus, 0.5 \u00d7 1011 Nm\u20132 and \ncoefficient of linear thermal 10\u20135\u00b0C\u20131 length 1m and area of cross-\nsection 10\u20133 m2 is heated from 0\u00b0C to 100\u00b0C without expansion \nor bending. The compressive force developed in it is:",
+      "media": {}
+    },
+    {
+      "id": 39,
+      "page_number": 5,
+      "text": "Kinetic Theory\n(Ideal Gas Equations and Vander Waals Relation)\n\nThe following graph represents the T-V curves of an ideal \ngas (where T is the temperature and F the volume) at three \npressures P1, P2 and P3 compared with those of Charles s law \nrepresented as dotted lines.\nP1\n0\nV\nT\nP2\nP3",
+      "original_stem": "The following graph represents the T-V curves of an ideal \ngas (where T is the temperature and F the volume) at three \npressures P1, P2 and P3 compared with those of Charles s law \nrepresented as dotted lines.\nP1\n0\nV\nT\nP2\nP3",
+      "choices": {
+        "A": "P2 > P1 > P3",
+        "B": "P1 > P2 > P3",
+        "C": "P3 > P2 > P1",
+        "D": "P1 > P3 > P2"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Kinetic Theory\n(Ideal Gas Equations and Vander Waals Relation)\n\nThe following graph represents the T-V curves of an ideal \ngas (where T is the temperature and F the volume) at three \npressures P1, P2 and P3 compared with those of Charles s law \nrepresented as dotted lines.\nP1\n0\nV\nT\nP2\nP3",
+      "media": {}
+    },
+    {
+      "id": 40,
+      "page_number": 5,
+      "text": "Oscillations\n(Simple Pendulum and Loaded Springs)\n\nIf the mass of the bob in a simple pendulum is increased to \nthrice its original mass and its length is made half its original \nlength, then the new time period of oscillation is x\n<div class=\"table-responsive\" style=\"overflow-x:auto;margin:15px 0;\"><table border=\"1\" style=\"border-collapse:collapse;width:100%;max-width:600px;font-size:14px;background:rgba(255,255,255,0.05);\"><tr><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">2</th><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">time its</th></tr></table></div>\noriginal time period. Then the value of x is:",
+      "original_stem": "If the mass of the bob in a simple pendulum is increased to \nthrice its original mass and its length is made half its original \nlength, then the new time period of oscillation is x\n<div class=\"table-responsive\" style=\"overflow-x:auto;margin:15px 0;\"><table border=\"1\" style=\"border-collapse:collapse;width:100%;max-width:600px;font-size:14px;background:rgba(255,255,255,0.05);\"><tr><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">2</th><th style=\"padding:8px 12px;border:1px solid rgba(128,128,128,0.3); background:rgba(128,128,128,0.12);\">time its</th></tr></table></div>\noriginal time period. Then the value of x is:",
+      "choices": {
+        "A": "2 3",
+        "B": "4",
+        "C": "3",
+        "D": "2"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Oscillations\n(Simple Pendulum and Loaded Springs)\n\nIf the mass of the bob in a simple pendulum is increased to \nthrice its original mass and its length is made half its original \nlength, then the new time period of oscillation is x\n2time its\noriginal time period. Then the value of x is:",
+      "media": {}
+    },
+    {
+      "id": 41,
+      "page_number": 5,
+      "text": "If the plate of a parallel plate capacitor connected to a battery \nare moved close to each other, then",
+      "original_stem": "If the plate of a parallel plate capacitor connected to a battery \nare moved close to each other, then",
+      "choices": {
+        "A": "B. D and E only",
+        "B": "A, B and C only",
+        "C": "A, B and E only",
+        "D": "A, C and E only",
+        "E": "the product of charge and voltage increases"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "If the plate of a parallel plate capacitor connected to a battery \nare moved close to each other, then",
+      "media": {}
+    },
+    {
+      "id": 42,
+      "page_number": 5,
+      "text": "Current Electricity\n(Wheatstone and Meter Bridge)\n\nChoose the correct circuit which can achieve the bridge \nbalance.",
+      "original_stem": "Choose the correct circuit which can achieve the bridge \nbalance.",
+      "choices": {
+        "A": "10W",
+        "B": "10W",
+        "C": "10W",
+        "D": "10W"
+      },
+      "correct": "C",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Current Electricity\n(Wheatstone and Meter Bridge)\n\nChoose the correct circuit which can achieve the bridge \nbalance.",
+      "media": {}
+    },
+    {
+      "id": 43,
+      "page_number": 5,
+      "text": "10W\n15W\nE\nK\n5W\nD\nG\n(Electrical Power)\n\nTwo heaters A and B have power rating of 1 kW and 2 kW, \nrespectively. Those two are first connected in series and then \nin parallel to a fixed power source. The ratio of power outputs \nfor these two cases is:",
+      "original_stem": "Two heaters A and B have power rating of 1 kW and 2 kW, \nrespectively. Those two are first connected in series and then \nin parallel to a fixed power source. The ratio of power outputs \nfor these two cases is:",
+      "choices": {
+        "A": "1 : 2",
+        "B": "2 : 3",
+        "C": "1 : 1",
+        "D": "2 : 9"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "10W\n15W\nE\nK\n5W\nD\nG\n(Electrical Power)\n\nTwo heaters A and B have power rating of 1 kW and 2 kW, \nrespectively. Those two are first connected in series and then \nin parallel to a fixed power source. The ratio of power outputs \nfor these two cases is:",
+      "media": {}
+    },
+    {
+      "id": 44,
+      "page_number": 5,
+      "text": "Moving Charges and Magnetism\n(Magnetic Moment)\n\nAn iron bar of length L has magnetic moment M. It is bent \nat the middle of its length such that the two arms make an \nangle 60\u00b0 with each other. The magnetic moment of this new \nmagnet is:",
+      "original_stem": "An iron bar of length L has magnetic moment M. It is bent \nat the middle of its length such that the two arms make an \nangle 60\u00b0 with each other. The magnetic moment of this new \nmagnet is:",
+      "choices": {
+        "A": "2 M",
+        "B": "M",
+        "C": "M",
+        "D": "M"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Moving Charges and Magnetism\n(Magnetic Moment)\n\nAn iron bar of length L has magnetic moment M. It is bent \nat the middle of its length such that the two arms make an \nangle 60\u00b0 with each other. The magnetic moment of this new \nmagnet is:",
+      "media": {}
+    },
+    {
+      "id": 45,
+      "page_number": 5,
+      "text": "2\nMagnetism and Matter\n(Magnetic Dipole Moment, and Force Between \nMagnetic Poles 60)\n\nA sheet is place on a horizontal surface in front of a strong \nmagnetic pole. A force is needed to:",
+      "original_stem": "A sheet is place on a horizontal surface in front of a strong \nmagnetic pole. A force is needed to:",
+      "choices": {
+        "A": "A, C and D only",
+        "B": "C only",
+        "C": "B and D only",
+        "D": "A and C only"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "2\nMagnetism and Matter\n(Magnetic Dipole Moment, and Force Between \nMagnetic Poles 60)\n\nA sheet is place on a horizontal surface in front of a strong \nmagnetic pole. A force is needed to:",
+      "media": {}
+    },
+    {
+      "id": 46,
+      "page_number": 6,
+      "text": "To Discover more\nNEET 2024 Solved Paper\n7\nAlternating Current\n(A.C. Circuit Containing Capacitance Only)\n\nA10mF capacitor is connected to a 210 V, 50 Hz source as \nshown in figure. The peak current in the circuit is nearly \n(p = 3.14):\nC = 10 mF\n210 V, 50 HZ\n+\n+\n\u2013\n\u2013\n~",
+      "original_stem": "A10mF capacitor is connected to a 210 V, 50 Hz source as \nshown in figure. The peak current in the circuit is nearly \n(p = 3.14):\nC = 10 mF\n210 V, 50 HZ\n+\n+\n\u2013\n\u2013\n~",
+      "choices": {
+        "A": "1.20 A",
+        "B": "0.35 A",
+        "C": "0.58 A",
+        "D": "0.93 A"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "To Discover more\nNEET 2024 Solved Paper\n7\nAlternating Current\n(A.C. Circuit Containing Capacitance Only)\n\nA10mF capacitor is connected to a 210 V, 50 Hz source as \nshown in figure. The peak current in the circuit is nearly \n(p = 3.14):\nC = 10 mF\n210 V, 50 HZ\n+\n+\n\u2013\n\u2013\n~",
+      "media": {}
+    },
+    {
+      "id": 47,
+      "page_number": 6,
+      "text": "Electromagnetic Waves\n(Properties and Applications [i.e. Velocity, Amplitude, Energy \nDensity] of Electromagnetic Waves)\n\nThe property which is not of an electromagnetic wave \ntravelling in free space is that:",
+      "original_stem": "The property which is not of an electromagnetic wave \ntravelling in free space is that:",
+      "choices": {
+        "A": "they travel  with speed equal to",
+        "B": "they originate from charges moving with uniform speed",
+        "C": "they are transverse in nature",
+        "D": "the energy density in electric field is equal to energy"
+      },
+      "correct": "B",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "Electromagnetic Waves\n(Properties and Applications [i.e. Velocity, Amplitude, Energy \nDensity] of Electromagnetic Waves)\n\nThe property which is not of an electromagnetic wave \ntravelling in free space is that:",
+      "media": {}
+    },
+    {
+      "id": 48,
+      "page_number": 6,
+      "text": "density in magnetic field.\n(Displacement Current)\n\nA parallel plate capacitor is charged by connecting it to a \nbatter/through a resistor. If I is the current in the circuit, then \nin the gap between the plates:",
+      "original_stem": "A parallel plate capacitor is charged by connecting it to a \nbatter/through a resistor. If I is the current in the circuit, then \nin the gap between the plates:",
+      "choices": {
+        "A": "displacement current of magnitude equal to I flows in a",
+        "B": "displacement current of magnitude greater than I flows but",
+        "C": "there is no current",
+        "D": "displacement current of magnitude equal to I flows in the"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "density in magnetic field.\n(Displacement Current)\n\nA parallel plate capacitor is charged by connecting it to a \nbatter/through a resistor. If I is the current in the circuit, then \nin the gap between the plates:",
+      "media": {}
+    },
+    {
+      "id": 49,
+      "page_number": 6,
+      "text": "same direction as I.\nRay Optics and Optical Instruments\n(Telescope)\n\nA small telescope has an objective of focal length 140 cm and \nan eye piece of focal length 5.0 cm. The magnifying power of \ntelescope for viewing a distant object is:",
+      "original_stem": "A small telescope has an objective of focal length 140 cm and \nan eye piece of focal length 5.0 cm. The magnifying power of \ntelescope for viewing a distant object is:",
+      "choices": {
+        "A": "17",
+        "B": "32",
+        "C": "34",
+        "D": "28"
+      },
+      "correct": "D",
+      "topic": "General",
+      "vignette": null,
+      "explanation": null,
+      "answer_found": true,
+      "q_type": "mcq",
+      "plain_text": "same direction as I.\nRay Optics and Optical Instruments\n(Telescope)\n\nA small telescope has an objective of focal length 140 cm and \nan eye piece of focal length 5.0 cm. The magnifying power of \ntelescope for viewing a distant object is:",
+      "media": {}
+    },
+    {
+      "id": 1,
+      "page_number": 0,
+      "text": "of 14\nQuestion ID: 1574533\nWith respect to venture capital, the term \"mezzanine-stage financing\" is used to describe the\nfinancing:",
+      "original_stem": "of 14\nQuestion ID: 1574533\nWith respect to venture capital, the term \"mezzanine-stage financing\" is used to describe the\nfinancing:",
+      "choices": {
+        "A": "that supports product development and market research",
+        "B": "to initiate commercial manufacturing",
+        "C": "to prepare for an initial public offering"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Mezzanine-stage venture capital financing provides capital during the period prior to an\ninitial public offering. (Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574533\nWith respect to venture capital, the term \"mezzanine-stage financing\" is used to describe the\nfinancing:",
+      "media": {}
+    },
+    {
+      "id": 2,
+      "page_number": 0,
+      "text": "of 14\nQuestion ID: 1577987\nWhich of the following types of private debt has the lowest level of risk?",
+      "original_stem": "of 14\nQuestion ID: 1577987\nWhich of the following types of private debt has the lowest level of risk?",
+      "choices": {
+        "A": "Mezzanine debt",
+        "B": "Unitranche debt",
+        "C": "Venture debt"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Unitranche debt is a blend of different classes of debt and typically ranks between senior\nand subordinated debt. Mezzanine debt is subordinated to senior debt and often\nunsecured. Venture debt is the riskiest because it finances start-up companies that have\nhigh business risk and often lack positive cash flow and assets.\n(Module 80.1, LOS 80.b)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1577987\nWhich of the following types of private debt has the lowest level of risk?",
+      "media": {}
+    },
+    {
+      "id": 3,
+      "page_number": 0,
+      "text": "of 14\nQuestion ID: 1574530\nThe formative stage of venture capital investing when capital is furnished for market\nresearch and product development is best characterized as the:",
+      "original_stem": "of 14\nQuestion ID: 1574530\nThe formative stage of venture capital investing when capital is furnished for market\nresearch and product development is best characterized as the:",
+      "choices": {
+        "A": "angel investing stage",
+        "B": "seed stage",
+        "C": "early stage"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "In the seed stage of venture capital investing, capital is furnished for product\ndevelopment, marketing, and market research. The angel investing stage is when\ninvestment funds are used for business plans and assessing market potential. The early\nstage refers to investments made to fund initial commercial production and sales.\n(Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574530\nThe formative stage of venture capital investing when capital is furnished for market\nresearch and product development is best characterized as the:",
+      "media": {}
+    },
+    {
+      "id": 4,
+      "page_number": 1,
+      "text": "of 14\nQuestion ID: 1574536\nKettering Incorporated is a successful manufacturer of technology hardware. Kettering is\nseeking capital to finance additional growth that will position the company for an initial\npublic offering. This stage of financing is most accurately described as:",
+      "original_stem": "of 14\nQuestion ID: 1574536\nKettering Incorporated is a successful manufacturer of technology hardware. Kettering is\nseeking capital to finance additional growth that will position the company for an initial\npublic offering. This stage of financing is most accurately described as:",
+      "choices": {
+        "A": "mezzanine-stage financing",
+        "B": "angel investing",
+        "C": "early-stage financing"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Mezzanine stage capital prepares a company for and IPO. Angel investing and early-stage\nfinancing describe venture capital in a company's formative stages.\n(Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574536\nKettering Incorporated is a successful manufacturer of technology hardware. Kettering is\nseeking capital to finance additional growth that will position the company for an initial\npublic offering. This stage of financing is most accurately described as:",
+      "media": {}
+    },
+    {
+      "id": 5,
+      "page_number": 1,
+      "text": "of 14\nQuestion ID: 1577988\nThe vintage year is the year in which a private equity fund:",
+      "original_stem": "of 14\nQuestion ID: 1577988\nThe vintage year is the year in which a private equity fund:",
+      "choices": {
+        "A": "makes its first investment",
+        "B": "receives its first capital commitment",
+        "C": "sells its first investment"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "The vintage year is typically defined as the year a private equity or venture capital fund\nmakes its first investment. The year of the first capital commitment is not necessarily the\nsame as the year of the first investment by the fund into a portfolio company, because\nthere might be a lag between when the capital is committed and when it is deployed.\n(Module 80.1, LOS 80.c)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1577988\nThe vintage year is the year in which a private equity fund:",
+      "media": {}
+    },
+    {
+      "id": 6,
+      "page_number": 2,
+      "text": "of 14\nQuestion ID: 1574534\nSupplying capital to companies that are just moving into operation, but do not as yet have a\nproduct or service available to sell, is a description that best relates to which of the following\nstages of venture capital investing?",
+      "original_stem": "of 14\nQuestion ID: 1574534\nSupplying capital to companies that are just moving into operation, but do not as yet have a\nproduct or service available to sell, is a description that best relates to which of the following\nstages of venture capital investing?",
+      "choices": {
+        "A": "Mezzanine stage",
+        "B": "Angel investing stage",
+        "C": "Early stage"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "The description relates best to the early stage wherein the capital that is supplied helps\nfund initial production and sales.(Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574534\nSupplying capital to companies that are just moving into operation, but do not as yet have a\nproduct or service available to sell, is a description that best relates to which of the following\nstages of venture capital investing?",
+      "media": {}
+    },
+    {
+      "id": 7,
+      "page_number": 2,
+      "text": "of 14\nQuestion ID: 1577989\nSuperStarts Venture Capital Fund has a favorable performance record compared to other\nventure capital funds. This most likely suggests SuperStarts began investing its capital in a:",
+      "original_stem": "of 14\nQuestion ID: 1577989\nSuperStarts Venture Capital Fund has a favorable performance record compared to other\nventure capital funds. This most likely suggests SuperStarts began investing its capital in a:",
+      "choices": {
+        "A": "high valuation market",
+        "B": "business cycle expansion",
+        "C": "business cycle contraction"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Funds that begin investing during a business cycle expansion are likely to earn higher\nrates of return if they specialize in early-stage companies. Funds that begin investing\nduring business cycle contractions are likely to earn higher rates of return if they\nspecialize in distressed companies.\n(Module 80.1, LOS 80.c)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1577989\nSuperStarts Venture Capital Fund has a favorable performance record compared to other\nventure capital funds. This most likely suggests SuperStarts began investing its capital in a:",
+      "media": {}
+    },
+    {
+      "id": 8,
+      "page_number": 3,
+      "text": "of 14\nQuestion ID: 1577985\nAt what stage in its lifecycle is a company most likely to have distressed debt?",
+      "original_stem": "of 14\nQuestion ID: 1577985\nAt what stage in its lifecycle is a company most likely to have distressed debt?",
+      "choices": {
+        "A": "Mature",
+        "B": "Growth",
+        "C": "Start-up"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Distressed debt is typically that of mature companies that have encountered financial\ntrouble, which may be due to a temporary situation or a structural issue.\n(Module 80.1, LOS 80.b)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1577985\nAt what stage in its lifecycle is a company most likely to have distressed debt?",
+      "media": {}
+    },
+    {
+      "id": 9,
+      "page_number": 3,
+      "text": "of 14\nQuestion ID: 1574532\nA private equity firm that provides equity capital to a publicly traded company to finance the\ncompany's restructuring, but does not take the company private, is best described as\nengaging in:",
+      "original_stem": "of 14\nQuestion ID: 1574532\nA private equity firm that provides equity capital to a publicly traded company to finance the\ncompany's restructuring, but does not take the company private, is best described as\nengaging in:",
+      "choices": {
+        "A": "private investment in public equity",
+        "B": "mezzanine-stage financing",
+        "C": "angel investing"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Private investment in public equities refers to a private equity firm providing equity\nfinancing to publicly traded companies. Angel investing refers to financing the formation\nof a business. Mezzanine-stage financing refers to capital provided to a firm as it prepares\nfor an initial public offering. (Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574532\nA private equity firm that provides equity capital to a publicly traded company to finance the\ncompany's restructuring, but does not take the company private, is best described as\nengaging in:",
+      "media": {}
+    },
+    {
+      "id": 10,
+      "page_number": 3,
+      "text": "of 14\nQuestion ID: 1574537\nRelatively infrequent valuations of private equity portfolio companies most likely cause:",
+      "original_stem": "of 14\nQuestion ID: 1574537\nRelatively infrequent valuations of private equity portfolio companies most likely cause:",
+      "choices": {
+        "A": "average fund returns to be biased upward",
+        "B": "standard deviations of fund returns to be biased upward",
+        "C": "correlations of fund returns with equity returns to be biased downward"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Infrequent valuation results in downward bias in both standard deviations and\ncorrelations. (Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574537\nRelatively infrequent valuations of private equity portfolio companies most likely cause:",
+      "media": {}
+    },
+    {
+      "id": 11,
+      "page_number": 4,
+      "text": "of 14\nQuestion ID: 1577984\nWhat type of private debt is least likely to have warrants?",
+      "original_stem": "of 14\nQuestion ID: 1577984\nWhat type of private debt is least likely to have warrants?",
+      "choices": {
+        "A": "Direct lending",
+        "B": "Mezzanine debt",
+        "C": "Venture debt"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Direct lending is often senior and secured. Venture debt and mezzanine debt often have\nfeatures such as warrants to compensate investors for taking on additional risk.\n(Module 80.1, LOS 80.b)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1577984\nWhat type of private debt is least likely to have warrants?",
+      "media": {}
+    },
+    {
+      "id": 12,
+      "page_number": 4,
+      "text": "of 14\nQuestion ID: 1574531\nTo exit an investment in a portfolio company through a trade sale, a private equity firm sells:",
+      "original_stem": "of 14\nQuestion ID: 1574531\nTo exit an investment in a portfolio company through a trade sale, a private equity firm sells:",
+      "choices": {
+        "A": "the portfolio company to one of the portfolio company\u2019s competitors",
+        "B": "shares of a portfolio company to the public",
+        "C": "the portfolio company to another private equity firm"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "A trade sale involves selling a portfolio company to a competitor or another strategic\nbuyer. An IPO involves selling all or some shares of a portfolio company to the public. A\nsecondary sale involves selling a portfolio company to another private equity firm or a\ngroup of investors. (Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574531\nTo exit an investment in a portfolio company through a trade sale, a private equity firm sells:",
+      "media": {}
+    },
+    {
+      "id": 13,
+      "page_number": 4,
+      "text": "of 14\nQuestion ID: 1577986\nCompared to traditional bonds, private debt provides:",
+      "original_stem": "of 14\nQuestion ID: 1577986\nCompared to traditional bonds, private debt provides:",
+      "choices": {
+        "A": "higher returns",
+        "B": "higher liquidity",
+        "C": "lower risk"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Overall, investing in private debt is illiquid and riskier than investing in traditional debt.\nGiven that investors want to be compensated for higher risk, private debt should have the\npotential to provide higher returns. Also, some private debt may include equity upside\npotential.\n(Module 80.1, LOS 80.b)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1577986\nCompared to traditional bonds, private debt provides:",
+      "media": {}
+    },
+    {
+      "id": 14,
+      "page_number": 5,
+      "text": "of 14\nQuestion ID: 1574535\nThe stage at which venture capital financing is used to fund market research and product\ndevelopment is best characterized as the:",
+      "original_stem": "of 14\nQuestion ID: 1574535\nThe stage at which venture capital financing is used to fund market research and product\ndevelopment is best characterized as the:",
+      "choices": {
+        "A": "seed stage",
+        "B": "early stage",
+        "C": "angel investing stage"
+      },
+      "correct": "A",
+      "topic": "General",
+      "vignette": null,
+      "explanation": "Seed stage financing is used for market research and to fund product development and/or\nmarketing and is typically the first stage at which a venture capital fund will invest in a\nstart-up company. (Module 80.1, LOS 80.a)",
+      "answer_found": false,
+      "q_type": "mcq",
+      "plain_text": "of 14\nQuestion ID: 1574535\nThe stage at which venture capital financing is used to fund market research and product\ndevelopment is best characterized as the:",
+      "media": {}
     }
   ]
 }

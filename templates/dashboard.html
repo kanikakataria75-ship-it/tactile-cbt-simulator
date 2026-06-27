@@ -17,67 +17,87 @@
   </script>
 </head>
 <body>
-  <!-- Ambient Blurred Orbs -->
-  <div class="orb-container">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+  <!-- Ambient Aurora Background -->
+  <div class="aurora-bg">
+    <div class="aurora-orb orb-indigo"></div>
+    <div class="aurora-orb orb-amethyst"></div>
+    <div class="aurora-orb orb-blue"></div>
   </div>
 
   <button class="theme-toggle" id="themeToggleBtn" onclick="toggleGlobalTheme()">
     <span class="theme-icon"><i class="fa-solid fa-moon"></i></span> <span id="themeToggleText">Dark</span>
   </button>
 
-  <div class="result-container animate-fade-in">
-    <!-- Header -->
-    <div class="setup-header" style="margin-bottom: 30px;">
+  <div class="perspective-container">
+  <div class="bento-grid animate-fade-in">
+    
+    <!-- FULL WIDTH ANALYTICS TICKER / HEADER -->
+    <div class="analytics-ticker bento-card-span-12">
+      <div class="ticker-item"><i class="fa-solid fa-bolt" style="color: var(--cfa-gold);"></i> System Status: Online</div>
+      <div class="ticker-item"><i class="fa-solid fa-graduation-cap"></i> CFA Level I Practice Environment</div>
+      <div class="ticker-item"><i class="fa-solid fa-clock"></i> Active Time: <span id="tickerActiveTime">00:00:00</span></div>
+      <div class="ticker-item"><i class="fa-solid fa-database"></i> Database Index: Secure</div>
+      <div class="ticker-item"><i class="fa-solid fa-circle-check" style="color: var(--color-correct);"></i> Engine: Active</div>
+    </div>
+
+    <!-- HEADER CARD - Span 12 -->
+    <div class="bento-card-span-12 setup-header" style="margin-bottom: 10px;">
       <div class="logo-emblem"><i class="fa-solid fa-chart-pie"></i></div>
       <h1>Historical Performance</h1>
       <p>Analyze scoring trends and error log vault statistics</p>
     </div>
 
-    <!-- Stats Cards -->
-    <div class="stat-cards stagger" style="margin-bottom: 24px;">
-      <div class="glass-card stat-card">
-        <div class="stat-value">{{ total_runs }}</div>
-        <div class="stat-label">Practice Runs Completed</div>
-      </div>
-      <div class="glass-card stat-card">
-        <div class="stat-value">{{ avg_score }}%</div>
-        <div class="stat-label">Average Score</div>
-      </div>
-      <div class="glass-card stat-card">
-        <div class="stat-value">{{ avg_accuracy }}%</div>
-        <div class="stat-label">Overall Accuracy</div>
-      </div>
-      <div class="glass-card stat-card" style="border-color: var(--color-incorrect);">
-        <div class="stat-value" style="color: var(--color-incorrect);">{{ vault_count }}</div>
-        <div class="stat-label">Questions in Error Vault</div>
-      </div>
+    <!-- STAT CARDS (Bento placements: 4 columns) -->
+    <!-- Card 1: Completed Runs - Span 3 -->
+    <div class="glass-card stat-card bento-card-span-3">
+      <div class="stat-value" style="font-size: 2.8rem;">{{ total_runs }}</div>
+      <div class="stat-label heavy-tracking">Runs Completed</div>
     </div>
 
-    <!-- Trend Chart Card -->
-    <div class="glass-card" style="padding: 24px; margin-bottom: 24px;">
-      <h3 style="font-size: 0.95rem; margin-bottom: 16px; color: var(--cfa-gold);"><i class="fa-solid fa-chart-line" style="color: var(--cfa-gold); margin-right: 8px;"></i> Score Trajectory Curve</h3>
-      <div style="position: relative; height: 300px; width: 100%;">
+    <!-- Card 2: Average Score - Span 3 -->
+    <div class="glass-card stat-card bento-card-span-3">
+      <div class="stat-value" style="font-size: 2.8rem; color: var(--color-primary);">{{ avg_score }}%</div>
+      <div class="stat-label heavy-tracking">Average Score</div>
+    </div>
+
+    <!-- Card 3: Overall Accuracy - Span 3 -->
+    <div class="glass-card stat-card bento-card-span-3">
+      <div class="stat-value" style="font-size: 2.8rem; color: var(--color-correct);">{{ avg_accuracy }}%</div>
+      <div class="stat-label heavy-tracking">Overall Accuracy</div>
+    </div>
+
+    <!-- Card 4: Error Vault - Span 3 -->
+    <div class="glass-card stat-card bento-card-span-3" style="border-color: rgba(244, 63, 94, 0.4);">
+      <div class="stat-value" style="font-size: 2.8rem; color: var(--color-incorrect);">{{ vault_count }}</div>
+      <div class="stat-label heavy-tracking" style="color: var(--color-incorrect);">In Error Vault</div>
+    </div>
+
+    <!-- Trajectory Curve - Span 12 -->
+    <div class="glass-card bento-card-span-12" style="padding: 28px;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 20px;">
+        <i class="fa-solid fa-chart-line" style="margin-right: 8px;"></i> Score Trajectory Curve
+      </h3>
+      <div style="position: relative; height: 320px; width: 100%;">
         <canvas id="trendChart"></canvas>
       </div>
     </div>
 
-    <!-- History Table Card -->
-    <div class="glass-card topic-table-wrapper" style="padding: 24px; margin-bottom: 24px;">
-      <h3 style="font-size: 0.95rem; margin-bottom: 16px; color: var(--cfa-gold);"><i class="fa-solid fa-table" style="color: var(--cfa-gold); margin-right: 8px;"></i> Historical Attempt Log</h3>
+    <!-- Historical Attempt Log - Span 12 -->
+    <div class="glass-card topic-table-wrapper bento-card-span-12" style="padding: 28px;">
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 20px;">
+        <i class="fa-solid fa-table" style="margin-right: 8px;"></i> Historical Attempt Log
+      </h3>
       <div style="overflow-x: auto;">
-        <table class="topic-table" style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+        <table class="topic-table" style="font-size: 0.88rem;">
           <thead>
-            <tr style="text-align: left; border-bottom: 1px solid var(--border-subtle);">
-              <th style="padding: 12px 8px;">Date &amp; Time</th>
-              <th style="padding: 12px 8px;">Candidate Name</th>
-              <th style="padding: 12px 8px;">Exam Topic / Reading</th>
-              <th style="padding: 12px 8px; text-align: center;">Score</th>
-              <th style="padding: 12px 8px; text-align: center;">Correct</th>
-              <th style="padding: 12px 8px; text-align: center;">Pacing (Correct/Wrong)</th>
-              <th style="padding: 12px 8px; text-align: center;">Mastery Rating</th>
+            <tr style="text-align: left;">
+              <th>Date &amp; Time</th>
+              <th>Candidate</th>
+              <th>Topic / Reading</th>
+              <th style="text-align: center;">Score</th>
+              <th style="text-align: center;">Correct</th>
+              <th style="text-align: center;">Pacing (Correct/Wrong)</th>
+              <th style="text-align: center;">Mastery Rating</th>
             </tr>
           </thead>
           <tbody id="historyTableBody">
@@ -87,14 +107,24 @@
       </div>
     </div>
 
-    <!-- Portal Navigation Panel -->
-    <div class="result-footer" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+    <!-- Navigation Buttons - Span 12 -->
+    <div class="bento-card-span-12" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
       <a href="/" class="btn btn-secondary btn-lg"><i class="fa-solid fa-house" style="margin-right: 8px;"></i> Return to Exam Setup</a>
-      <a href="/generate-error-quiz" class="btn btn-primary btn-lg" style="box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25); background: linear-gradient(135deg, var(--color-incorrect), #991b1b);">
+      <a href="/generate-error-quiz" class="btn btn-primary btn-lg" style="box-shadow: 0 8px 25px rgba(244, 63, 94, 0.35); background: linear-gradient(135deg, var(--color-incorrect), #b91c1c);">
         <i class="fa-solid fa-rotate-left" style="margin-right: 8px;"></i> Start Mistake Vault Quiz
       </a>
     </div>
 
+    <!-- FLOATING DOCK -->
+    <div class="floating-dock bento-card-span-12">
+      <a href="/dashboard" class="dock-link"><i class="fa-solid fa-chart-simple"></i> Analytics Dashboard</a>
+      <a href="https://curriculum.cfainstitute.org/" target="_blank" class="dock-link"><i class="fa-solid fa-book"></i> Curriculum Reference</a>
+      <a href="/error_log" class="dock-link"><i class="fa-solid fa-triangle-exclamation"></i> Error Log Quiz</a>
+      <span class="dock-separator"></span>
+      <span class="dock-version">v2.4.0-cbt</span>
+    </div>
+
+  </div>
   </div>
 
   <script>
@@ -105,7 +135,7 @@
       if (historyData.length === 0) {
         tbody.innerHTML = `
           <tr>
-            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 30px 8px;">
+            <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 40px 8px;">
               No exam attempts recorded in history database yet. Take practice exams to populate!
             </td>
           </tr>
@@ -118,21 +148,27 @@
         const dateStr = dateObj.toLocaleDateString() + ' ' + dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         
         let masteryBadgeColor = 'var(--color-correct)';
-        if (run.score_pct < 70) masteryBadgeColor = 'var(--color-incorrect)';
-        else if (run.score_pct < 80) masteryBadgeColor = 'var(--color-flagged)';
+        let shadowColor = 'rgba(16, 185, 129, 0.3)';
+        if (run.score_pct < 70) {
+          masteryBadgeColor = 'var(--color-incorrect)';
+          shadowColor = 'rgba(244, 63, 94, 0.3)';
+        } else if (run.score_pct < 80) {
+          masteryBadgeColor = 'var(--color-flagged)';
+          shadowColor = 'rgba(251, 191, 36, 0.3)';
+        }
 
         const pacingStr = `${run.avg_time_correct}s / ${run.avg_time_incorrect}s`;
 
         return `
-          <tr style="border-bottom: 1px solid var(--border-subtle);">
-            <td style="padding: 12px 8px; color: var(--text-secondary); font-size: 0.8rem;">${dateStr}</td>
-            <td style="padding: 12px 8px; font-weight: 600;">${run.candidate_name}</td>
-            <td style="padding: 12px 8px; color: var(--text-secondary);">${run.exam_topic}</td>
-            <td style="padding: 12px 8px; text-align: center; font-weight: 700; color: ${run.score_pct >= 70 ? 'var(--color-correct)' : 'var(--color-incorrect)'}">${run.score_pct}%</td>
-            <td style="padding: 12px 8px; text-align: center;">${run.correct} / ${run.total}</td>
-            <td style="padding: 12px 8px; text-align: center; color: var(--text-secondary); font-size: 0.8rem;">${pacingStr}</td>
-            <td style="padding: 12px 8px; text-align: center;">
-              <span style="display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; background: ${masteryBadgeColor}; color: #fff;">
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
+            <td style="padding: 14px 8px; color: var(--text-muted); font-size: 0.8rem;">${dateStr}</td>
+            <td style="padding: 14px 8px; font-weight: 600;">${run.candidate_name}</td>
+            <td style="padding: 14px 8px; color: var(--text-secondary);">${run.exam_topic}</td>
+            <td style="padding: 14px 8px; text-align: center; font-weight: 700; color: ${run.score_pct >= 70 ? 'var(--color-correct)' : 'var(--color-incorrect)'}">${run.score_pct}%</td>
+            <td style="padding: 14px 8px; text-align: center;">${run.correct} / ${run.total}</td>
+            <td style="padding: 14px 8px; text-align: center; color: var(--text-muted); font-size: 0.8rem;">${pacingStr}</td>
+            <td style="padding: 14px 8px; text-align: center;">
+              <span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; background: ${masteryBadgeColor}; color: #fff; box-shadow: 0 0 10px ${shadowColor};">
                 ${run.mastery_class || (run.score_pct >= 80 ? 'Mastery Level' : run.score_pct >= 70 ? 'Borderline Pass' : 'Review Required')}
               </span>
             </td>
@@ -146,8 +182,8 @@
     function renderTrendChart() {
       const ctx = document.getElementById('trendChart').getContext('2d');
       if (historyData.length === 0) {
-        ctx.font = '14px Poppins';
-        ctx.fillStyle = '#94a3b8';
+        ctx.font = '14px Plus Jakarta Sans';
+        ctx.fillStyle = '#64748b';
         ctx.textAlign = 'center';
         ctx.fillText('No history data available to map curve.', ctx.canvas.width / 2, ctx.canvas.height / 2);
         return;
@@ -170,12 +206,12 @@
             borderColor: 'var(--cfa-gold)',
             backgroundColor: 'var(--cfa-gold-dim)',
             borderWidth: 3,
-            pointBackgroundColor: 'var(--bg-primary)',
+            pointBackgroundColor: '#06060c',
             pointBorderColor: 'var(--cfa-gold)',
             pointBorderWidth: 2.5,
             pointRadius: 6,
             pointHoverRadius: 8,
-            tension: 0.2,
+            tension: 0.25,
             fill: true
           }]
         },
@@ -212,7 +248,7 @@
                 display: true,
                 text: 'Score (%)',
                 color: textColor,
-                font: { family: 'Poppins', weight: '600' }
+                font: { family: 'Plus Jakarta Sans', weight: '700' }
               }
             },
             x: {
@@ -256,6 +292,31 @@
 
     populateTable();
     renderTrendChart();
+
+    // ── Active Timer Clock ──
+    const tickerActiveTime = document.getElementById('tickerActiveTime');
+    if (tickerActiveTime) {
+      let startTime = Date.now();
+      setInterval(() => {
+        let diff = Date.now() - startTime;
+        let hrs = Math.floor(diff / 3600000);
+        let mins = Math.floor((diff % 3600000) / 60000);
+        let secs = Math.floor((diff % 60000) / 1000);
+        tickerActiveTime.textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }, 1000);
+    }
+
+    // ── 3D Interactive Spatial Computing Script ──
+    const spatialCards = document.querySelectorAll('.glass-card, .setup-header');
+    spatialCards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
   </script>
 </body>
 </html>

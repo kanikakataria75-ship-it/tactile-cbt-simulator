@@ -16,172 +16,267 @@
   </script>
 </head>
 <body>
-  <!-- Ambient Blurred Orbs -->
-  <div class="orb-container">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+  <!-- Ambient Aurora Background -->
+  <div class="aurora-bg">
+    <div class="aurora-orb orb-indigo"></div>
+    <div class="aurora-orb orb-amethyst"></div>
+    <div class="aurora-orb orb-blue"></div>
   </div>
 
   <button class="theme-toggle" id="themeToggleBtn" onclick="toggleGlobalTheme()">
     <span class="theme-icon"><i class="fa-solid fa-moon"></i></span> <span id="themeToggleText">Dark</span>
   </button>
 
-  <!-- Widescreen Setup Dashboard Form -->
-  <form class="dashboard-wrapper animate-fade-in" action="/upload" method="POST" enctype="multipart/form-data" id="setupForm">
+  <div class="perspective-container">
+  <form action="/upload" method="POST" enctype="multipart/form-data" id="setupForm" class="setup-form-wrapper animate-fade-in">
+    
+    <!-- FULL WIDTH ANALYTICS TICKER / HEADER -->
+    <div class="analytics-ticker bento-card-span-12">
+      <div class="ticker-item"><i class="fa-solid fa-bolt" style="color: var(--cfa-gold);"></i> System Status: Online</div>
+      <div class="ticker-item"><i class="fa-solid fa-graduation-cap"></i> CFA Level I Practice Environment</div>
+      <div class="ticker-item"><i class="fa-solid fa-clock"></i> Active Time: <span id="tickerActiveTime">00:00:00</span></div>
+      <div class="ticker-item"><i class="fa-solid fa-database"></i> Database Index: Secure</div>
+      <div class="ticker-item"><i class="fa-solid fa-circle-check" style="color: var(--color-correct);"></i> Engine: Active</div>
+    </div>
+    
+    <!-- Error vault alert (conditional banner) - Span 12 -->
+    {% if error == 'no_mistakes' %}
+    <div class="glass-card bento-card-span-12 animate-fade-in" style="padding: 20px; border-color: var(--color-incorrect); text-align: center; background: rgba(244, 63, 94, 0.08); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-md); margin-bottom: 10px;">
+      <p style="color: var(--color-incorrect); font-weight: 700; font-size: 0.95rem; margin: 0;">
+        <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i> Your mistake vault is currently empty! Answer questions incorrectly in a mock test first to log errors.
+      </p>
+    </div>
+    {% endif %}
 
-    <!-- THE LEFT SIDEBAR PANEL (Navigation & Identity) -->
-    <aside class="sidebar-panel">
-      <!-- Illuminated portal logo emblem -->
+    <div class="setup-layout-container">
+      <!-- CARD 1: Left Sidebar Panel (Identity & Profile) -->
+      <aside class="sidebar-panel" style="min-height: unset; height: 100%; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
       <div class="sidebar-logo">
         <div class="logo-emblem"><i class="fa-solid fa-graduation-cap"></i></div>
         <h2>Assessment Portal</h2>
         <p>Enterprise Practice Controller</p>
       </div>
 
-      <!-- Candidate Profile inputs as sleek, bottom-bordered parameters -->
-      <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 20px;">
-        <h3 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cfa-gold); margin-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;"><i class="fa-solid fa-user-gear" style="color: var(--cfa-gold); margin-right: 8px;"></i> Candidate Profile</h3>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <h3 class="heavy-tracking" style="border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 6px;">
+          <i class="fa-solid fa-user-gear" style="color: var(--cfa-gold); margin-right: 8px;"></i> Candidate Profile
+        </h3>
         
         <div class="form-group">
-          <label class="form-label" for="candidateName" style="font-size: 0.72rem;">Candidate Name</label>
+          <label class="form-label" for="candidateName">Candidate Name</label>
           <input class="form-input-tactile" type="text" name="candidate_name" placeholder="e.g. John Doe" required id="candidateName">
         </div>
         
-        <div class="form-group">
-          <label class="form-label" for="examTopic" style="font-size: 0.72rem;">Exam Topic / Title</label>
+        <div class="form-group" style="margin-top: 15px;">
+          <label class="form-label" for="examTopic">Exam Topic / Title</label>
           <input class="form-input-tactile" type="text" name="exam_topic" placeholder="e.g. Financial Management" required id="examTopic">
         </div>
       </div>
-
-      <!-- Navigation stacked tactical dashboard options -->
-      <div class="sidebar-nav">
-        <a href="/dashboard" class="sidebar-nav-btn">
-          <i class="fa-solid fa-chart-pie" style="margin-right: 8px;"></i> Historical Analytics
-        </a>
-        <a href="/generate-error-quiz" class="sidebar-nav-btn" style="border-color: rgba(239, 68, 68, 0.25);">
-          <i class="fa-solid fa-rotate-left" style="margin-right: 8px;"></i> Error Log Vault Quiz Generator
-        </a>
       </div>
     </aside>
 
-    <!-- THE MAIN EXPANSION WORKSPACE (Right Grid Panel) -->
-    <main class="main-workspace">
-      <!-- Error vault check warning -->
-      {% if error == 'no_mistakes' %}
-      <div class="dashboard-card animate-fade-in" style="padding: 18px 24px; border-color: var(--color-incorrect); text-align: center; background: rgba(239, 68, 68, 0.08); border-radius: var(--radius-md);">
-        <p style="color: var(--color-incorrect); font-weight: 700; font-size: 0.9rem; margin: 0;">
-          <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i> Your mistake vault is currently empty! Answer questions incorrectly in a mock test first to log errors.
+    <!-- Main Bento Grid next to Sidebar -->
+    <div class="bento-grid">
+
+    <!-- CARD 2: Analytics & Mistakes Vault Card - Span 3 -->
+    <div class="glass-card bento-card-span-3" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
+      <div>
+        <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 20px;">
+          <i class="fa-solid fa-gauge-high" style="margin-right: 8px;"></i> Performance &amp; Vault
+        </h3>
+        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
+          Review historical exam analytics and generate personalized quiz runs from your Mistakes Vault database.
         </p>
       </div>
-      {% endif %}
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+        <a href="/dashboard" class="sidebar-nav-btn" style="text-align: center; justify-content: center; width: 100%;">
+          <i class="fa-solid fa-chart-pie" style="margin-right: 8px;"></i> Historical Analytics
+        </a>
+        <a href="/generate-error-quiz" class="sidebar-nav-btn" style="border-color: rgba(244, 63, 94, 0.25); text-align: center; justify-content: center; width: 100%;">
+          <i class="fa-solid fa-rotate-left" style="margin-right: 8px;"></i> Mistakes Vault Quiz
+        </a>
+      </div>
+    </div>
 
-      <!-- ROW 1 (Configuration Metrics) -->
-      <div class="workspace-row">
-        <!-- Target Exam & Rules Breakdown -->
-        <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-sliders" style="color: var(--cfa-gold); margin-right: 8px;"></i> Target Exam &amp; Rules</h3>
-          <div class="form-group" style="margin-bottom: 16px;">
-            <label class="form-label" for="targetExam">Target Examination</label>
-            <select class="form-select-tactile" name="target_exam" id="targetExam" onchange="applyRulesEngine()">
-              <option value="CFA">CFA (3 choices: A, B, C)</option>
-              <option value="FRM">FRM (4 choices: A, B, C, D)</option>
-              <option value="ACCA">ACCA (4 choices: A, B, C, D)</option>
-              <option value="JEE Main">JEE Main (4 choices: A, B, C, D)</option>
-              <option value="JEE Advanced">JEE Advanced (4 choices: A, B, C, D)</option>
-              <option value="NEET">NEET (4 choices: A, B, C, D)</option>
-              <option value="Other">Other (Custom Mock Test)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Rules Breakdown</label>
-            <div id="rulesFeedback" style="padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
-              CFA rules selected. Exam questions will render 3 options (A, B, C). Standard 3pt marking applies.
-            </div>
+    <!-- CARD 3: Target Exam & Rules - Span 3 -->
+    <div class="glass-card bento-card-span-3" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 20px;">
+        <i class="fa-solid fa-sliders" style="margin-right: 8px;"></i> Target Exam &amp; Rules
+      </h3>
+      <div class="form-group" style="margin-bottom: 20px;">
+        <label class="form-label" for="targetExam">Target Examination</label>
+        <select class="form-select-tactile" name="target_exam" id="targetExam" onchange="applyRulesEngine()">
+          <option value="CFA">CFA (3 choices: A, B, C)</option>
+          <option value="FRM">FRM (4 choices: A, B, C, D)</option>
+          <option value="ACCA">ACCA (4 choices: A, B, C, D)</option>
+          <option value="JEE Main">JEE Main (4 choices: A, B, C, D)</option>
+          <option value="JEE Advanced">JEE Advanced (4 choices: A, B, C, D)</option>
+          <option value="NEET">NEET (4 choices: A, B, C, D)</option>
+          <option value="Other">Other (Custom Mock Test)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Rules Breakdown</label>
+        <div id="rulesFeedback" style="padding: 14px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-md); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+          CFA rules selected. Exam questions will render 3 options (A, B, C). Standard 3pt marking applies.
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Marking Settings - Span 3 -->
+    <div class="glass-card bento-card-span-3" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 20px;">
+        <i class="fa-solid fa-calculator" style="margin-right: 8px;"></i> Marking Settings
+      </h3>
+      <div style="display: flex; flex-direction: column; gap: 20px; height: 100%; justify-content: center;">
+        <div class="marking-item">
+          <span class="mark-label"><i class="fa-solid fa-circle-check" style="color: var(--color-correct); margin-right: 6px;"></i> Correct Answer</span>
+          <div>
+            <input type="number" name="mark_correct" value="3" min="0" max="10" id="markCorrect">
+            <span style="color:var(--text-muted);font-size:0.8rem;margin-left:4px">pts</span>
           </div>
         </div>
-
-        <!-- Marking Settings -->
-        <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-calculator" style="color: var(--cfa-gold); margin-right: 8px;"></i> Marking Settings</h3>
-          <div style="display: flex; flex-direction: column; gap: 16px; height: 100%; justify-content: center;">
-            <div class="marking-item" style="border-radius: var(--radius-md); background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle);">
-              <span class="mark-label"><i class="fa-solid fa-circle-check" style="color: var(--color-correct); margin-right: 6px;"></i> Correct Answer</span>
-              <input type="number" name="mark_correct" value="3" min="0" max="10" id="markCorrect">
-              <span style="color:var(--text-muted);font-size:0.8rem">pts</span>
-            </div>
-            <div class="marking-item" style="border-radius: var(--radius-md); background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle);">
-              <span class="mark-label"><i class="fa-solid fa-circle-xmark" style="color: var(--color-incorrect); margin-right: 6px;"></i> Incorrect / Blank</span>
-              <input type="number" name="mark_incorrect" value="0" min="-5" max="0" id="markIncorrect">
-              <span style="color:var(--text-muted);font-size:0.8rem">pts</span>
-            </div>
+        <div class="marking-item">
+          <span class="mark-label"><i class="fa-solid fa-circle-xmark" style="color: var(--color-incorrect); margin-right: 6px;"></i> Incorrect / Blank</span>
+          <div>
+            <input type="number" name="mark_incorrect" value="0" min="-5" max="0" id="markIncorrect">
+            <span style="color:var(--text-muted);font-size:0.8rem;margin-left:4px">pts</span>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- ROW 2 (Session Variables & Uploader) -->
-      <div class="workspace-row">
-        <!-- Duration & Active Session Selection -->
-        <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <h3 style="font-size: 0.95rem; margin-bottom: 18px; color: var(--cfa-gold);"><i class="fa-solid fa-clock" style="color: var(--cfa-gold); margin-right: 8px;"></i> Duration &amp; Session</h3>
-          <div style="display: flex; flex-direction: column; gap: 20px; height: 100%; justify-content: center;">
-            <div class="form-group">
-              <label class="form-label" for="durationInput">Test Duration (minutes)</label>
-              <input class="form-input-tactile" type="number" name="duration" value="135" min="1" max="360" required id="durationInput">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Active Session</label>
-              <div class="session-toggle" style="border-radius: var(--radius-md);">
-                <input type="radio" name="session" value="AM" id="sessionAM" checked>
-                <label for="sessionAM" style="padding: 14px;">AM Practice</label>
-                <input type="radio" name="session" value="PM" id="sessionPM">
-                <label for="sessionPM" style="padding: 14px;">PM Practice</label>
-              </div>
-            </div>
-          </div>
+
+    <!-- CARD 4: Duration & Active Session Selection - Span 4 -->
+    <div class="glass-card bento-card-span-4" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 20px;">
+        <i class="fa-solid fa-clock" style="margin-right: 8px;"></i> Duration &amp; Session
+      </h3>
+      <div style="display: flex; flex-direction: column; gap: 20px; height: 100%; justify-content: center;">
+        <div class="form-group">
+          <label class="form-label" for="durationInput">Test Duration (minutes)</label>
+          <input class="form-input-tactile" type="number" name="duration" value="135" min="1" max="360" required id="durationInput">
         </div>
-
-        <!-- Dual Drag-and-drop File Upload Terminal -->
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-          <!-- Tooltip Badge -->
-          <div style="font-size: 0.78rem; color: var(--text-secondary); background: var(--cfa-gold-dim); border: 1px dashed var(--border-active); padding: 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px;">
-            <i class="fa-solid fa-lightbulb" style="color: var(--cfa-gold); margin-right: 6px;"></i> <span>Leave the Answer Key card blank if your question document already contains the answers or explanations inline.</span>
-          </div>
-
-          <!-- Two side-by-side glassmorphic cards -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 100%;">
-            <!-- Card 1: Question Document -->
-            <div class="dashboard-card" style="padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
-              <h3 style="font-size: 0.88rem; margin-bottom: 12px; color: var(--cfa-gold);"><i class="fa-solid fa-file-arrow-up" style="color: var(--cfa-gold); margin-right: 8px;"></i> 1. Question Document</h3>
-              <div class="upload-zone" id="uploadZoneQuest" style="padding: 20px 10px; min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: var(--radius-md); background: rgba(255,255,255,0.01); border: 2px dashed var(--border-input); cursor: pointer; transition: all var(--transition-base);">
-                <input type="file" name="question_file" accept=".txt,.csv,.text,.pdf" required id="fileInputQuest" style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
-                <div class="upload-icon" style="font-size: 1.8rem; margin-bottom: 8px; color: var(--text-secondary);"><i class="fa-solid fa-file-arrow-up"></i></div>
-                <div class="upload-text" style="font-size: 0.8rem; color: var(--text-secondary);">Drop questions (.txt/.pdf)</div>
-                <div class="upload-filename" id="fileNameQuest" style="display:none; font-size: 0.75rem; margin-top: 6px; color: var(--color-correct); font-weight: 700;"></div>
-              </div>
-            </div>
-
-            <!-- Card 2: Separate Answer Key -->
-            <div class="dashboard-card" style="padding: 20px; display: flex; flex-direction: column; justify-content: space-between;">
-              <h3 style="font-size: 0.88rem; margin-bottom: 12px; color: var(--cfa-gold);"><i class="fa-solid fa-key" style="color: var(--cfa-gold); margin-right: 8px;"></i> 2. Separate Answer Key</h3>
-              <div class="upload-zone" id="uploadZoneAns" style="padding: 20px 10px; min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: var(--radius-md); background: rgba(255,255,255,0.01); border: 2px dashed var(--border-input); cursor: pointer; transition: all var(--transition-base);">
-                <input type="file" name="answer_file" accept=".txt,.csv,.text,.pdf" id="fileInputAns" style="position: absolute; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
-                <div class="upload-icon" style="font-size: 1.8rem; margin-bottom: 8px; color: var(--text-secondary);"><i class="fa-solid fa-key"></i></div>
-                <div class="upload-text" style="font-size: 0.8rem; color: var(--text-secondary);">Drop answer key (optional)</div>
-                <div class="upload-filename" id="fileNameAns" style="display:none; font-size: 0.75rem; margin-top: 6px; color: var(--color-correct); font-weight: 700;"></div>
-              </div>
-            </div>
+        <div class="form-group">
+          <label class="form-label">Active Session</label>
+          <div class="session-toggle">
+            <input type="radio" name="session" value="AM" id="sessionAM" checked>
+            <label for="sessionAM">AM Practice</label>
+            <input type="radio" name="session" value="PM" id="sessionPM">
+            <label for="sessionPM">PM Practice</label>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Action Panel / Widescreen Test Launch Button -->
-        <button type="submit" class="btn btn-primary btn-lg" id="startBtn" disabled style="width: 100%; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; border-radius: var(--radius-md);">
-          <i class="fa-solid fa-rocket" style="margin-right: 8px;"></i> Boot Active Testing Environment
+    <!-- CARD 5: Uploader and Drag Drop Zone - Span 8 -->
+    <div class="glass-card bento-card-span-8" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin-bottom: 12px;">
+        <i class="fa-solid fa-file-arrow-up" style="margin-right: 8px;"></i> Ingestion Desk
+      </h3>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">
+        <i class="fa-solid fa-lightbulb" style="color: var(--cfa-gold); margin-right: 6px;"></i> Leave the Answer Key card blank if your question document already contains answers or explanations inline.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 100%;">
+        <!-- Drop Zone 1 -->
+        <div class="upload-zone" id="uploadZoneQuest">
+          <input type="file" name="question_file" accept=".txt,.csv,.text,.pdf" required id="fileInputQuest" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 10;">
+          <div class="logo-emblem" style="font-size: 1.8rem; margin-bottom: 8px;"><i class="fa-solid fa-file-arrow-up"></i></div>
+          <div class="upload-text" style="font-size: 0.8rem; font-weight:600; color: var(--text-secondary);">Drop Question PDF / TXT</div>
+          <div class="upload-filename" id="fileNameQuest" style="display:none;"></div>
+        </div>
+        
+        <!-- Drop Zone 2 -->
+        <div class="upload-zone" id="uploadZoneAns">
+          <input type="file" name="answer_file" accept=".txt,.csv,.text,.pdf" id="fileInputAns" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 10;">
+          <div class="logo-emblem" style="font-size: 1.8rem; margin-bottom: 8px; filter: grayscale(1);"><i class="fa-solid fa-key"></i></div>
+          <div class="upload-text" style="font-size: 0.8rem; font-weight:600; color: var(--text-secondary);">Drop Answer Key (Optional)</div>
+          <div class="upload-filename" id="fileNameAns" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 7: Tasks Workspace - Span 7 -->
+    <div class="glass-card bento-card-span-7 task-workspace-card" style="padding: 28px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
+      <div style="width: 100%;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 class="heavy-tracking" style="color: var(--cfa-gold); margin: 0;">
+            <i class="fa-solid fa-list-check" style="margin-right: 8px;"></i> Tasks Workspace
+          </h3>
+          <button type="button" id="addTaskBtn" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.78rem; border-radius: 50px; font-weight: 800;">
+            <i class="fa-solid fa-plus" style="margin-right: 4px;"></i> Add Task
+          </button>
+        </div>
+        
+        <!-- Inline Add Form (Initially Hidden) -->
+        <div id="addTaskFormContainer" style="display: none; gap: 8px; margin-bottom: 16px; width: 100%;">
+          <input type="text" id="newTaskTitleInput" class="form-input-tactile" placeholder="What needs to be done?" style="padding: 8px 12px; font-size: 0.85rem; flex: 1; min-height: unset; margin: 0;">
+          <button type="button" id="saveNewTaskBtn" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem; border-radius: var(--radius-md);">Save</button>
+          <button type="button" id="cancelNewTaskBtn" class="btn btn-ghost" style="padding: 8px 12px; font-size: 0.85rem; border-radius: var(--radius-md);">Cancel</button>
+        </div>
+        
+        <div id="tasksList" style="display: flex; flex-direction: column; gap: 8px; max-height: 180px; overflow-y: auto; padding-right: 4px;">
+          <!-- Dynamic Task Items -->
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 8: Focus Timer - Span 5 -->
+    <div class="glass-card bento-card-span-5 focus-timer-card" style="padding: 28px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; position: relative;">
+      <div class="drag-handle"><i class="fa-solid fa-grip-vertical"></i></div>
+      <h3 class="heavy-tracking" style="color: var(--cfa-gold); width: 100%; text-align: left; margin-bottom: 12px;">
+        <i class="fa-solid fa-hourglass-half" style="margin-right: 8px;"></i> Focus Timer
+      </h3>
+      
+      <div style="position: relative; width: 120px; height: 120px; margin: 10px 0;">
+        <svg style="transform: rotate(-90deg); width: 120px; height: 120px;">
+          <circle cx="60" cy="60" r="50" stroke="rgba(255,255,255,0.04)" stroke-width="6" fill="transparent" />
+          <circle id="timerProgressRing" cx="60" cy="60" r="50" stroke="var(--color-primary)" stroke-width="8" fill="transparent"
+            stroke-dasharray="314.16" stroke-dashoffset="314.16" style="transition: stroke-dashoffset 0.3s linear; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(99,102,241,0.5));" />
+        </svg>
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <span id="focusTimeDisplay" style="font-size: 1.6rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--text-primary);">25:00</span>
+        </div>
+      </div>
+      
+      <div style="display: flex; gap: 10px; width: 100%; margin-top: 10px;">
+        <button type="button" id="focusStartBtn" class="btn btn-secondary" style="flex: 1; padding: 10px 0; border-radius: 50px; font-size: 0.85rem; font-weight: 800;">
+          <i class="fa-solid fa-play" style="margin-right: 4px;"></i> Start
+        </button>
+        <button type="button" id="focusResetBtn" class="btn btn-ghost" style="flex: 1; padding: 10px 0; border-radius: 50px; font-size: 0.85rem; font-weight: 800;">
+          <i class="fa-solid fa-rotate-left" style="margin-right: 4px;"></i> Reset
         </button>
       </div>
-    </main>
+    </div>
+
+    <!-- BOOT BUTTON - Span 12 -->
+    <div class="bento-card-span-12" style="margin-top: 10px;">
+      <button type="submit" class="btn btn-primary btn-lg" id="startBtn" disabled style="width: 100%; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800; border-radius: 50px;">
+        <i class="fa-solid fa-circle-play" style="margin-right: 8px;"></i> START YOUR EXAM NOW
+      </button>
+    </div>
+
+    <!-- FLOATING DOCK -->
+    <div class="floating-dock bento-card-span-12">
+      <a href="/dashboard" class="dock-link"><i class="fa-solid fa-chart-simple"></i> Analytics Dashboard</a>
+      <a href="https://curriculum.cfainstitute.org/" target="_blank" class="dock-link"><i class="fa-solid fa-book"></i> Curriculum Reference</a>
+      <a href="/error_log" class="dock-link"><i class="fa-solid fa-triangle-exclamation"></i> Error Log Quiz</a>
+      <span class="dock-separator"></span>
+      <span class="dock-version">v2.4.0-cbt</span>
+    </div>
+
+      </div> <!-- Closes .bento-grid -->
+    </div> <!-- Closes .setup-layout-container -->
   </form>
+  </div>
 
   <script>
     const fileInputQuest = document.getElementById('fileInputQuest');
@@ -210,19 +305,17 @@
       input.addEventListener('change', function() {
         if (this.files.length > 0) {
           const file = this.files[0];
-          nameElement.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--color-correct); margin-right: 6px;"></i> Selected: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+          nameElement.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--color-correct); margin-right: 6px;"></i> ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
           nameElement.style.display = 'block';
           zone.classList.add('has-file');
           if (isMandatory) {
             startBtn.disabled = false;
-            startBtn.style.opacity = '1';
           }
         } else {
           nameElement.style.display = 'none';
           zone.classList.remove('has-file');
           if (isMandatory) {
             startBtn.disabled = true;
-            startBtn.style.opacity = '0.45';
           }
         }
       });
@@ -275,6 +368,228 @@
     // Set initial button state on page load
     updateThemeToggleUI(localStorage.getItem('theme') || 'dark');
     applyRulesEngine();
+
+    // ── Tasks Workspace Engine ──
+    const tasksList = document.getElementById('tasksList');
+    const addTaskBtn = document.getElementById('addTaskBtn');
+    const addTaskFormContainer = document.getElementById('addTaskFormContainer');
+    const newTaskTitleInput = document.getElementById('newTaskTitleInput');
+    const saveNewTaskBtn = document.getElementById('saveNewTaskBtn');
+    const cancelNewTaskBtn = document.getElementById('cancelNewTaskBtn');
+
+    let tasks = JSON.parse(localStorage.getItem('portal_tasks')) || [
+      { id: 1, title: 'Review Fixed Income Vignettes', completed: false },
+      { id: 2, title: 'Complete Ethics Practice Set 3', completed: true },
+      { id: 3, title: 'Upload derivatives mock PDF', completed: false }
+    ];
+
+    function saveTasks() {
+      localStorage.setItem('portal_tasks', JSON.stringify(tasks));
+      renderTasks();
+    }
+
+    function renderTasks() {
+      tasksList.innerHTML = '';
+      if (tasks.length === 0) {
+        tasksList.innerHTML = `<div style="text-align: center; color: var(--text-muted); font-size: 0.82rem; padding: 20px 0;">No tasks currently in workspace. Add some above!</div>`;
+        return;
+      }
+
+      tasks.forEach(task => {
+        const item = document.createElement('div');
+        item.className = `task-item ${task.completed ? 'completed' : ''}`;
+        item.dataset.id = task.id;
+
+        item.innerHTML = `
+          <div class="task-item-left">
+            <input type="checkbox" class="task-checkbox" ${task.completed ? 'checked' : ''}>
+            <span class="task-title" contenteditable="true" spellcheck="false">${task.title}</span>
+          </div>
+          <button type="button" class="task-delete-btn" title="Delete Task">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        `;
+
+        // Checkbox complete trigger
+        const checkbox = item.querySelector('.task-checkbox');
+        checkbox.addEventListener('change', () => {
+          task.completed = checkbox.checked;
+          saveTasks();
+        });
+
+        // Inline text editable trigger
+        const titleSpan = item.querySelector('.task-title');
+        titleSpan.addEventListener('blur', () => {
+          const newTitle = titleSpan.textContent.trim();
+          if (newTitle !== '') {
+            task.title = newTitle;
+            saveTasks();
+          } else {
+            titleSpan.textContent = task.title;
+          }
+        });
+
+        titleSpan.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            titleSpan.blur();
+          }
+        });
+
+        // Delete trigger
+        const deleteBtn = item.querySelector('.task-delete-btn');
+        deleteBtn.addEventListener('click', () => {
+          tasks = tasks.filter(t => t.id !== task.id);
+          saveTasks();
+        });
+
+        tasksList.appendChild(item);
+      });
+
+      applySpatialEffects();
+    }
+
+    addTaskBtn.addEventListener('click', () => {
+      addTaskFormContainer.style.display = 'flex';
+      newTaskTitleInput.focus();
+    });
+
+    cancelNewTaskBtn.addEventListener('click', () => {
+      addTaskFormContainer.style.display = 'none';
+      newTaskTitleInput.value = '';
+    });
+
+    saveNewTaskBtn.addEventListener('click', () => {
+      const title = newTaskTitleInput.value.trim();
+      if (title !== '') {
+        const newTask = {
+          id: Date.now(),
+          title: title,
+          completed: false
+        };
+        tasks.push(newTask);
+        saveTasks();
+        addTaskFormContainer.style.display = 'none';
+        newTaskTitleInput.value = '';
+      }
+    });
+
+    newTaskTitleInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        saveNewTaskBtn.click();
+      }
+    });
+
+    // ── Focus Timer Engine ──
+    const focusTimeDisplay = document.getElementById('focusTimeDisplay');
+    const focusStartBtn = document.getElementById('focusStartBtn');
+    const focusResetBtn = document.getElementById('focusResetBtn');
+    const timerProgressRing = document.getElementById('timerProgressRing');
+
+    let focusTimerInterval = null;
+    let focusDuration = 25 * 60; // 25 minutes default
+    let focusTimeRemaining = focusDuration;
+    let focusTimerRunning = false;
+
+    const ringCircumference = 2 * Math.PI * 50;
+
+    function updateProgressRing() {
+      const fraction = focusTimeRemaining / focusDuration;
+      const offset = ringCircumference - (fraction * ringCircumference);
+      timerProgressRing.style.strokeDashoffset = offset;
+    }
+
+    function updateFocusTimerDisplay() {
+      const mins = Math.floor(focusTimeRemaining / 60);
+      const secs = focusTimeRemaining % 60;
+      focusTimeDisplay.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      updateProgressRing();
+    }
+
+    function startFocusTimer() {
+      focusTimerRunning = true;
+      focusStartBtn.innerHTML = '<i class="fa-solid fa-pause" style="margin-right: 4px;"></i> Pause';
+      document.body.classList.add('focus-active');
+
+      focusTimerInterval = setInterval(() => {
+        if (focusTimeRemaining > 0) {
+          focusTimeRemaining--;
+          updateFocusTimerDisplay();
+        } else {
+          clearInterval(focusTimerInterval);
+          focusTimerRunning = false;
+          focusStartBtn.innerHTML = '<i class="fa-solid fa-play" style="margin-right: 4px;"></i> Start';
+          document.body.classList.remove('focus-active');
+          alert('Focus session completed! Take a short break.');
+          resetFocusTimer();
+        }
+      }, 1000);
+    }
+
+    function pauseFocusTimer() {
+      focusTimerRunning = false;
+      focusStartBtn.innerHTML = '<i class="fa-solid fa-play" style="margin-right: 4px;"></i> Resume';
+      clearInterval(focusTimerInterval);
+      document.body.classList.remove('focus-active');
+    }
+
+    function resetFocusTimer() {
+      focusTimerRunning = false;
+      clearInterval(focusTimerInterval);
+      focusTimeRemaining = focusDuration;
+      focusStartBtn.innerHTML = '<i class="fa-solid fa-play" style="margin-right: 4px;"></i> Start';
+      document.body.classList.remove('focus-active');
+      updateFocusTimerDisplay();
+    }
+
+    focusStartBtn.addEventListener('click', () => {
+      if (focusTimerRunning) {
+        pauseFocusTimer();
+      } else {
+        startFocusTimer();
+      }
+    });
+
+    focusResetBtn.addEventListener('click', () => {
+      resetFocusTimer();
+    });
+
+    // Initialize widgets
+    renderTasks();
+    updateFocusTimerDisplay();
+
+    // ── 3D Interactive Spatial Computing Script ──
+    function applySpatialEffects() {
+      const spatialCards = document.querySelectorAll('.glass-card, .sidebar-panel, .upload-zone, .task-item');
+      spatialCards.forEach(card => {
+        if (card.dataset.spatialBound) return;
+        card.dataset.spatialBound = "true";
+
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    }
+
+    // ── Active Timer Clock ──
+    const tickerActiveTime = document.getElementById('tickerActiveTime');
+    if (tickerActiveTime) {
+      let startTime = Date.now();
+      setInterval(() => {
+        let diff = Date.now() - startTime;
+        let hrs = Math.floor(diff / 3600000);
+        let mins = Math.floor((diff % 3600000) / 60000);
+        let secs = Math.floor((diff % 60000) / 1000);
+        tickerActiveTime.textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }, 1000);
+    }
+
+    applySpatialEffects();
   </script>
 </body>
 </html>

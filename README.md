@@ -1,50 +1,94 @@
 # 📊 Multi-Exam CBT Simulator & Ingestor
 
-A premium, widescreen glassmorphic Computer-Based Test (CBT) Simulator engine designed for high-stakes exams (CFA, FRM, JEE, NEET). It contains an advanced multimodal PDF ingestion pipeline that extracts, structure-tokenizes, and recovers diagrams/tables natively to reconstruct full exams.
+A premium, widescreen Spatial glassmorphic Computer-Based Test (CBT) Simulator engine designed for high-stakes examinations (CFA, FRM, ACCA, JEE, NEET). This platform integrates an advanced vision-first PDF ingestion pipeline with standard productivity widgets, custom rules engines, and interactive visual indicators.
 
 ---
 
 ## ✨ Key Features
 
-### 1. 👁️ Multimodal Ingestion Pipeline
-- **Dual-Engine Architecture:** Uses Gemini 2.0 Flash Vision to parse high-resolution page layout structures with a fast layout-aware text fallback parser.
-- **Structural Option Splitting:** Instantly tokenizes horizontal/vertical choices (e.g. `A. 12V B. 24V C. 36V`) into clean option key-value mappings.
-- **Scientific & Math Preservation:** Natively preserves thermodynamic, algebraic, and structural math characters (e.g. `π, Δ, Ω, α, β, γ, θ, ∞`) as native Unicode strings with strict HTML sub/sup rendering.
+### 1. 👁️ Vision-First Multimodal Ingestion
+- **Gemini 2.0 Flash Vision:** Parses high-resolution page layout structures directly to extract questions, vignetted cases, and custom formatting.
+- **Direct Bounding Box Crops:** Extracts diagram images, mathematical graphs, or complex drawings from coordinates returned by the vision model, saving and injecting them natively into test items.
+- **Structural Option Splitting:** Automatically maps vertical/horizontal answer options (e.g., `A`, `B`, `C`) to structured key-value blocks.
+- **Unicode & Math Preservation:** Natively maintains algebraic and thermodynamic math symbols (`π`, `Δ`, `Ω`, `α`, `β`, `γ`, `θ`, `∞`) with appropriate subscript/superscript markup.
 
-### 2. 📐 Spatial Layout & Recovery Engine
-- **Header/Footer Bypass:** Standard margin filters are bypassed for large visual components (tables and diagrams), ensuring top-of-page and bottom-of-page visual vignettes are never skipped.
-- **Cascading Multi-Resolution Search:** Uses PyMuPDF literal page lookup at multiple resolutions (first 35 chars, then 20 chars, then 12 chars, and first 3 words) to accurately assign vertical coordinates to questions.
-- **Unreferenced Media Ingestion:** Maps extracted drawings and table crops to the vertically closest question on the same page based on spatial vertical flow.
+### 2. 🌌 Spatial Glassmorphism & Visual Polish
+- **Aurora Background Orbs:** Includes layered background mesh orbs moving under a gentle float animation.
+- **Cursor Spotlights:** Follows cursor movements with hover radial-gradient spotlight reflections inside glass card cells.
+- **Balanced Motion Stability:** Card panels, question lists, and option items utilize static soft border outlines and glows on hover, avoiding distracting position shifts or screen jitter.
 
-### 3. 💻 Widescreen CBT Exam Interface
-- **Premium Glassmorphic UI:** Smooth gradients, modern Outfit/Inter typography, and subtle micro-animations for an interactive testing experience.
-- **Dynamic Question Pane:** Double-column layout separating vignettes/stems from options to mirror real professional testing environments.
-- **Real-Time Analytics:** Time-on-question metrics, flags, instant grading scorecard, and review metrics.
+### 3. 🛠️ Integrated Study Cockpit (Setup Page)
+- **Interactive Tasks Workspace:** A native to-do list featuring task addition forms, inline title edits, checkbox toggles (with strike-through styling), and data persistence via browser `localStorage`.
+- **Focus Timer Widget:** A study timer rendering an SVG countdown progress ring that supports start, pause, resume, and reset.
+- **Heartbeat Focus Pulse:** Starts a slow breathing cycle (slowing aurora animations from 8s to 16s) when the timer is active to promote visual calm.
+- **Header Ticker & Floating Dock:** A top status bar tracks live connection states and active elapsed time, while a bottom dock centers quick links.
+
+### 4. 📝 CBT Exam Simulation & Scoring
+- **Dynamic Rules Engine:** Adjusts marking structures and option choices based on exam boards (e.g., 3 options for CFA, 4 choices for FRM/ACCA).
+- **Exam HUD & Review Panel:** Features a sticky header timer with warning indicators, question flag tags, status badges, and index lists.
+- **Mistakes Vault & Analytics:** Automatically logs incorrect questions in a local database to review score trajectory curves and compile custom recovery quizzes.
 
 ---
 
 ## 🛠️ Tech Stack
-- **Backend:** Python 3.11 / Flask / PyMuPDF (fitz) / pdfplumber
-- **Frontend:** Vanilla HTML5 / ES6 JavaScript / Tailwind CSS (Glassmorphism & Interactive styles)
-- **Data Persistence:** Local session-based state machines
+- **Backend:** Python 3.11 / Flask / PyMuPDF (fitz) / Pillow / python-dotenv
+- **Frontend:** Vanilla HTML5 / ES6 JavaScript / Font Awesome / Custom CSS (Liquid Glassmorphism)
+- **Data Persistence:** Local session-based state and `localStorage`
 
 ---
 
-## 🚀 Setup & Execution
+## 🚀 Local Setup & Execution Guide
 
-1. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Follow these steps to set up and run the simulator locally on your PC:
 
-2. **Configure API Key:**
-   Create a `.env` file in the root directory:
-   ```env
-   GEMINI_API_KEY=your_gemini_api_key_here
-   ```
+### Prerequisites
+Make sure you have **Python 3.11+** installed on your system. You will also need a **Gemini API Key** from Google AI Studio.
 
-3. **Run the Server:**
-   ```bash
-   python app.py
-   ```
-   Open `http://127.0.0.1:5000` in your web browser.
+### 1. Clone the Repository
+Open a terminal and navigate to your workspace directory:
+```bash
+git clone <repository-url>
+cd cfa-cbt-simulator
+```
+
+### 2. Set Up a Virtual Environment (Recommended)
+Creating a virtual environment ensures that the project dependencies do not interfere with other Python libraries:
+
+**On Windows:**
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+**On macOS / Linux:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+Install all required libraries using the pip package manager:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure API Credentials
+Create a `.env` file in the project root directory:
+```env
+FLASK_SECRET_KEY=your-custom-secure-key-here
+GEMINI_API_KEY=AIzaSy...your-actual-api-key-here
+```
+> **Note:** Ensure that there are no quotes or whitespaces around the API key values.
+
+### 5. Launch the Server
+Execute the Flask server:
+```bash
+python app.py
+```
+
+After starting, navigate to the local address in your web browser:
+```text
+http://127.0.0.1:5000
+```
+- **Upload Page:** Drop your practice PDF document into the Ingestion Desk, fill out your profile details, and click **START YOUR EXAM NOW**.
+- **Analytics:** Access historical scoring charts via the bottom floating dock links.
